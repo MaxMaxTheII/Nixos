@@ -42,7 +42,41 @@
       # ... you can add the rest here
     };
   };
-
+wayland.windowManager.hyprland = {
+  enable = true;
+  settings = {
+    # Basic Config
+    monitor = ",preferred,auto,1";
+    general = {
+      gaps_in = 5;
+      gaps_out = 10;
+      border_size = 2;
+      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      layout = "dwindle";
+    };
+    decoration = {
+      rounding = 10;
+      blur = {
+        enabled = true;
+        size = 3;
+      };
+    };
+    # Keybindings (Super/Windows key is 'Mod4')
+    bind = [
+      "SUPER, Q, exec, kitty"
+      "SUPER, C, killactive,"
+      "SUPER, M, exit,"
+      "SUPER, E, exec, kitty yazi"
+      "SUPER, V, togglefloating,"
+      "SUPER, R, exec, wofi --show drun"
+      # Focus movement
+      "SUPER, left, movefocus, l"
+      "SUPER, right, movefocus, r"
+      "SUPER, up, movefocus, u"
+      "SUPER, down, movefocus, d"
+    ];
+  };
+};
 # --- BASH CONFIGURATION ---
   programs.bash = {
     enable = true;
@@ -50,7 +84,8 @@
       ll = "ls -la";
       nv = "nvim";
       sudo = "sudo ";
-      nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
+     # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
+      nos = "git -C ~/dotfiles add . && git -C ~/dotfiles commit -m 'update: $(date)' || true && nh os switch ~/dotfiles && git -C ~/dotfiles push"
     };
     
     bashrcExtra = ''

@@ -56,8 +56,16 @@
   services.xserver.enable = true;
 
   # Enable the Cinnamon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.cinnamon.enable = true;
+
+  programs.hyprland.enable = true;
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+services.displayManager.sddm = {
+  enable = true;
+  wayland.enable = true; # Ensures SDDM starts a Wayland session
+};
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -133,6 +141,8 @@
   fastfetch
   docker_29
   yazi
+  wofi
+  waybar
   poetry
   nh
   nix-output-monitor
@@ -150,6 +160,8 @@
   # };
 
   # List services that you want to enable:
+  # programs.hyprland.enable = true;
+  # Optional: Hint to Electron apps to use Wayland
   # programs.hyprland.enable
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
