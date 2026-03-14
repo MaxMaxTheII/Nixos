@@ -49,9 +49,7 @@ wayland.windowManager.hyprland = {
     input = {
     kb_layout = "at";
     kb_variant = "nodeadkeys";
-    };
-    touchpad = {
-      natural_scroll = true;
+    "touchpad:natural_scroll" = true;
     };
     monitor = ",preferred,auto,1";
     general = {
