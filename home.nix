@@ -115,6 +115,7 @@ wayland.windowManager.hyprland = {
       "SUPER, M, exit,"
       "SUPER, E, exec, kitty yazi"
       "SUPER, V, togglefloating,"
+      "SUPER, L, exec, hyprlock"
       #"SUPER, R, exec, wofi --show drun"
       # Focus movement
       "SUPER, left, movefocus, l"
