@@ -99,7 +99,7 @@ services.displayManager.sddm = {
   users.users.max = {
     isNormalUser = true;
     description = "max";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -129,6 +129,8 @@ services.displayManager.sddm = {
   ghidra
   # tmux
   kitty
+  brightnessctl
+  wlogout
   texlab
   tidal-hifi
   texliveFull

@@ -80,6 +80,12 @@ wayland.windowManager.hyprland = {
     "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
     ];
     # Keybindings (Super/Windows key is 'Mod4')
+    binde = [
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+      ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+    ];
     bind = [
       "SUPER, Q, exec, kitty"
       "SUPER, C, killactive,"
@@ -102,7 +108,9 @@ wayland.windowManager.hyprland = {
       "SUPER SHIFT, 4, movetoworkspace, 4"
       "SUPER SHIFT, 5, movetoworkspace, 5"
       "SUPER SHIFT, 6, movetoworkspace, 6"
-    ];
+
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+];
     animations = {
   enabled = true;
   bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
@@ -124,8 +132,28 @@ programs.waybar = {
       position = "top";
       height = 30;
       modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "hyprland/window" ];
-      modules-right = [ "clock" "tray" ];
+      modules-center = [ "hyprland/window" "clock"];
+      modules-right = [ "network" "battery" "tray" "custom/power"];
+      network = {
+        format-wifi = "  {essid}";
+        format-ethernet = "󰈀  {ifname}";
+        format-disconnected = "󰖪  Disconnected";
+        tooltip-format = "{ifname} via {gwaddr}";
+      };
+      battery = {
+        states = {
+          warning = 30;
+          critical = 15;
+        };
+        format = "{icon} {capacity}%";
+        format-icons = ["" "" "" "" ""];
+      };
+
+      "custom/power" = {
+        format = "⏻ ";
+        on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
+        tooltip = false;
+      };
     };
   };
 };
