@@ -218,6 +218,30 @@ programs.waybar = {
           shadow_passes = 2;
         }
       ];
+      label = [
+    {
+      monitor = "";
+      # This command tells hyprlock to display the time in 24h format
+      text = "$TIME"; 
+      color = "rgba(242, 243, 244, 0.75)";
+      font_size = 95;
+      font_family = "JetBrains Mono Nerd Font Bold"; # Or your favorite font
+      position = "0, 300";
+      halign = "center";
+      valign = "center";
+    }
+    {
+      monitor = "";
+      # This displays the date below the time
+      text = "cmd[update:1000] echo \"$(date +'%A, %d %B')\"";
+      color = "rgba(242, 243, 244, 0.75)";
+      font_size = 22;
+      font_family = "JetBrains Mono Nerd Font";
+      position = "0, 200";
+      halign = "center";
+      valign = "center";
+    }
+  ];
     };
   };
 
