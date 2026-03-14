@@ -184,6 +184,43 @@ programs.waybar = {
   };
 };
 
+{
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      general = {
+        disable_loading = true;
+        grace = 0;
+        hide_cursor = true;
+      };
+
+      background = [
+        {
+          path = "screenshot"; # This takes a blurred screenshot of your current screen
+          blur_passes = 3;
+          blur_size = 8;
+        }
+      ];
+
+      input-field = [
+        {
+          size = "200, 50";
+          position = "0, -20";
+          monitor = "";
+          dots_center = true;
+          fade_on_empty = false;
+          font_color = "rgb(202, 211, 245)";
+          inner_color = "rgb(91, 96, 120)";
+          outer_color = "rgb(24, 25, 38)";
+          outline_thickness = 5;
+          placeholder_text = "Password...";
+          shadow_passes = 2;
+        }
+      ];
+    };
+  };
+}
+
 # --- BASH CONFIGURATION ---
   programs.bash = {
     enable = true;
