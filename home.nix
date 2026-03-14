@@ -101,6 +101,17 @@ wayland.windowManager.hyprland = {
       "SUPER SHIFT, 5, movetoworkspace, 5"
       "SUPER SHIFT, 6, movetoworkspace, 6"
     ];
+    animations = {
+  enabled = true;
+  bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+  animation = [
+    "windows, 1, 7, myBezier"
+    "windowsOut, 1, 7, default, popin 80%"
+    "border, 1, 10, default"
+    "fade, 1, 7, default"
+    "workspaces, 1, 6, default" # This controls the "Tab" speed between workspaces
+  ];
+};
   };
 };
 programs.waybar = {
