@@ -71,6 +71,7 @@ wayland.windowManager.hyprland = {
     exec-once = [
       "waybar"
       "hyprctl setcursor Bibata-Modern-Ice 24"
+      "nm-applet --indicator"
     ];
     env = [
       "XCURSOR_SIZE,24"
@@ -156,6 +157,9 @@ programs.waybar = {
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" "clock"];
       modules-right = [ "network" "battery" "tray" "custom/power"];
+      tray = {
+        spacing = 10;
+      };
       network = {
         format-wifi = "  {essid}";
         format-ethernet = "󰈀  {ifname}";

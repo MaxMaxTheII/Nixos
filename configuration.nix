@@ -125,6 +125,7 @@ services.displayManager.sddm = {
   discord
   gdb
 #  alacritty
+  networkmanagerapplet
   pwntools
   ghidra
   # tmux
