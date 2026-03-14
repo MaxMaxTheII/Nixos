@@ -51,6 +51,9 @@ wayland.windowManager.hyprland = {
     kb_variant = "nodeadkeys";
     "touchpad:natural_scroll" = true;
     };
+    exec-once = [
+      "waybar"
+    ];
     monitor = ",preferred,auto,1";
     general = {
       gaps_in = 5;
@@ -82,12 +85,19 @@ wayland.windowManager.hyprland = {
     ];
   };
 };
-programs.waybar.enable = true;
-
-programs.waybar.settings.main = {
-  modules-right = ["clock"];
+programs.waybar = {
+  enable = true;
+  settings = {
+    mainBar = {
+      layer = "top";
+      position = "top";
+      height = 30;
+      modules-left = [ "hyprland/workspaces" ];
+      modules-center = [ "hyprland/window" ];
+      modules-right = [ "clock" "tray" ];
+    };
+  };
 };
-
 
 # --- BASH CONFIGURATION ---
   programs.bash = {
