@@ -46,11 +46,13 @@
 wayland.windowManager.hyprland = {
   enable = true;
   settings = {
-    # Basic Config
     input = {
     kb_layout = "at";
     kb_variant = "nodeadkeys";
-  };
+    };
+    touchpad = {
+      natural_scroll = true;
+    };
     monitor = ",preferred,auto,1";
     general = {
       gaps_in = 5;
@@ -83,6 +85,9 @@ wayland.windowManager.hyprland = {
   };
 };
 
+programs.waybar.settings.main = {
+  modules-right = ["clock"];
+};
 
 
 # --- BASH CONFIGURATION ---
