@@ -42,10 +42,15 @@
       # ... you can add the rest here
     };
   };
+
 wayland.windowManager.hyprland = {
   enable = true;
   settings = {
     # Basic Config
+    input = {
+    kb_layout = "at";
+    kb_variant = "nodeadkeys";
+  };
     monitor = ",preferred,auto,1";
     general = {
       gaps_in = 5;
@@ -77,6 +82,9 @@ wayland.windowManager.hyprland = {
     ];
   };
 };
+
+
+
 # --- BASH CONFIGURATION ---
   programs.bash = {
     enable = true;
