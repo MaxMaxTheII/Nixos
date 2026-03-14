@@ -69,7 +69,12 @@ wayland.windowManager.hyprland = {
         size = 3;
       };
     };
-    wayland.windowManager.hyprland.settings.bindr = [
+    bindm = [
+    # Mouse movements: SUPER + Left Click to move, SUPER + Right Click to resize
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
+    ];
+    bindr = [
     "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
     ];
     # Keybindings (Super/Windows key is 'Mod4')
@@ -85,6 +90,16 @@ wayland.windowManager.hyprland = {
       "SUPER, right, movefocus, r"
       "SUPER, up, movefocus, u"
       "SUPER, down, movefocus, d"
+
+      "SUPER, Tab, workspace, e+1"
+      "SUPER SHIFT, Tab, workspace, e-1"
+
+      "SUPER SHIFT, 1, movetoworkspace, 1"
+      "SUPER SHIFT, 2, movetoworkspace, 2"
+      "SUPER SHIFT, 3, movetoworkspace, 3"
+      "SUPER SHIFT, 4, movetoworkspace, 4"
+      "SUPER SHIFT, 5, movetoworkspace, 5"
+      "SUPER SHIFT, 6, movetoworkspace, 6"
     ];
   };
 };
