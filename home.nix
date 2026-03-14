@@ -61,6 +61,8 @@ wayland.windowManager.hyprland = {
       border_size = 2;
       "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
       layout = "dwindle";
+      resize_on_border = true;
+  extend_border_grab_area = 20;
     };
     decoration = {
       rounding = 10;
