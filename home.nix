@@ -184,7 +184,7 @@ programs.waybar = {
   };
 };
 
-{
+
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -219,7 +219,7 @@ programs.waybar = {
       ];
     };
   };
-}
+
 
 # --- BASH CONFIGURATION ---
   programs.bash = {
