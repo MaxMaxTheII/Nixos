@@ -76,6 +76,8 @@ services.displayManager.sddm = {
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  security.pam.services.hyprlock = {};
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
