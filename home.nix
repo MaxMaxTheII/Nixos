@@ -69,6 +69,9 @@ wayland.windowManager.hyprland = {
         size = 3;
       };
     };
+    wayland.windowManager.hyprland.settings.bindr = [
+      "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun"
+    ];
     # Keybindings (Super/Windows key is 'Mod4')
     bind = [
       "SUPER, Q, exec, kitty"
@@ -76,7 +79,7 @@ wayland.windowManager.hyprland = {
       "SUPER, M, exit,"
       "SUPER, E, exec, kitty yazi"
       "SUPER, V, togglefloating,"
-      "SUPER, R, exec, wofi --show drun"
+      #"SUPER, R, exec, wofi --show drun"
       # Focus movement
       "SUPER, left, movefocus, l"
       "SUPER, right, movefocus, r"
