@@ -70,7 +70,7 @@ wayland.windowManager.hyprland = {
       };
     };
     wayland.windowManager.hyprland.settings.bindr = [
-      "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun"
+    "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
     ];
     # Keybindings (Super/Windows key is 'Mod4')
     bind = [
