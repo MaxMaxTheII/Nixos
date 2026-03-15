@@ -158,6 +158,9 @@ wayland.windowManager.hyprland = {
 };
   };
 };
+
+services.swayosd.enable = true;
+
 programs.waybar = {
   enable = true;
   settings = {
