@@ -158,7 +158,7 @@ programs.waybar = {
       height = 30;
       modules-left = [ "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" "clock"];
-      modules-right = [ "network" "battery" "tray" "custom/power"];
+      modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
       tray = {
         spacing = 10;
       };
@@ -175,6 +175,11 @@ programs.waybar = {
         };
         format = "{icon} {capacity}%";
         format-icons = ["" "" "" "" ""];
+      };
+      bluetooth = {
+        format =  " {status}";
+	    format-connected = " {device_alias}";
+	    format-connected-battery = " {device_alias} {device_battery_percentage}%";
       };
 
       "custom/power" = {
