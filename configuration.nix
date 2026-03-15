@@ -65,6 +65,9 @@
 
   programs.hyprland.enable = true;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 services.displayManager.sddm = {
   enable = true;
@@ -136,12 +139,14 @@ services.displayManager.autoLogin = {
   libnotify
   swayosd
   gdb
+  hyprpaper
 #  alacritty
   networkmanagerapplet
   pwntools
   ghidra
   # tmux
   kitty
+  polkit_gnome
   brightnessctl
   wlogout
   texlab

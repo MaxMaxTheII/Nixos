@@ -85,11 +85,18 @@ wayland.windowManager.hyprland = {
     kb_variant = "nodeadkeys";
     "touchpad:natural_scroll" = true;
     };
+    misc = {
+      force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
+      disable_hyprland_logo = true;
+    };
     exec-once = [
       "hyprlock"
+      "hyprpaper"
       "waybar"
       "hyprctl setcursor Bibata-Modern-Ice 24"
       "nm-applet --indicator"
+      "udiskie &"
+      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
     ];
     env = [
       "XCURSOR_SIZE,24"
@@ -174,6 +181,19 @@ wayland.windowManager.hyprland = {
   ];
 };
   };
+};
+
+services.hyprpaper = {
+  enable = true;
+  settings = {
+    preload = [ "/home/max/dotfiles/data/wallpapers/zergling.jpg" ];
+    wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling.jpg" ];
+  };
+};
+
+services.udiskie = {
+  enable = true;
+  tray = "auto"; # Shows a tray icon in Waybar if nm-applet is running
 };
 
 services.swayosd.enable = true;
