@@ -53,10 +53,10 @@ fonts.fontconfig = {
   # --- KITTY CONFIGURATION ---
   programs.kitty = {
     enable = true;
-    font = {
-      name = "Comic Mono";
-      size = 11;
-    };
+#    font = {
+#      name = "Comic Mono";
+#      size = 11;
+#    };
     settings = {
       background_opacity = "0.8";
       background_blur = 20;
