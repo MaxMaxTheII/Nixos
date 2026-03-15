@@ -66,6 +66,10 @@ services.displayManager.sddm = {
   enable = true;
   wayland.enable = true; # Ensures SDDM starts a Wayland session
 };
+services.displayManager.autoLogin = {
+  enable = true;
+  user = "max";
+};# login and instantly lock the screen to have the same loginscreen everytime
 
   # Configure keymap in X11
   services.xserver.xkb = {

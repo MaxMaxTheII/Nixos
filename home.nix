@@ -69,6 +69,7 @@ wayland.windowManager.hyprland = {
     "touchpad:natural_scroll" = true;
     };
     exec-once = [
+      "hyprlock"
       "waybar"
       "hyprctl setcursor Bibata-Modern-Ice 24"
       "nm-applet --indicator"
