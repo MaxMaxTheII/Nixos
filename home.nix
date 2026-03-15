@@ -209,6 +209,7 @@ programs.waybar = {
         format =  " {status}";
 	    format-connected = " {device_alias}";
 	    format-connected-battery = " {device_alias} {device_battery_percentage}%";
+        on-click = "blueman-manager";
       };
 
       "custom/power" = {
