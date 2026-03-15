@@ -37,7 +37,7 @@ fonts.fontconfig = {
   enable = true;
   defaultFonts = {
     monospace = [ 
-      "Comic Mono"
+#      "Comic Mono"
       "JetBrainsMono Nerd Font" 
       "Font Awesome 6 Free" 
       "Noto Color Emoji" 
