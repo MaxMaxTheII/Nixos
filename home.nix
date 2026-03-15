@@ -105,10 +105,17 @@ wayland.windowManager.hyprland = {
     ];
     # Keybindings (Super/Windows key is 'Mod4')
     binde = [
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-      ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      # ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      # ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      # ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+      # ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      # Volume with OSD
+      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+      
+      # Brightness with OSD
+      ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+      ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
     ];
     bind = [
       "SUPER, Q, exec, kitty"
@@ -134,7 +141,9 @@ wayland.windowManager.hyprland = {
       "SUPER SHIFT, 5, movetoworkspace, 5"
       "SUPER SHIFT, 6, movetoworkspace, 6"
 
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      # Mute with OSD
+      ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 ];
     animations = {
   enabled = true;
