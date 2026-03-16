@@ -189,7 +189,7 @@ services.hyprpaper = {
   enable = true;
   settings = {
     preload = [ ./data/wallpapers/zergling-wp.png];
-    wallpaper = [ ,./data/wallpapers/zergling-wp.png ];
+    wallpaper = [ ./data/wallpapers/zergling-wp.png ];
   };
 };
 
