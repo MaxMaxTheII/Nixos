@@ -189,7 +189,7 @@ services.hyprpaper = {
   enable = true;
   settings = {
     preload = [ variables.paths.wallpaper ];
-    wallpaper = [ ,variables.paths.wallpaper ];
+    wallpaper = [ variables.paths.wallpaper ];
   };
 };
 
