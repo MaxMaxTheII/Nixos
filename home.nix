@@ -312,7 +312,7 @@ programs.waybar = {
       nv = "nvim";
       sudo = "sudo ";
      # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
-      nos = "git -C ~/dotfiles add . && git -C ~/dotfiles commit -m 'update: $(date)' || true && nh os switch ~/dotfiles && git -C ~/dotfiles push";
+      nos = ''git -C ~/dotfiles add . && git -C ~/dotfiles commit -m "update: $(date)" || true && nh os switch ~/dotfiles && git -C ~/dotfiles push'';
     };
     
     bashrcExtra = ''
