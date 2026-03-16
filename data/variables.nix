@@ -5,4 +5,6 @@ var: let
     colors = {
         highlight_1 "#ff0000";
     };
-in {}
+in {
+    inherit var;
+}
