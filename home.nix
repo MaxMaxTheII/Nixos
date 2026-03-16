@@ -167,6 +167,13 @@ wayland.windowManager.hyprland = {
       "SUPER SHIFT, 5, movetoworkspace, 5"
       "SUPER SHIFT, 6, movetoworkspace, 6"
 
+      "SUPER, 1, workspace, 1"
+      "SUPER, 2, workspace, 2"
+      "SUPER, 3, workspace, 3"
+      "SUPER, 4, workspace, 4"
+      "SUPER, 5, workspace, 5"
+      "SUPER, 6, workspace, 6"
+
       # Mute with OSD
       ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
       # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
