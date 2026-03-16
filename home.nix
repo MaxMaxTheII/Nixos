@@ -87,6 +87,9 @@ fonts.fontconfig = {
 wayland.windowManager.hyprland = {
   enable = true;
   settings = {
+    cursor = {
+      no_hardware_cursors = true;
+    };
     input = {
     kb_layout = "at";
     kb_variant = "nodeadkeys";
