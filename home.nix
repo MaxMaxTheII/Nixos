@@ -112,7 +112,7 @@ wayland.windowManager.hyprland = {
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-      "WLR_NO_HARDWARE_CURSORS,1"
+#      "WLR_NO_HARDWARE_CURSORS,1"
     ];
     monitor = ",preferred,auto,1";
     general = {
