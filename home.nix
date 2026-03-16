@@ -13,6 +13,8 @@
   # ENV vars
   home.sessionVariables = {
     EDITOR = "nvim";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
 #    FLAKE = "/home/max/dotfiles";
   };
   # This allows Home Manager to manage itself
@@ -29,10 +31,10 @@
 
 gtk = {
   enable = true;
-  cursorTheme = {
+  /*cursorTheme = {
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
-  };
+  };*/
 };
 
 fonts.fontconfig = {
@@ -103,6 +105,7 @@ wayland.windowManager.hyprland = {
     env = [
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
+      "HYPRCURSOR_THEME,Bibata-Modern-Ice"
     ];
     monitor = ",preferred,auto,1";
     general = {
