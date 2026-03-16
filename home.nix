@@ -205,7 +205,7 @@ wayland.windowManager.hyprland = {
 services.hyprpaper = {
   enable = true;
   settings = {
-  preload = [ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
+  preload = [(import ./data/variables.nix var).paths.wallpaper]#[ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
     wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
   };
 };
