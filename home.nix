@@ -16,6 +16,8 @@
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
 #    FLAKE = "/home/max/dotfiles";
+    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+    HYPRCURSOR_SIZE = "24";
   };
   # This allows Home Manager to manage itself
   programs.home-manager.enable = true;
@@ -24,6 +26,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
+    x11.defaultCursor = "left_ptr";
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 24;
@@ -97,7 +100,7 @@ wayland.windowManager.hyprland = {
       "hyprlock"
       "hyprpaper"
       "waybar"
-      "hyprctl setcursor Bibata-Modern-Ice 24"
+      # "hyprctl setcursor Bibata-Modern-Ice 24"
       "nm-applet --indicator"
       "udiskie &"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
@@ -106,6 +109,7 @@ wayland.windowManager.hyprland = {
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
       "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+      "WLR_NO_HARDWARE_CURSORS,1"
     ];
     monitor = ",preferred,auto,1";
     general = {
