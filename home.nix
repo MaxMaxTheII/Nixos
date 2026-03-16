@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  variables = (import ./data/variables.nix pkgs).var
+  variables = (import ./data/variables.nix pkgs).var;
 in 
 {
   imports = [
