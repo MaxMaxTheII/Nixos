@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
-let
-  variables = (import ./data/variables.nix pkgs).var;
-in 
+# let
+#   variables = (import ./data/variables.nix pkgs).var;
+# in 
 {
   imports = [
     ./nvim.nix
@@ -188,8 +188,8 @@ wayland.windowManager.hyprland = {
 services.hyprpaper = {
   enable = true;
   settings = {
-    preload = [ variables.paths.wallpaper ];
-    wallpaper = [ variables.paths.wallpaper ];
+    preload = [ ./data/wallpapers/zergling-wp.png];
+    wallpaper = [ ,./data/wallpapers/zergling-wp.png ];
   };
 };
 
