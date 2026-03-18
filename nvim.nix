@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-programs.zathura = {
+/*programs.zathura = {
     enable = true;
     options = {
       synctex = true;
@@ -16,7 +16,7 @@ programs.zathura = {
       recolor-lightcolor = "#1e1e1e";
       recolor-darkcolor = "#d4d4d4";
     };
-  };
+  };*/
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
