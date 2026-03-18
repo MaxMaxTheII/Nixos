@@ -7,8 +7,8 @@ programs.zathura = {
       synctex = true;
       synctex-editor-command = "nvim --remote-silent +%{line} %{input}";
       selection-clipboard = "clipboard";
-      recolor = true; # Allows for dark mode/custom colors
-      recolor-keephue = true;
+#      recolor = true; # Allows for dark mode/custom colors
+#      recolor-keephue = true;
     
       # Matching your 0.75 opacity vibe (pseudo-transparent)
     /*  default-bg = "#1e1e1e";
