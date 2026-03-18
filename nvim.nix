@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-/*programs.zathura = {
+programs.zathura = {
     enable = true;
     options = {
       synctex = true;
@@ -11,12 +11,12 @@
       recolor-keephue = true;
     
       # Matching your 0.75 opacity vibe (pseudo-transparent)
-      default-bg = "#1e1e1e";
+    /*  default-bg = "#1e1e1e";
       default-fg = "#d4d4d4";
       recolor-lightcolor = "#1e1e1e";
-      recolor-darkcolor = "#d4d4d4";
+      recolor-darkcolor = "#d4d4d4";*/
     };
-  };*/
+  };
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
