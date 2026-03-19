@@ -169,6 +169,7 @@ services.displayManager.autoLogin = {
   hyprshot
   nvd
   bitwarden-desktop
+  comic-mono
   ];
 #  environment.variables.FLAKE = "/home/max/dotfiles";
 
@@ -179,6 +180,27 @@ services.displayManager.autoLogin = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+fonts = {
+  packages = with pkgs;[
+    comic-mono
+  ];
+  fontconfig = {
+  enable = true;
+  defaultFonts = {
+    monospace = [ 
+      "Comic Mono"
+      "JetBrainsMono Nerd Font" 
+      "Font Awesome 6 Free" 
+      "Noto Color Emoji" 
+    ];
+    sansSerif = [ 
+      "DejaVu Sans" 
+      "Font Awesome 6 Free" 
+    ];
+  };
+};
+};
 
   # List services that you want to enable:
   # programs.hyprland.enable = true;

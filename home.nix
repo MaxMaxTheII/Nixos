@@ -40,7 +40,7 @@ gtk = {
   };*/
 };
 
-fonts = {
+/*fonts = {
   packages = with pkgs;[
     comic-mono
   ];
@@ -60,7 +60,7 @@ fonts = {
   };
 };
 };
-
+*/
 
   # --- KITTY CONFIGURATION ---
   programs.kitty = {
