@@ -3,42 +3,42 @@
 #   variables = (import ./data/variables.nix pkgs).var;
 # in 
 {
-  imports = [
-    ./nvim.nix
-  ];
-  home.username = "max";
-  home.homeDirectory = "/home/max";
-  home.stateVersion = "25.11";
+    imports = [
+        ./nvim.nix
+    ];
+    home.username = "max";
+    home.homeDirectory = "/home/max";
+    home.stateVersion = "25.11";
 
   # ENV vars
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    XCURSOR_THEME = "Bibata-Modern-Ice";
-    XCURSOR_SIZE = "24";
-#    FLAKE = "/home/max/dotfiles";
-    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
-    HYPRCURSOR_SIZE = "24";
-  };
+    home.sessionVariables = {
+        EDITOR = "nvim";
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
+    #    FLAKE = "/home/max/dotfiles";
+        HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+        HYPRCURSOR_SIZE = "24";
+    };
   # This allows Home Manager to manage itself
-  programs.home-manager.enable = true;
+    programs.home-manager.enable = true;
 
   # ----- cursor ---
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    x11.defaultCursor = "left_ptr";
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
-  };
+    home.pointerCursor = {
+        gtk.enable = true;
+        x11.enable = true;
+        x11.defaultCursor = "left_ptr";
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+        size = 24;
+    };
 
-gtk = {
-  enable = true;
-  /*cursorTheme = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-  };*/
-};
+    gtk = {
+        enable = true;
+      /*cursorTheme = {
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+      };*/
+    };
 
 /*fonts = {
   packages = with pkgs;[
@@ -63,311 +63,312 @@ gtk = {
 */
 
   # --- KITTY CONFIGURATION ---
-  programs.kitty = {
-    enable = true;
-#    font = {
-#      name = "Comic Mono";
-#      size = 11;
-#    };
-    settings = {
-      background_opacity = "0.8";
-      background_blur = 20;
-      remember_window_size = "no";
-      initial_window_width = "128c";
-      initial_window_height = "40c";
-      confirm_os_window_close = -1;
-      tab_bar_style = "powerline";
-      tab_powerline_style = "round";
-    };
-    shellIntegration.enableBashIntegration = true;
-    
-    keybindings = {
-      "alt+shift+1" = "goto_tab 1";
-      "alt+shift+2" = "goto_tab 2";
-      "alt+shift+3" = "goto_tab 3";
-      # ... you can add the rest here
-    };
-  };
-
-wayland.windowManager.hyprland = {
-  enable = true;
-  settings = {
-    cursor = {
-      no_hardware_cursors = true;
-    };
-    input = {
-    kb_layout = "at";
-    kb_variant = "nodeadkeys";
-    "touchpad:natural_scroll" = true;
-    };
-    misc = {
-      force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
-      disable_hyprland_logo = true;
-    };
-    exec-once = [
-      "hyprlock"
-      "hyprpaper"
-      "waybar"
-      # "hyprctl setcursor Bibata-Modern-Ice 24"
-      "nm-applet --indicator"
-      "udiskie &"
-      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
-    ];
-    env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
-      "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-#      "WLR_NO_HARDWARE_CURSORS,1"
-    ];
-    monitor = ",preferred,auto,1";
-    general = {
-      gaps_in = 5;
-      gaps_out = 10;
-      border_size = 2;
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      layout = "dwindle";
-      resize_on_border = true;
-  extend_border_grab_area = 20;
-    };
-    decoration = {
-      rounding = 10;
-      blur = {
-        enabled = true;
-        size = 3;
-      };
-    };
-    bindm = [
-    # Mouse movements: SUPER + Left Click to move, SUPER + Right Click to resize
-      "SUPER, mouse:272, movewindow"
-      "SUPER, mouse:273, resizewindow"
-    ];
-    bindr = [
-    "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
-    ];
-    # Keybindings (Super/Windows key is 'Mod4')
-    binde = [
-      # ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      # ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      # ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-      # ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      # Volume with OSD
-      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-      
-      # Brightness with OSD
-      ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-      ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
-    ];
-    bind = [
-      "SUPER, Q, exec, kitty"
-      "SUPER, C, killactive,"
-      "SUPER, M, exit,"
-      "SUPER, E, exec, kitty yazi"
-      "SUPER, V, togglefloating,"
-      "SUPER, L, exec, hyprlock"
-
-      "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
-      "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
-      ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
-      
-      #"SUPER, R, exec, wofi --show drun"
-      # Focus movement
-      "SUPER, left, movefocus, l"
-      "SUPER, right, movefocus, r"
-      "SUPER, up, movefocus, u"
-      "SUPER, down, movefocus, d"
-
-      "SUPER, Tab, workspace, e+1"
-      "SUPER SHIFT, Tab, workspace, e-1"
-
-      "SUPER SHIFT, 1, movetoworkspace, 1"
-      "SUPER SHIFT, 2, movetoworkspace, 2"
-      "SUPER SHIFT, 3, movetoworkspace, 3"
-      "SUPER SHIFT, 4, movetoworkspace, 4"
-      "SUPER SHIFT, 5, movetoworkspace, 5"
-      "SUPER SHIFT, 6, movetoworkspace, 6"
-
-      "SUPER, 1, workspace, 1"
-      "SUPER, 2, workspace, 2"
-      "SUPER, 3, workspace, 3"
-      "SUPER, 4, workspace, 4"
-      "SUPER, 5, workspace, 5"
-      "SUPER, 6, workspace, 6"
-
-      # Mute with OSD
-      ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-      # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-];
-    animations = {
-  enabled = true;
-  bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-  animation = [
-    "windows, 1, 7, myBezier"
-    "windowsOut, 1, 7, default, popin 80%"
-    "border, 1, 10, default"
-    "fade, 1, 7, default"
-    "workspaces, 1, 6, default" # This controls the "Tab" speed between workspaces
-  ];
-};
-  };
-};
-
-services.hyprpaper = {
-  enable = true;
-  settings = {
-#  preload = [(import ./data/variables.nix var).paths.wallpaper]; #[ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
-  preload = [ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
-    wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
-  };
-};
-
-services.udiskie = {
-  enable = true;
-  tray = "auto"; # Shows a tray icon in Waybar if nm-applet is running
-};
-
-services.swayosd.enable = true;
-
-programs.waybar = {
-  enable = true;
-  settings = {
-    mainBar = {
-      layer = "top";
-      position = "top";
-      height = 30;
-      modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "hyprland/window" "clock"];
-      modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
-      tray = {
-        spacing = 10;
-      };
-      network = {
-        format-wifi = "  {essid}";
-        format-ethernet = "󰈀  {ifname}";
-        format-disconnected = "󰖪  Disconnected";
-        tooltip-format = "{ifname} via {gwaddr}";
-      };
-      battery = {
-        states = {
-          warning = 30;
-          critical = 15;
+    programs.kitty = {
+        enable = true;
+    #    font = {
+    #      name = "Comic Mono";
+    #      size = 11;
+    #    };
+        settings = {
+            background_opacity = "0.8";
+            background_blur = 20;
+            remember_window_size = "no";
+            initial_window_width = "128c";
+            initial_window_height = "40c";
+            confirm_os_window_close = -1;
+            tab_bar_style = "powerline";
+            tab_powerline_style = "round";
         };
-        format = "{icon} {capacity}%";
-        format-icons = ["" "" "" "" ""];
-      };
-      bluetooth = {
-        format =  " {status}";
-	    format-connected = " {device_alias}";
-	    format-connected-battery = " {device_alias} {device_battery_percentage}%";
-        on-click = "blueman-manager";
-      };
-
-      "custom/power" = {
-        format = "⏻ ";
-        on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
-        tooltip = false;
-      };
+        shellIntegration.enableBashIntegration = true;
+        
+        keybindings = {
+            "alt+shift+1" = "goto_tab 1";
+            "alt+shift+2" = "goto_tab 2";
+            "alt+shift+3" = "goto_tab 3";
+          # ... you can add the rest here
+        };
     };
-  };
-};
 
+    wayland.windowManager.hyprland = {
+        enable = true;
+        settings = {
+            cursor = {
+                no_hardware_cursors = true;
+            };
+            input = {
+            kb_layout = "at";
+            kb_variant = "nodeadkeys";
+            "touchpad:natural_scroll" = true;
+            };
+            misc = {
+                force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
+                disable_hyprland_logo = true;
+            };
+            exec-once = [
+                "hyprlock"
+                "hyprpaper"
+                "waybar"
+                # "hyprctl setcursor Bibata-Modern-Ice 24"
+                "nm-applet --indicator"
+                "udiskie &"
+                "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
+            ];
+            env = [
+                "XCURSOR_SIZE,24"
+                "HYPRCURSOR_SIZE,24"
+                "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+            #      "WLR_NO_HARDWARE_CURSORS,1"
+            ];
+            monitor = ",preferred,auto,1";
+            general = {
+                gaps_in = 5;
+                gaps_out = 10;
+                border_size = 2;
+                "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+                layout = "dwindle";
+                resize_on_border = true;
+                extend_border_grab_area = 20;
+            };
+            decoration = {
+                rounding = 10;
+                blur = {
+                    enabled = true;
+                    size = 3;
+                };
+            };
+            bindm = [
+                # Mouse movements: SUPER + Left Click to move, SUPER + Right Click to resize
+                "SUPER, mouse:272, movewindow"
+                "SUPER, mouse:273, resizewindow"
+            ];
+            bindr = [
+                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
+            ];
+            # Keybindings (Super/Windows key is 'Mod4')
+            binde = [
+                # ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+                # ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+                # ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+                # ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+                # Volume with OSD
+                ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+                ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+                  
+                # Brightness with OSD
+                ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+                ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+            ];
+            bind = [
+                "SUPER, Q, exec, kitty"
+                "SUPER, C, killactive,"
+                "SUPER, M, exit,"
+                "SUPER, E, exec, kitty yazi"
+                "SUPER, V, togglefloating,"
+                "SUPER, L, exec, hyprlock"
 
-  programs.hyprlock = {
-    enable = true;
-    settings = {
-      general = {
-        disable_loading = true;
-        grace = 0;
-        hide_cursor = true;
-      };
+                "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
+                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
+                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
+                  
+                #"SUPER, R, exec, wofi --show drun"
+                # Focus movement
+                "SUPER, left, movefocus, l"
+                "SUPER, right, movefocus, r"
+                "SUPER, up, movefocus, u"
+                "SUPER, down, movefocus, d"
 
-      background = [
-        {
-          path = "screenshot"; # This takes a blurred screenshot of your current screen
-          blur_passes = 3;
-          blur_size = 8;
-        }
-      ];
+                "SUPER, Tab, workspace, e+1"
+                "SUPER SHIFT, Tab, workspace, e-1"
 
-      input-field = [
-        {
-          size = "200, 50";
-          position = "0, -20";
-          monitor = "";
-          dots_center = true;
-          fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
-          outline_thickness = 5;
-          placeholder_text = "Password...";
-          shadow_passes = 2;
-        }
-      ];
-      label = [
-    {
-      monitor = "";
-      # This command tells hyprlock to display the time in 24h format
-      text = "$TIME"; 
-      color = "rgba(242, 243, 244, 0.75)";
-      font_size = 95;
-      font_family = "JetBrains Mono Nerd Font Bold"; # Or your favorite font
-      position = "0, 300";
-      halign = "center";
-      valign = "center";
-    }
-    {
-      monitor = "";
-      # This displays the date below the time
-      text = "cmd[update:1000] echo \"$(date +'%A, %d %B')\"";
-      color = "rgba(242, 243, 244, 0.75)";
-      font_size = 22;
-      font_family = "JetBrains Mono Nerd Font";
-      position = "0, 200";
-      halign = "center";
-      valign = "center";
-    }
-  ];
+                "SUPER SHIFT, 1, movetoworkspace, 1"
+                "SUPER SHIFT, 2, movetoworkspace, 2"
+                "SUPER SHIFT, 3, movetoworkspace, 3"
+                "SUPER SHIFT, 4, movetoworkspace, 4"
+                "SUPER SHIFT, 5, movetoworkspace, 5"
+                "SUPER SHIFT, 6, movetoworkspace, 6"
+
+                "SUPER, 1, workspace, 1"
+                "SUPER, 2, workspace, 2"
+                "SUPER, 3, workspace, 3"
+                "SUPER, 4, workspace, 4"
+                "SUPER, 5, workspace, 5"
+                "SUPER, 6, workspace, 6"
+
+                # Mute with OSD
+                ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+                # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            ];
+            animations = {
+                enabled = true;
+                bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+                animation = [
+                    "windows, 1, 7, myBezier"
+                    "windowsOut, 1, 7, default, popin 80%"
+                    "border, 1, 10, default"
+                    "fade, 1, 7, default"
+                    "workspaces, 1, 6, default" # This controls the "Tab" speed between workspaces
+                ];
+            };
+        };
     };
-  };
 
-
-# --- BASH CONFIGURATION ---
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -la";
-      nv = "nvim";
-      sudo = "sudo ";
-     # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
-      nos = ''git -C ~/dotfiles add . && git -C ~/dotfiles commit -m "update: $(date)" || true && nh os switch ~/dotfiles && git -C ~/dotfiles push'';
+    services.hyprpaper = {
+        enable = true;
+        settings = {
+            #  preload = [(import ./data/variables.nix var).paths.wallpaper]; #[ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
+            preload = [ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
+            wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
+        };
     };
-    
-    bashrcExtra = ''
-      function y() {
-          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-          command yazi "$@" --cwd-file="$tmp"
-          IFS= read -r -d ''' cwd < "$tmp"
-          [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-          rm -f -- "$tmp"
-      }
-    '';
 
-    # Fastfetch on startup
-    initExtra = ''
-      fastfetch
-    '';
-  };
-programs.yazi = {
-  enable = true;
-  keymap = {
-    manager.prepend_keymap = [
-      {
-        on = [ "g" "m" ];
-        run = "cd /run/media/max/";
-        desc = "Go to Media";
-      }
-    ];
-  };
-};
+    services.udiskie = {
+        enable = true;
+        tray = "auto"; # Shows a tray icon in Waybar if nm-applet is running
+    };
+
+    services.swayosd.enable = true;
+
+    programs.waybar = {
+        enable = true;
+        settings = {
+            mainBar = {
+                layer = "top";
+                position = "top";
+                height = 30;
+                modules-left = [ "hyprland/workspaces" ];
+                modules-center = [ "hyprland/window" "clock"];
+                modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
+                tray = {
+                    spacing = 10;
+                };
+                network = {
+                    format-wifi = "  {essid}";
+                    format-ethernet = "󰈀  {ifname}";
+                    format-disconnected = "󰖪  Disconnected";
+                    tooltip-format = "{ifname} via {gwaddr}";
+                };
+                battery = {
+                    states = {
+                    warning = 30;
+                    critical = 15;
+                    };
+                    format = "{icon} {capacity}%";
+                    format-icons = ["" "" "" "" ""];
+                };
+                bluetooth = {
+                    format =  " {status}";
+                    format-connected = " {device_alias}";
+                    format-connected-battery = " {device_alias} {device_battery_percentage}%";
+                    on-click = "blueman-manager";
+                };
+
+                "custom/power" = {
+                    format = "⏻ ";
+                    on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
+                    tooltip = false;
+                };
+            };
+        };
+    };
+
+
+    programs.hyprlock = {
+        enable = true;
+        settings = {
+            general = {
+                disable_loading = true;
+                grace = 0;
+                hide_cursor = true;
+            };
+
+            background = [
+                {
+                    path = "screenshot"; # This takes a blurred screenshot of your current screen
+                    blur_passes = 3;
+                    blur_size = 8;
+                }
+            ];
+
+            input-field = [
+                {
+                    size = "200, 50";
+                    position = "0, -20";
+                    monitor = "";
+                    dots_center = true;
+                    fade_on_empty = false;
+                    font_color = "rgb(202, 211, 245)";
+                    inner_color = "rgb(91, 96, 120)";
+                    outer_color = "rgb(24, 25, 38)";
+                    outline_thickness = 5;
+                    placeholder_text = "Password...";
+                    shadow_passes = 2;
+                }
+            ];
+            label = [
+                {
+                    monitor = "";
+                    # This command tells hyprlock to display the time in 24h format
+                    text = "$TIME"; 
+                    color = "rgba(242, 243, 244, 0.75)";
+                    font_size = 95;
+                    font_family = "JetBrains Mono Nerd Font Bold"; # Or your favorite font
+                    position = "0, 300";
+                    halign = "center";
+                    valign = "center";
+                }
+                {
+                    monitor = "";
+                    # This displays the date below the time
+                    text = "cmd[update:1000] echo \"$(date +'%A, %d %B')\"";
+                    color = "rgba(242, 243, 244, 0.75)";
+                    font_size = 22;
+                    font_family = "JetBrains Mono Nerd Font";
+                    position = "0, 200";
+                    halign = "center";
+                    valign = "center";
+                }
+            ];
+        };
+    };
+
+
+    # --- BASH CONFIGURATION ---
+    programs.bash = {
+        enable = true;
+        shellAliases = {
+            ll = "ls -la";
+            nv = "nvim";
+            sudo = "sudo ";
+             # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
+            nos = ''git -C ~/dotfiles add . && git -C ~/dotfiles commit -m "update: $(date)" || true && nh os switch ~/dotfiles && git -C ~/dotfiles push'';
+        };
+        
+        bashrcExtra = ''
+          function y() {
+              local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+              command yazi "$@" --cwd-file="$tmp"
+              IFS= read -r -d ''' cwd < "$tmp"
+              [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+              rm -f -- "$tmp"
+          }
+        '';
+
+        # Fastfetch on startup
+        initExtra = ''
+          fastfetch
+        '';
+    };
+    programs.yazi = {
+        enable = true;
+        keymap = {
+            manager.prepend_keymap = [
+                {
+                on = [ "g" "m" ];
+                run = "cd /run/media/max/";
+                desc = "Go to Media";
+                }
+            ];
+        };
+    };
 }
+
