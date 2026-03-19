@@ -40,11 +40,15 @@ gtk = {
   };*/
 };
 
-fonts.fontconfig = {
+fonts = {
+  packages = with pkgs;[
+    comic-mono
+  ];
+  fontconfig = {
   enable = true;
   defaultFonts = {
     monospace = [ 
-#      "Comic Mono"
+      "Comic Mono"
       "JetBrainsMono Nerd Font" 
       "Font Awesome 6 Free" 
       "Noto Color Emoji" 
@@ -54,6 +58,7 @@ fonts.fontconfig = {
       "Font Awesome 6 Free" 
     ];
   };
+};
 };
 
 
