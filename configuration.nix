@@ -166,6 +166,7 @@ services.displayManager.autoLogin = {
   poetry
   nh
   nix-output-monitor
+  hyprshot
   nvd
   bitwarden-desktop
   ];
