@@ -160,8 +160,11 @@ wayland.windowManager.hyprland = {
       "SUPER, E, exec, kitty yazi"
       "SUPER, V, togglefloating,"
       "SUPER, L, exec, hyprlock"
+
       "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
       "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
+      ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
+      
       #"SUPER, R, exec, wofi --show drun"
       # Focus movement
       "SUPER, left, movefocus, l"
