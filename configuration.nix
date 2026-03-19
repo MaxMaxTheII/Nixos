@@ -130,46 +130,70 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
     environment.systemPackages = with pkgs; [
-        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        wget
-        git
-        htop
-        ipe
-        discord
-        libnotify
-        swayosd
-        gdb
-        hyprpaper
-        #  alacritty
-        networkmanagerapplet
-        pwntools
-        ghidra
-        # tmux
-        kitty
-        polkit_gnome
+    #A
+    #B
+        bitwarden-desktop
         brightnessctl
-        wlogout
+    #C 
+        comic-mono
+    #D  
+        discord
+        docker_29
+    #E
+    #F 
+        fastfetch
+    #G 
+        gdb
+        ghidra
+        git
+    #H   
+        htop
+        hyprshot
+        hyprland
+        hyprpaper
+    #I  
+        ipe
+        i3
+    #J
+    #K 
+        kitty
+    #L   
+        libnotify
+        libgcc
+    #M
+    #N  
+        nh
+        nix-output-monitor
+        nvd
+        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+        networkmanagerapplet
+    #O
+        openvpn
+    #P   
+        poetry
+        polkit_gnome
+        pwntools
+    #Q
+    #R
+    #S  
+        swayosd
+    #T 
         texlab
         tidal-hifi
         texliveFull
-        libgcc
+    #U
+    #V  
         vimPlugins.vimtex
-        zathura
-        openvpn
-        hyprland
-        i3
-        fastfetch
-        docker_29
-        yazi
+    #W 
+        wget
         wofi
+        wlogout
         waybar
-        poetry
-        nh
-        nix-output-monitor
-        hyprshot
-        nvd
-        bitwarden-desktop
-        comic-mono
+    #X
+    #Y  
+        yazi
+    #Z
+        zathura
     ];
 #  environment.variables.FLAKE = "/home/max/dotfiles";
 

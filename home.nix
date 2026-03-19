@@ -85,6 +85,9 @@
             "alt+shift+1" = "goto_tab 1";
             "alt+shift+2" = "goto_tab 2";
             "alt+shift+3" = "goto_tab 3";
+            "alt+shift+4" = "goto_tab 4";
+            "alt+shift+5" = "goto_tab 5";
+            "alt+shift+6" = "goto_tab 6";
           # ... you can add the rest here
         };
     };
@@ -146,10 +149,6 @@
             ];
             # Keybindings (Super/Windows key is 'Mod4')
             binde = [
-                # ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-                # ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-                # ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-                # ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
                 # Volume with OSD
                 ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
                 ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
