@@ -146,7 +146,8 @@
             ];
             bindr = [
                 "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
-                ", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
+                #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
+                ", XF86Calculator, exec, pkill -x gnome-calculator || gnome-calculator --mode=programming"
             ];
             # Keybindings (Super/Windows key is 'Mod4')
             binde = [
