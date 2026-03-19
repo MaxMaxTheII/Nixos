@@ -146,11 +146,12 @@
         gdb
         ghidra
         git
+        gnome-calculator
     #H   
         htop
-        hyprshot
         hyprland
         hyprpaper
+        hyprshot
     #I  
         ipe
         i3
@@ -158,15 +159,15 @@
     #K 
         kitty
     #L   
-        libnotify
         libgcc
+        libnotify
     #M
     #N  
+        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+        networkmanagerapplet
         nh
         nix-output-monitor
         nvd
-        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        networkmanagerapplet
     #O
         openvpn
     #P   
@@ -179,16 +180,16 @@
         swayosd
     #T 
         texlab
-        tidal-hifi
         texliveFull
+        tidal-hifi
     #U
     #V  
         vimPlugins.vimtex
     #W 
-        wget
-        wofi
-        wlogout
         waybar
+        wget
+        wlogout
+        wofi
     #X
     #Y  
         yazi
