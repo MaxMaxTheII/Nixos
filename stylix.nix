@@ -2,7 +2,7 @@
     stylix = {
         enable = true;
         image = ./data/wallpapers/zergling-wp.png;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";# TODO remove
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";# TODO remove
 
         fonts = {
             monospace = {
