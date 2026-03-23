@@ -107,7 +107,7 @@ vim.keymap.set({"i", "s"}, "<Tab>", function()
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover, { border = "rounded" }
   )
-''
+'';
 /*
 require("catppuccin").setup({
     flavour = "mocha",
