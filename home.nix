@@ -128,6 +128,7 @@
                 gaps_out = 10;
                 border_size = 2;
 #                "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+                "col.active_border" = "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
                 layout = "dwindle";
                 resize_on_border = true;
                 extend_border_grab_area = 20;
