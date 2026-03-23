@@ -66,7 +66,7 @@
     #U
     #V  
         vesktop # stylable discord client
-        vimPlugins.vimtex
+#         vimPlugins.vimtex
     #W 
         waybar
         wlogout
@@ -84,16 +84,23 @@
 
 
     xdg.desktopEntries = {
-        vesktop = {
+        discord = {
             name = "Discord";
             exec = "vesktop %U";
             icon = "discord"; # This uses the official Discord icon
+            desktopName = "Discord";
             genericName = "Internet Messenger";
             categories = [ "Network" "InstantMessaging" "Chat" ];
             terminal = false;
             settings = {
                 StartupWMClass = "vesktop"; # Helps Hyprland group the window correctly
             };
+        };
+        vesktop = {
+            name = "Vesktop";
+            exec = "vesktop %U";
+            noDisplay = true;
+
         };
     };
 
