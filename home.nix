@@ -116,7 +116,7 @@
                 # Firefox
                 "opacity 0.95 0.95,class:^(firefox)$"
                 "blur,class:^(firefox)$"
-            ]
+            ];
             exec-once = [
                 "hyprlock"
                 "hyprpaper"
