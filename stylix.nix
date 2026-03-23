@@ -19,7 +19,7 @@
             };
             sizes = {
                 applications = 12;
-                terminal = 14;
+                terminal = 11;
             };
         };
 
