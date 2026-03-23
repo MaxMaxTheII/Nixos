@@ -3,7 +3,7 @@
         enable = true;
         image = ./data/wallpapers/zergling-wp.png;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";# TODO remove
-        targets.hyprlock.enable = false;
+
         fonts = {
             monospace = {
                 package = pkgs.comic-mono;
