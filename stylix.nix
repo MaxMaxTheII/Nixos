@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, lib,  ... }: {
     stylix = {
         enable = true;
         image = ./data/wallpapers/zergling-wp.png;
