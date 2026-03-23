@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
