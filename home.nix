@@ -110,12 +110,12 @@
             windowrulev2 = [
                 # Discord / Vesktop
                 "opacity 0.85 0.85,class:^(vesktop)$"
-                "blur,class:^(vesktop)$"
-                "ignorealpha 0.5,class:^(vesktop)$"
+               # "blur,class:^(vesktop)$"
+               # "ignorealpha 0.5,class:^(vesktop)$"
 
                 # Firefox
                 "opacity 0.95 0.95,class:^(firefox)$"
-                "blur,class:^(firefox)$"
+               # "blur,class:^(firefox)$"
             ];
             exec-once = [
                 "hyprlock"
