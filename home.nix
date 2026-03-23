@@ -70,7 +70,7 @@
     #      size = 11;
     #    };
         settings = {
-            background_opacity = "0.8";
+#            background_opacity = "0.8";
             background_blur = 20;
             remember_window_size = "no";
             initial_window_width = "128c";

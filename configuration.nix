@@ -8,6 +8,7 @@
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
+            ./stylix.nix
         ];
 
   # Bootloader.
@@ -135,7 +136,7 @@
         bitwarden-desktop
         brightnessctl
     #C 
-        comic-mono
+        # comic-mono
     #D  
         discord
         docker_29
@@ -205,7 +206,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+/*
     fonts = {
         packages = with pkgs;[
             comic-mono
@@ -226,7 +227,7 @@
             };
         };
     };
-
+*/ 
   # List services that you want to enable:
   # programs.hyprland.enable = true;
   # Optional: Hint to Electron apps to use Wayland
