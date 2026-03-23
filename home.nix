@@ -107,6 +107,16 @@
                 force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
                 disable_hyprland_logo = true;
             };
+            windowrulev2 = [
+                # Discord / Vesktop
+                "opacity 0.85 0.85,class:^(vesktop)$"
+                "blur,class:^(vesktop)$"
+                "ignorealpha 0.5,class:^(vesktop)$"
+
+                # Firefox
+                "opacity 0.95 0.95,class:^(firefox)$"
+                "blur,class:^(firefox)$"
+            ]
             exec-once = [
                 "hyprlock"
                 "hyprpaper"
@@ -274,8 +284,9 @@
         };
     };
 
-
+    stylix.targets.vesktop.enable = true;
     stylix.targets.hyprlock.enable = false;
+    stylix.targets.firefox.enable = true;
 
     programs.hyprlock = {
         enable = true;
