@@ -133,7 +133,7 @@
     environment.systemPackages = with pkgs; [
     #A
     #B
-        bitwarden-desktop
+#         bitwarden-desktop
         brightnessctl
     #C 
         # comic-mono
@@ -142,29 +142,29 @@
         docker_29
     #E
     #F 
-        fastfetch
+#         fastfetch
     #G 
-        gdb
-        ghidra
+#         gdb
+#         ghidra
         git
-        gnome-calculator
+#         gnome-calculator
     #H   
-        htop
-        hyprland
-        hyprpaper
-        hyprshot
+#         htop
+#         hyprland
+#         hyprpaper
+#         hyprshot
     #I  
-        ipe
-        i3
+#         ipe
+#         i3
     #J
     #K 
-        kitty
+#         kitty
     #L   
         libgcc
-        libnotify
+#         libnotify
     #M
     #N  
-        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+#         neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         networkmanagerapplet
         nh
         nix-output-monitor
@@ -172,31 +172,31 @@
     #O
         openvpn
     #P   
-        poetry
+#         poetry
         polkit_gnome
-        pwntools
+ #        pwntools
     #Q
     #R
     #S  
-        swayosd
+#         swayosd
     #T 
-        texlab
-        texliveFull
-        tidal-hifi
+#         texlab
+#         texliveFull
+#         tidal-hifi
     #U
     #V  
-        vesktop # stylable discord client
-        vimPlugins.vimtex
+#         vesktop # stylable discord client
+#         vimPlugins.vimtex
     #W 
-        waybar
+#         waybar
         wget
-        wlogout
-        wofi
+#         wlogout
+#         wofi
     #X
     #Y  
-        yazi
+#         yazi
     #Z
-        zathura
+#         zathura
     ];
 #  environment.variables.FLAKE = "/home/max/dotfiles";
 

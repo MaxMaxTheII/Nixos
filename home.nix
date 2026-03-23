@@ -22,6 +22,81 @@
   # This allows Home Manager to manage itself
     programs.home-manager.enable = true;
 
+    home.packages = with pkgs; [
+    #A
+    #B
+        bitwarden-desktop
+    #C 
+    #D  
+    #E
+    #F 
+        fastfetch
+    #G 
+        gdb
+        ghidra
+        gnome-calculator
+    #H   
+        htop
+        hyprland
+        hyprpaper
+        hyprshot
+    #I  
+        ipe
+        i3
+    #J
+    #K 
+        kitty
+    #L   
+        libnotify
+    #M
+    #N  
+        neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #O
+    #P   
+        poetry
+        pwntools
+    #Q
+    #R
+    #S  
+        swayosd
+    #T 
+        texlab
+        texliveFull
+        tidal-hifi
+    #U
+    #V  
+        vesktop # stylable discord client
+        vimPlugins.vimtex
+    #W 
+        waybar
+        wlogout
+        wofi
+    #X
+    #Y  
+        yazi
+    #Z
+        zathura
+
+
+
+
+    ];
+
+
+    xdg.desktopEntries = {
+        vesktop = {
+            name = "Discord";
+            exec = "vesktop %U";
+            icon = "discord"; # This uses the official Discord icon
+            genericName = "Internet Messenger";
+            categories = [ "Network" "InstantMessaging" "Chat" ];
+            terminal = false;
+            settings = {
+                StartupWMClass = "vesktop"; # Helps Hyprland group the window correctly
+            };
+        };
+    };
+
   # ----- cursor ---
     home.pointerCursor = {
         gtk.enable = true;
