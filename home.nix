@@ -27,7 +27,8 @@
     #B
         bitwarden-desktop
     #C 
-    #D  
+    #D 
+        (discord.override { withOpenASAR = false; }) # only the icon
     #E
     #F 
         fastfetch
