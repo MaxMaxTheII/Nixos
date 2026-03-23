@@ -88,7 +88,7 @@
             name = "Discord";
             exec = "vesktop %U";
             icon = "discord"; # This uses the official Discord icon
-            desktopName = "Discord";
+#            desktopName = "Discord";
             genericName = "Internet Messenger";
             categories = [ "Network" "InstantMessaging" "Chat" ];
             terminal = false;
