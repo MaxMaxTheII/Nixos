@@ -138,7 +138,7 @@
     #C 
         # comic-mono
     #D  
-        discord
+        # discord replaced with vesktop
         docker_29
     #E
     #F 
@@ -185,6 +185,7 @@
         tidal-hifi
     #U
     #V  
+        vesktop # stylable discord client
         vimPlugins.vimtex
     #W 
         waybar
