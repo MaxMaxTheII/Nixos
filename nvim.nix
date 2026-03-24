@@ -16,7 +16,18 @@ programs.zathura = {
       recolor-lightcolor = "#1e1e1e";
       recolor-darkcolor = "#d4d4d4";*/
     };
-  };
+    settings = {
+        opener = {
+            pdf-viewer = [
+                { run = ''zathura "$@"''; block = false; }
+            ];
+        };
+        open = {
+            rules = [
+                { mime = "application/pdf"; use = "pdf-viewer"; }
+            ];
+        };
+    };
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
