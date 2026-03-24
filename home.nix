@@ -5,7 +5,7 @@
 {
     imports = [
         ./nvim.nix
-#        ./stylix.nix
+        ./stylix.nix
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
