@@ -428,6 +428,18 @@
     };
     programs.yazi = {
         enable = true;
+        settings = {
+            opener = {
+                pdf-viewer = [
+                    { run = ''zathura "$@"''; block = false; }
+                ];
+            };
+            open = {
+                rules = [
+                    { mime = "application/pdf"; use = "pdf-viewer"; }
+                ];
+            };
+        };
         keymap = {
             manager.prepend_keymap = [
                 {
