@@ -1,7 +1,8 @@
 { pkgs, config, lib,  ... }: {
     stylix = {
         enable = true;
-        image = ./data/wallpapers/zergling-wp.png;
+        # image = ./data/wallpapers/zergling-wp.png;
+        image = ./data/wallpapers/zergling-wp.jpg;
         # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";# TODO remove
 /*        base16Scheme = lib.attrsets.recursiveUpdate 
             (config.lib.stylix.scheme "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml")
