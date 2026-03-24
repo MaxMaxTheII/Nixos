@@ -166,6 +166,7 @@
             exec-once = [
                 "hyprlock"
                 # "hyprpaper"
+                "swaybg -i ${config.stylix.image} -m fill"
                 "waybar"
                 # "hyprctl setcursor Bibata-Modern-Ice 24"
                 "nm-applet --indicator"
