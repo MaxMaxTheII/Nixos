@@ -22,7 +22,13 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.max = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.users.max = {
+          import  = [
+            ./home.nix
+            stylix.homeManagerModules.stylix
+            ];
+            };
         }
         stylix.nixosModules.stylix
       ];
