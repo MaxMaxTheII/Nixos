@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
-# let
-#   variables = (import ./data/variables.nix pkgs).var;
-# in 
 {
     imports = [
         ./nvim.nix
-        ./stylix.nix
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
@@ -16,7 +12,6 @@
         EDITOR = "nvim";
         XCURSOR_THEME = "Bibata-Modern-Ice";
         XCURSOR_SIZE = "24";
-    #    FLAKE = "/home/max/dotfiles";
         HYPRCURSOR_THEME = "Bibata-Modern-Ice";
         HYPRCURSOR_SIZE = "24";
     };
@@ -40,11 +35,9 @@
     #H   
         htop
         hyprland
-        # hyprpaper
         hyprshot
     #I  
         ipe
- #        i3
     #J
     #K 
         kitty
@@ -52,7 +45,6 @@
         libnotify
     #M
     #N  
-#         neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #O
     #P   
         poetry
@@ -68,7 +60,6 @@
     #U
     #V  
         vesktop # stylable discord client
-#         vimPlugins.vimtex
     #W 
         waybar
         wlogout
@@ -78,10 +69,6 @@
         yazi
     #Z
         zathura
-
-
-
-
     ];
 
 
@@ -124,35 +111,10 @@
       };*/
     };
 
-/*fonts = {
-  packages = with pkgs;[
-    comic-mono
-  ];
-  fontconfig = {
-  enable = true;
-  defaultFonts = {
-    monospace = [ 
-      "Comic Mono"
-      "JetBrainsMono Nerd Font" 
-      "Font Awesome 6 Free" 
-      "Noto Color Emoji" 
-    ];
-    sansSerif = [ 
-      "DejaVu Sans" 
-      "Font Awesome 6 Free" 
-    ];
-  };
-};
-};
-*/
 
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
         enable = true;
-    #    font = {
-    #      name = "Comic Mono";
-    #      size = 11;
-    #    };
         settings = {
 #            background_opacity = "0.8";
             background_blur = 20;
@@ -309,14 +271,6 @@
         };
     };
 
- #    services.hyprpaper = {
-  #       enable = true;
- #       settings = {
-            #  preload = [(import ./data/variables.nix var).paths.wallpaper]; #[ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
-#            preload = [ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
-#            wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
- #       };
-   # };
 
     services.udiskie = {
         enable = true;

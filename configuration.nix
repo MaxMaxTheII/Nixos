@@ -8,7 +8,7 @@
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
-#             ./stylix.nix
+            ./stylix.nix
         ];
 
   # Bootloader.
@@ -133,38 +133,22 @@
     environment.systemPackages = with pkgs; [
     #A
     #B
-#         bitwarden-desktop
         brightnessctl
     #C 
-        # comic-mono
     #D  
-        # discord replaced with vesktop
         docker_29
     #E
     #F 
-#         fastfetch
     #G 
-#         gdb
-#         ghidra
         git
-#         gnome-calculator
     #H   
-#         htop
-#         hyprland
-#         hyprpaper
-#         hyprshot
     #I  
-#         ipe
-#         i3
     #J
     #K 
-#         kitty
     #L   
         libgcc
-#         libnotify
     #M
     #N  
-#         neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         networkmanagerapplet
         nh
         nix-output-monitor
@@ -172,31 +156,19 @@
     #O
         openvpn
     #P   
-#         poetry
         polkit_gnome
- #        pwntools
     #Q
     #R
     #S  
-#         swayosd
+        swaybg
     #T 
-#         texlab
-#         texliveFull
-#         tidal-hifi
     #U
     #V  
-#         vesktop # stylable discord client
-#         vimPlugins.vimtex
     #W 
-#         waybar
         wget
-#         wlogout
-#         wofi
     #X
     #Y  
-#         yazi
     #Z
-#         zathura
     ];
 #  environment.variables.FLAKE = "/home/max/dotfiles";
 
@@ -207,28 +179,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-/*
-    fonts = {
-        packages = with pkgs;[
-            comic-mono
-        ];
-        fontconfig = {
-            enable = true;
-            defaultFonts = {
-                monospace = [ 
-                    "Comic Mono"
-                    "JetBrainsMono Nerd Font" 
-                    "Font Awesome 6 Free" 
-                    "Noto Color Emoji" 
-                ];
-                sansSerif = [ 
-                    "DejaVu Sans" 
-                    "Font Awesome 6 Free" 
-                ];
-            };
-        };
-    };
-*/ 
   # List services that you want to enable:
   # programs.hyprland.enable = true;
   # Optional: Hint to Electron apps to use Wayland
