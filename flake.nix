@@ -24,7 +24,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.max = {
-          import  = [
+          imports  = [
             ./home.nix
             stylix.homeManagerModules.stylix
             ];
