@@ -15,7 +15,7 @@
             base0E = "cba6f7"; # Soft Purple for keywords
             };
             */ 
-        base16Scheme = {
+       /* base16Scheme = {
             base00 = "18111b"; # Deep dark purple-black background
             base01 = "211924"; # Lighter background (status bars)
             base02 = "3b2d3d"; # Selection background
@@ -32,7 +32,27 @@
             base0D = "f5c2e7"; # Zergling Pink (Active Border / Highlights)
             base0E = "cba6f7"; # Soft Purple
             base0F = "f2cdcd"; # Extra pink accent
-        }; 
+        };*/ 
+        base16Scheme = {
+            base00 = "0b0a11"; # very dark background (almost black with purple tint)
+            base01 = "14121c"; # subtle elevation
+            base02 = "1f1b2e"; # UI panels
+            base03 = "6e6a86"; # comments (cool gray-purple)
+
+            base04 = "a8a3c2"; # secondary text
+            base05 = "e9e6ff"; # primary text (bright, slightly cool)
+            base06 = "f5f3ff"; # brighter foreground
+            base07 = "ffffff"; # pure white highlights
+
+            base08 = "ff4d8d"; # neon pink (errors)
+            base09 = "ff9f43"; # neon orange
+            base0A = "ffe66d"; # neon yellow
+            base0B = "2bff88"; # neon green
+            base0C = "19f9ff"; # neon cyan
+            base0D = "5aa9ff"; # neon blue
+            base0E = "c77dff"; # neon purple
+            base0F = "ff7ad9"; # hot pink accent
+        };
         fonts = {
             monospace = {
                 package = pkgs.comic-mono;
