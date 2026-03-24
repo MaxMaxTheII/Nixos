@@ -5,7 +5,7 @@
 {
     imports = [
         ./nvim.nix
-        ./stylix.nix
+#         ./stylix.nix
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
@@ -44,7 +44,7 @@
         hyprshot
     #I  
         ipe
-        i3
+ #        i3
     #J
     #K 
         kitty
