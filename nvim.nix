@@ -28,6 +28,7 @@ programs.zathura = {
             ];
         };
     };
+};
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
