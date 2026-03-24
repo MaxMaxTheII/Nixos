@@ -58,7 +58,7 @@
             desktop = 0.7;
         };
     };
-    fonts.packages = with pkgs; [
+    home.packages = with pkgs; [
         font-awesome
     ];
 }
