@@ -39,7 +39,7 @@
     #H   
         htop
         hyprland
-        hyprpaper
+        # hyprpaper
         hyprshot
     #I  
         ipe
@@ -202,7 +202,7 @@
             ];
             exec-once = [
                 "hyprlock"
-                "hyprpaper"
+                # "hyprpaper"
                 "waybar"
                 # "hyprctl setcursor Bibata-Modern-Ice 24"
                 "nm-applet --indicator"
@@ -308,14 +308,14 @@
         };
     };
 
-    services.hyprpaper = {
-        enable = true;
+ #    services.hyprpaper = {
+  #       enable = true;
  #       settings = {
             #  preload = [(import ./data/variables.nix var).paths.wallpaper]; #[ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
 #            preload = [ "/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
 #            wallpaper = [ ",/home/max/dotfiles/data/wallpapers/zergling-wp.png" ];
  #       };
-    };
+   # };
 
     services.udiskie = {
         enable = true;
