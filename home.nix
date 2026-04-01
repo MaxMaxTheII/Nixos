@@ -34,6 +34,7 @@
         gnome-calculator
     #H   
         htop
+        hunspell
         hyprland
         hyprshot
     #I  
@@ -43,6 +44,7 @@
         kitty
     #L   
         libnotify
+        libreoffice-qt
     #M
     #N  
     #O
