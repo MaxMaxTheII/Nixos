@@ -339,9 +339,9 @@
     programs.wlogin = {
         enable = true;
         # Add custom settings or CSS here
-        settings = {
+#        settings = {
       # Example: set the background color or layout
-        };
+#        };
     };
 
     stylix.targets.vesktop.enable = true;
