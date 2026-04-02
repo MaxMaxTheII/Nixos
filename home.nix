@@ -63,6 +63,7 @@
     #V  
         vesktop # stylable discord client
     #W 
+        wireshark
     #     waybar
     #    wlogout
         wofi
