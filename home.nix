@@ -41,7 +41,7 @@
         ipe
     #J
     #K 
-        kitty
+    #    kitty
     #L   
         libnotify
         libreoffice-qt
@@ -63,12 +63,12 @@
     #V  
         vesktop # stylable discord client
     #W 
-        waybar
-        wlogout
+    #     waybar
+    #    wlogout
         wofi
     #X
     #Y  
-        yazi
+    #     yazi
     #Z
         zathura
     ];
@@ -334,6 +334,13 @@
                     tooltip = false;
                 };
             };
+        };
+    };
+    programs.wlogin = {
+        enable = true;
+        # Add custom settings or CSS here
+        settings = {
+      # Example: set the background color or layout
         };
     };
 
