@@ -336,7 +336,7 @@
             };
         };
     };
-    programs.wlogin = {
+    programs.wlogout = {
         enable = true;
         # Add custom settings or CSS here
 #        settings = {
