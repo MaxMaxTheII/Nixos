@@ -60,6 +60,7 @@
         texliveFull
         tidal-hifi
     #U
+        unzip
     #V  
         vesktop # stylable discord client
     #W 
