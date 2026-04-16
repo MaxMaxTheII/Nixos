@@ -47,6 +47,7 @@
         libreoffice-qt
     #M
     #N  
+        networkmanager-openconnect
     #O
         openconnect
     #P   
