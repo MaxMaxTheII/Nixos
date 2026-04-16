@@ -35,7 +35,7 @@
   # Enable networking
     networking.networkmanager = {
         enable = true;
-        plugins = with pkts; [
+        plugins = with pkgs; [
             networkmanager-openconnect    
         ];
     };
