@@ -65,9 +65,9 @@
         vesktop # stylable discord client
     #W 
         wireshark
-    #     waybar
+    #    waybar
     #    wlogout
-        wofi
+    #    wofi
     #X
     #Y  
     #     yazi
@@ -121,18 +121,15 @@
 
     gtk = {
         enable = true;
-      /*cursorTheme = {
-        name = "Bibata-Modern-Ice";
-        package = pkgs.bibata-cursors;
-      };*/
     };
-
+    programs.wofi{
+        enable = true;
+    };
 
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
         enable = true;
         settings = {
-#            background_opacity = "0.8";
             background_blur = 20;
             remember_window_size = "no";
             initial_window_width = "128c";
@@ -170,21 +167,14 @@
                 disable_hyprland_logo = true;
             };
             windowrulev2 = [
-                # Discord / Vesktop
                 "opacity 0.85 0.85,class:^(vesktop)$"
-               # "blur,class:^(vesktop)$"
-               # "ignorealpha 0.5,class:^(vesktop)$"
 
-                # Firefox
                 "opacity 0.95 0.95,class:^(firefox)$"
-               # "blur,class:^(firefox)$"
             ];
             exec-once = [
                 "hyprlock"
-                # "hyprpaper"
                 "swaybg -i ${config.stylix.image} -m fill"
                 "waybar"
-                # "hyprctl setcursor Bibata-Modern-Ice 24"
                 "nm-applet --indicator"
                 "udiskie &"
                 "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
@@ -193,14 +183,12 @@
                 "XCURSOR_SIZE,24"
                 "HYPRCURSOR_SIZE,24"
                 "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-            #      "WLR_NO_HARDWARE_CURSORS,1"
             ];
             monitor = ",preferred,auto,1";
             general = {
                 gaps_in = 5;
                 gaps_out = 10;
                 border_size = 2;
-#                "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
                 "col.inactive_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base01})";
                 layout = "dwindle";
@@ -246,8 +234,6 @@
                 "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
                 ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
                   
-                #"SUPER, R, exec, wofi --show drun"
-                # Focus movement
                 "SUPER, left, movefocus, l"
                 "SUPER, right, movefocus, r"
                 "SUPER, up, movefocus, u"
@@ -309,6 +295,25 @@
                 tray = {
                     spacing = 10;
                 };
+                clock = {
+                    format: "{:%H:%M}  ";
+                    format-alt: "{:%A, %B %d, %Y (%R)}  ";
+                    tooltip-format: "<tt><small>{calendar}</small></tt>";
+                    calendar: {
+                        mode          : "year"
+                        mode-mon-col  : 3;
+                        weeks-pos     : "right";
+                        on-scroll     : 1;
+                        on-click-right: "mode";
+                        format: {
+                            months:     "<span color='#ffead3'><b>{}</b></span>";
+                            days:       "<span color='#ecc6d9'><b>{}</b></span>";
+                            weeks:      "<span color='#99ffdd'><b>W{}</b></span>";
+                            weekdays:   "<span color='#ffcc66'><b>{}</b></span>";
+                            today:      "<span color='#ff6699'><b><u>{}</u></b></span>";
+                        };
+                    };
+                };
                 network = {
                     format-wifi = "  {essid}";
                     format-ethernet = "󰈀  {ifname}";
@@ -317,8 +322,8 @@
                 };
                 battery = {
                     states = {
-                    warning = 30;
-                    critical = 15;
+                        warning = 30;
+                        critical = 15;
                     };
                     format = "{icon} {capacity}%";
                     format-icons = ["" "" "" "" ""];
