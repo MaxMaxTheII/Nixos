@@ -122,7 +122,7 @@
     gtk = {
         enable = true;
     };
-    programs.wofi{
+    programs.wofi = {
         enable = true;
     };
 
