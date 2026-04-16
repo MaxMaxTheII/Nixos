@@ -150,10 +150,12 @@
     #M
     #N  
         networkmanagerapplet
+        networkmanager-openconnect    
         nh
         nix-output-monitor
         nvd
     #O
+        openconnect
     #     openvpn3
     #P   
         polkit_gnome

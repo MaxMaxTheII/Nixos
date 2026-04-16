@@ -47,9 +47,9 @@
         libreoffice-qt
     #M
     #N  
-        networkmanager-openconnect
+    #    networkmanager-openconnect
     #O
-        openconnect
+    #    openconnect
     #P   
         poetry
         pwntools
