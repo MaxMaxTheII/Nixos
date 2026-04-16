@@ -33,7 +33,12 @@
     };
 
   # Enable networking
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+        enable = true;
+        plugins = with pkts [
+            networkmanager-openconnect    
+        ];
+    };
 
     hardware.bluetooth.enable = true; 
     hardware.bluetooth.powerOnBoot = true; 
@@ -150,7 +155,6 @@
     #M
     #N  
         networkmanagerapplet
-        networkmanager-openconnect    
         nh
         nix-output-monitor
         nvd
