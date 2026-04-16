@@ -45,6 +45,7 @@
             base07 = "ffffff"; # pure white highlights
 
             # base08 = "ff4d8d"; # neon pink (errors)
+            base08 = "ff2e97"; # neon pink
             base09 = "ff9f43"; # neon orange
             base0A = "ffe66d"; # neon yellow
             base0B = "2bff88"; # neon green
@@ -54,11 +55,10 @@
             # base0F = "ff7ad9"; # hot pink accent
             
 
-            base08 = "ff2e97";
-            base0D = "9d7bff";
-            base0E = "d16dff";
-            base0F = "ff6ad5";
-            base0C = "00f0ff";
+            base0C = "00f0ff"; # turquise
+            base0D = "9d7bff"; # light purple
+            base0E = "d16dff"; # purple-pink
+            base0F = "ff6ad5"; # gentel pink
         };
         fonts = {
             monospace = {

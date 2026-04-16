@@ -306,11 +306,11 @@
                         on-scroll     = 1;
                         on-click-right= "mode";
                         format = {
-                            months =     "<span color='${config.lib.stylix.colors.withHashtag.base0D}'><b>{}</b></span>";
-                            days =       "<span color='${config.lib.stylix.colors.withHashtag.base0D}'><b>{}</b></span>";
-                            weeks =      "<span color='${config.lib.stylix.colors.withHashtag.base0D}'><b>W{}</b></span>";
-                            weekdays =   "<span color='${config.lib.stylix.colors.withHashtag.base0D}$'><b>{}</b></span>";
-                            today =      "<span color='${config.lib.stylix.colors.withHashtag.base0D}'><b><u>{}</u></b></span>";
+                            months =     "<span color='${config.lib.stylix.colors.withHashtag.base04}'><b>{}</b></span>";
+                            days =       "<span color='${config.lib.stylix.colors.withHashtag.base0E}'><b>{}</b></span>";
+                            weeks =      "<span color='${config.lib.stylix.colors.withHashtag.base0F}'><b>W{}</b></span>";
+                            weekdays =   "<span color='${config.lib.stylix.colors.withHashtag.base0C}'><b>{}</b></span>";
+                            today =      "<span color='${config.lib.stylix.colors.withHashtag.base08}'><b><u>{}</u></b></span>";
                         };
                     };
                 };
