@@ -154,7 +154,6 @@
         nix-output-monitor
         nvd
     #O
-        openvpn
     #P   
         polkit_gnome
     #Q
