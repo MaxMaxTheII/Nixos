@@ -48,7 +48,7 @@
     #M
     #N  
     #O
-        openvpn
+    #    openvpn
     #P   
         poetry
         pwntools
@@ -293,9 +293,6 @@
                 modules-left = [ "hyprland/workspaces" ];
                 modules-center = [ "hyprland/window" "clock"];
                 modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
-                tray = {
-                    spacing = 10;
-                };
                 clock = {
                     format = "{:%H:%M}  ";
                     format-alt = "{:%A, %B %d, %Y (%R)}  ";
@@ -314,6 +311,9 @@
                             today =      "<span color='${config.lib.stylix.colors.withHashtag.base0B}'><b><u>{}</u></b></span>";
                         };
                     };
+                };
+                tray = {
+                    spacing = 10;
                 };
                 network = {
                     format-wifi = "  {essid}";
