@@ -308,9 +308,9 @@
                         format = {
                             months =     "<span color='${config.lib.stylix.colors.withHashtag.base0E}'><b>{}</b></span>";
                             days =       "<span color='${config.lib.stylix.colors.withHashtag.base04}'><b>{}</b></span>";
-                            weeks =      "<span color='${config.lib.stylix.colors.withHashtag.base0F}'><b>W{}</b></span>";
+                            weeks =      "<span color='${config.lib.stylix.colors.withHashtag.base09}'><b>W{}</b></span>";
                             weekdays =   "<span color='${config.lib.stylix.colors.withHashtag.base0C}'><b>{}</b></span>";
-                            today =      "<span color='${config.lib.stylix.colors.withHashtag.base08}'><b><u>{}</u></b></span>";
+                            today =      "<span color='${config.lib.stylix.colors.withHashtag.base0B}'><b><u>{}</u></b></span>";
                         };
                     };
                 };
