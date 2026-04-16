@@ -3,7 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-        stylix.url = "github:nix-community/stylix-25.11";
+        stylix.url = "github:nix-community/stylix/release-25.11";
     
     # Add Home Manager input
         home-manager = {
