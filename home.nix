@@ -306,7 +306,7 @@
                         on-scroll     = 1;
                         on-click-right= "mode";
                         format = {
-                            months =     "<span color=rgb(255, 234, 211)><b>{}</b></span>";
+                            months =     "<span color='rgb(255, 234, 211)'><b>{}</b></span>";
                             days =       "<span color='#ecc6d9'><b>{}</b></span>";
                             weeks =      "<span color='#99ffdd'><b>W{}</b></span>";
                             weekdays =   "<span color='#ffcc66'><b>{}</b></span>";
