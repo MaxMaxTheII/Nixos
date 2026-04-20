@@ -452,7 +452,7 @@
                     { run = ''zathura "$@"'';orphan = true; block = false; }
                 ];
                 text-edit = [
-                    { run = ''$EDITOR %s''; orphan = true; block = true;}
+                    { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
                     {run = ''xdg-open %s1'';}
@@ -463,6 +463,10 @@
                     { mime = "application/pdf"; use = "pdf-viewer"; }
                     { mime = "text/*"; use = "text-edit";}
                     { url = "*.html"; use = ["open" "text-edit"];}
+
+                ];
+                append_rules = [
+	                { url = "*"; use = "open"; }# fallback
                 ];
             };
         };
