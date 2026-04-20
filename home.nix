@@ -479,6 +479,11 @@
                 }
             ];
         };
+        theme = {
+            indicator = {
+                current = {underline = "'${config.lib.stylix.colors.withHashtag.base0C}'";};
+            };
+        };
     };
 }
 
