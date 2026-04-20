@@ -481,7 +481,7 @@
         };
         theme = {
             indicator = {
-                current = {underline = "${config.lib.stylix.colors.withHashtag.base0C}";};
+                current = {underline =true; fg= "${config.lib.stylix.colors.withHashtag.base0C}";};
             };
         };
     };
