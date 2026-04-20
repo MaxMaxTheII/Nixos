@@ -449,12 +449,20 @@
         settings = {
             opener = {
                 pdf-viewer = [
-                    { run = ''zathura "$@"''; block = false; }
+                    { run = ''zathura "$@"'';orphan = true; block = false; }
+                ];
+                text-edit = [
+                    { run = ''$EDITOR %s''; orphan = true; block = true;}
+                ];
+                open = [
+                    {run = ''xdg-open %s1'';}
                 ];
             };
             open = {
                 rules = [
                     { mime = "application/pdf"; use = "pdf-viewer"; }
+                    { mime = "text/*"; use = "text-edit"}
+                    { url = "*.html"; use = ["open" "text-edit"];}
                 ];
             };
         };
