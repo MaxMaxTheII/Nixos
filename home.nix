@@ -461,7 +461,7 @@
             open = {
                 rules = [
                     { mime = "application/pdf"; use = "pdf-viewer"; }
-                    { mime = "text/*"; use = "text-edit"}
+                    { mime = "text/*"; use = "text-edit";}
                     { url = "*.html"; use = ["open" "text-edit"];}
                 ];
             };
