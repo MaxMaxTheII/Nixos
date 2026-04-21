@@ -314,7 +314,8 @@
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" ];
-                modules-center = [ "hyprland/window" "clock"];
+                modules-center = [ "clock"];
+                #modules-center = [ "hyprland/window" "clock"];
                 modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
                     format = "{:%H:%M}  ";
