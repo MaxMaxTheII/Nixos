@@ -143,11 +143,11 @@
 
     programs.wofi = {
         enable = true;
-        style = ''
-            #img {
-                -gtk-icon-effect: dim;
-            }
-        '';
+#        style = ''
+#            #img {
+#                -gtk-icon-effect: dim;
+#            }
+#        '';
     };
 
   # --- KITTY CONFIGURATION ---
