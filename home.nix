@@ -145,7 +145,7 @@
         enable = true;
         style = ''
             #img {
-                filter: grayscale(1);
+                -gtk-icon-filter: grayscale(100%);
             }
         '';
     };
