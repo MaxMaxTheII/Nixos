@@ -447,6 +447,7 @@
     programs.yazi = {
         enable = true;
         settings = {
+            
             opener = {
                 pdf-viewer = [
                     { run = ''zathura "$@"'';orphan = true; block = false; }
@@ -455,14 +456,14 @@
                     { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
-                    {run = ''xdg-open "$1"'';}
+                    {run = ''xdg-open "$@"'';}
                 ];
             };
             open = {
                 rules = [
                     { mime = "application/pdf"; use = "pdf-viewer"; }
                     { mime = "text/*"; use = "text-edit";}
-                    { url = "*.html"; use = ["open" "text-edit"];}
+                    { name = "*.html"; use = ["open" "text-edit"];}
 
                 ];
                 append_rules = [
