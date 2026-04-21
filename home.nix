@@ -132,7 +132,7 @@
         enable = true;
         iconTheme = {
             name = "Papirus-Dark"; # Or another BW theme
-            package = pkgs.papirus-icon-theme;
+            package = pkgs.morewaita-icon-theme;
         };
     };
 
