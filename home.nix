@@ -99,7 +99,7 @@
         };
         tidal-hifi = {
             name = "Tidal";
-            exec = "tidal-hifi --no-sandbox"
+            exec = "tidal-hifi --no-sandbox";
         };
         kvantummanager = {
             name = "Kvantum Manager";
