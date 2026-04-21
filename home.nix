@@ -100,6 +100,9 @@
         tidal-hifi = {
             name = "Tidal";
             exec = "tidal-hifi --no-sandbox";
+            icon = "tidal-hifi";
+            genericName = "Music Stream";
+            categories = ["Music"  "Streaming"]
         };
         kvantummanager = {
             name = "Kvantum Manager";
