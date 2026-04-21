@@ -134,6 +134,12 @@
 
     programs.wofi = {
         enable = true;
+        style = ''
+            #entry image {
+                 /* Force icons to Black and White */
+                filter: grayscale(1);
+            }
+        '';
     };
 
   # --- KITTY CONFIGURATION ---
