@@ -130,6 +130,10 @@
 
     gtk = {
         enable = true;
+        iconTheme = {
+            name = "Papirus-Dark"; # Or another BW theme
+            package = pkgs.papirus-icon-theme;
+        };
     };
 
     programs.wofi = {
