@@ -456,7 +456,7 @@
                     { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
-                    {run = ''xdg-open "$@"'';}
+                    {run = ''xdg-open "%s"'';}
                 ];
             };
             open = {
@@ -467,12 +467,12 @@
 
                 ];
                 append_rules = [
-	                { url = "*"; use = "open"; }# fallback
+	                { name = "*"; use = "open"; }# fallback
                 ];
             };
         };
         keymap = {
-            mgr.prepend_keymap = [
+            manager.prepend_keymap = [
                 {
                 on = [ "g" "m" ];
                 run = "cd /run/media/max/";
