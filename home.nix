@@ -102,7 +102,7 @@
             exec = "tidal-hifi --no-sandbox";
             icon = "tidal-hifi";
             genericName = "Music Stream";
-#            categories = ["Music"  "Streaming"];
+            categories = ["AudioVideo" "Audio" "Music" "Network"];
         };
         kvantummanager = {
             name = "Kvantum Manager";
