@@ -97,6 +97,10 @@
             noDisplay = true;
 
         };
+        tidal-hifi = {
+            name = "Tidal";
+            exec = "tidal-hifi --no-sandbox"
+        };
         kvantummanager = {
             name = "Kvantum Manager";
             noDisplay = true;
@@ -124,6 +128,7 @@
     gtk = {
         enable = true;
     };
+
     programs.wofi = {
         enable = true;
     };
