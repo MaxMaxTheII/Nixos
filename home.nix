@@ -116,6 +116,10 @@
             name = "Qt6 Settings";
             noDisplay = true;
         };
+        yazi = {
+            name = "Yazi";
+            noDisplay = true;
+        };
     };
 
   # ----- cursor ---
@@ -131,18 +135,19 @@
     gtk = {
         enable = true;
         iconTheme = {
-            name = "Papirus-Dark"; # Or another BW theme
+            name = "Morewaita-Dark"; # Or another BW theme
+            #package = pkgs.papirus-icon-theme;
             package = pkgs.morewaita-icon-theme;
         };
     };
 
     programs.wofi = {
         enable = true;
-        style = ''
-            image {
-                filter: grayscale(1);
-            }
-        '';
+#        style = ''
+#            image {
+#                filter: grayscale(1);
+#            }
+#        '';
     };
 
   # --- KITTY CONFIGURATION ---
