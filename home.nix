@@ -140,7 +140,6 @@
         enable = true;
         style = ''
             #entry image {
-                 /* Force icons to Black and White */
                 filter: grayscale(1);
             }
         '';
@@ -375,6 +374,7 @@
     stylix.targets.hyprlock.enable = false;
     stylix.targets.firefox.enable = true;
     stylix.targets.hyprland.enable = true;
+    stylix.targets.wofi.enable = true;
 
     programs.hyprlock = {
         enable = true;
