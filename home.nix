@@ -456,7 +456,7 @@
                     { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
-                    {run = ''xdg-open "%s1"'';}
+                    {run = ''xdg-open "$@"''; orphan = true;}
                 ];
             };
             open = {
