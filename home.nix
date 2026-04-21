@@ -143,11 +143,11 @@
 
     programs.wofi = {
         enable = true;
-#        style = ''
-#            image {
-#                filter: grayscale(1);
-#            }
-#        '';
+        style = ''
+            #img {
+                filter: grayscale(1);
+            }
+        '';
     };
 
   # --- KITTY CONFIGURATION ---
