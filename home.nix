@@ -456,7 +456,7 @@
                     { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
-                    {run = ''xdg-open "%s"'';}
+                    {run = ''xdg-open "%s1"'';}
                 ];
             };
             open = {
@@ -472,7 +472,7 @@
             };
         };
         keymap = {
-            manager.prepend_keymap = [
+            mgr.prepend_keymap = [
                 {
                 on = [ "g" "m" ];
                 run = "cd /run/media/max/";
