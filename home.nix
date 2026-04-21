@@ -139,7 +139,7 @@
     programs.wofi = {
         enable = true;
         style = ''
-            .entry image {
+            image {
                 filter: grayscale(1);
             }
         '';
