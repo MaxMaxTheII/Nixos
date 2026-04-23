@@ -171,7 +171,10 @@
             "alt+shift+4" = "goto_tab 4";
             "alt+shift+5" = "goto_tab 5";
             "alt+shift+6" = "goto_tab 6";
-          # ... you can add the rest here
+            "alt+shift+7" = "goto_tab 7";
+            "alt+shift+8" = "goto_tab 8";
+            "alt+shift+9" = "goto_tab 9";
+            "alt+shift+0" = "goto_tab 10";
         };
     };
 
@@ -272,6 +275,10 @@
                 "SUPER SHIFT, 4, movetoworkspace, 4"
                 "SUPER SHIFT, 5, movetoworkspace, 5"
                 "SUPER SHIFT, 6, movetoworkspace, 6"
+                "SUPER SHIFT, 7, movetoworkspace, 7"
+                "SUPER SHIFT, 8, movetoworkspace, 8"
+                "SUPER SHIFT, 9, movetoworkspace, 9"
+                "SUPER SHIFT, 0, movetoworkspace, 10"
 
                 "SUPER, 1, workspace, 1"
                 "SUPER, 2, workspace, 2"
@@ -279,6 +286,10 @@
                 "SUPER, 4, workspace, 4"
                 "SUPER, 5, workspace, 5"
                 "SUPER, 6, workspace, 6"
+                "SUPER, 7, workspace, 3"
+                "SUPER, 8, workspace, 8"
+                "SUPER, 9, workspace, 9"
+                "SUPER, 0, workspace, 10"
 
                 # Mute with OSD
                 ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
