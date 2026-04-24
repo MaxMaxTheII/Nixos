@@ -22,7 +22,7 @@
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
     #F 
-       fastfetch
+#       fastfetch
     #G 
         gdb
         ghidra
@@ -464,6 +464,11 @@
           fastfetch
         '';
     };
+    
+    programs.fastfetch = {
+        enable = true;
+    };
+
     programs.yazi = {
         enable = true;
         settings = {
