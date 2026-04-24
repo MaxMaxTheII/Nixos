@@ -34,7 +34,7 @@
         gnome-calculator
     #H   
         htop
-        hunspell
+        hunspell # libre office- spellchecker
         hyprland
         hyprshot
     #I  
@@ -56,7 +56,7 @@
     #Q
     #R
     #S  
-        swayosd
+        swayosd # on screen display for sound and light change
     #T 
         texlab
         texliveFull
@@ -77,6 +77,16 @@
         zathura
     ];
 
+    stylix.targets = {
+        vesktop.enable = true;
+        firefox.enable = true;
+        hyprland.enable = true;
+
+        wofi.enable = false;
+        
+        waybar.enable = false;
+        hyprlock.enable = false;
+    };
 
     xdg.desktopEntries = {
         discord = {
@@ -387,16 +397,6 @@
 #        };
     };
 
-    stylix.targets = {
-        vesktop.enable = true;
-        firefox.enable = true;
-        hyprland.enable = true;
-
-        wofi.enable = false;
-        
-        waybar.enable = false;
-        hyprlock.enable = false;
-    };
 
 
     programs.hyprlock = {
