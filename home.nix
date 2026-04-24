@@ -6,15 +6,10 @@
     home.username = "max";
     home.homeDirectory = "/home/max";
     home.stateVersion = "25.11";
-
-  # ENV vars
     home.sessionVariables = {
         EDITOR = "nvim";
-#        XCURSOR_THEME = "Bibata-Modern-Ice";
-#        XCURSOR_SIZE = "24";
-#        HYPRCURSOR_THEME = "Bibata-Modern-Ice";
-#        HYPRCURSOR_SIZE = "24";
     };
+
   # This allows Home Manager to manage itself
     programs.home-manager.enable = true;
 
@@ -47,9 +42,7 @@
         libreoffice-qt
     #M
     #N  
-    #    networkmanager-openconnect
     #O
-    #    openconnect
     #P   
         poetry
         pwntools
@@ -67,12 +60,8 @@
         vesktop # stylable discord client
     #W 
         wireshark
-    #    waybar
-    #    wlogout
-    #    wofi
     #X
     #Y  
-    #     yazi
     #Z
         zathura
     ];
@@ -82,7 +71,7 @@
         firefox.enable = true;
         hyprland.enable = true;
 
-        wofi.enable = true;
+        wofi.enable = false;
         
         waybar.enable = false;
         hyprlock.enable = false;
@@ -93,7 +82,6 @@
             name = "Discord";
             exec = "vesktop %U";
             icon = "discord"; # This uses the official Discord icon
-#            desktopName = "Discord";
             genericName = "Internet Messenger";
             categories = [ "Network" "InstantMessaging" "Chat" ];
             terminal = false;
@@ -132,15 +120,6 @@
         };
     };
 
-  # ----- cursor ---
- #   home.pointerCursor = {
- #       gtk.enable = true;
- #       x11.enable = true;
- #       x11.defaultCursor = "left_ptr";
- #       package = pkgs.bibata-cursors;
- #       name = "Bibata-Modern-Ice";
- #       size = 24;
- #   };
 
     gtk = {
         enable = true;
@@ -153,11 +132,11 @@
 
     programs.wofi = {
         enable = true;
-#        style = ''
-#            #img {
-#                -gtk-icon-effect: dim;
-#            }
-#        '';
+        style = ''
+            #img {
+                -gtk-icon-effect: dim;
+            }
+        '';
     };
 
   # --- KITTY CONFIGURATION ---
