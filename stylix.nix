@@ -33,6 +33,12 @@
  	       	name = "Bibata-Modern-Classic";
  	       	size = 24;
  	    };
+        iconTheme = {
+            enable = true;
+            package = pkgs.papirus-icon-theme; #.override { color = "indigo"; };
+            dark = "Papirus-Dark"; # used
+            light = "Papirus-Light"; # unused
+        };
         fonts = {
             monospace = {
                 package = pkgs.comic-mono;
@@ -52,13 +58,14 @@
             };
         };
 
-        packages = with pkgs; [
-            font-awesome
-        ];
         opacity = {
             terminal = 0.8;
             applications = 0.8;
             desktop = 0.7;
         };
     };
+
+    fonts.packages = with pkgs; [
+        font-awesome
+    ];
 }
