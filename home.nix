@@ -184,7 +184,7 @@
             };
             windowrulev2 = [
                 "opacity 0.85 0.85,class:^(vesktop)$"
-                "opacity 0.85 0.85,class:^(bitwarden-desktop)$"
+#                "opacity 0.85 0.85,class:^(bitwarden-desktop)$"
 
                 "opacity 0.95 0.95,class:^(firefox)$"
             ];
