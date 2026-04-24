@@ -467,6 +467,29 @@
     
     programs.fastfetch = {
         enable = true;
+        settings = {
+            modules = [
+                "title"
+                "separator"
+                "os"
+                "host"
+                "kernel"
+                "uptime"
+                "packages"
+                "shell"
+                "display"
+                "terminal"
+                "terminalfont"
+                "cpu"
+                "gpu"
+                "memory"
+                "swap"
+                "disk"
+                "battery"
+                "poweradapter"
+                "locale"                
+            ];
+        };
     };
 
     programs.yazi = {
