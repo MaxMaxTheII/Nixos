@@ -144,6 +144,7 @@ in
         docker_29
     #E
     #F 
+        unstable.fastfetch
     #G 
         git
     #H   
