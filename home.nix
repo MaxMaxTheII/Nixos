@@ -10,10 +10,10 @@
   # ENV vars
     home.sessionVariables = {
         EDITOR = "nvim";
-        XCURSOR_THEME = "Bibata-Modern-Ice";
-        XCURSOR_SIZE = "24";
-        HYPRCURSOR_THEME = "Bibata-Modern-Ice";
-        HYPRCURSOR_SIZE = "24";
+#        XCURSOR_THEME = "Bibata-Modern-Ice";
+#        XCURSOR_SIZE = "24";
+#        HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+#        HYPRCURSOR_SIZE = "24";
     };
   # This allows Home Manager to manage itself
     programs.home-manager.enable = true;
@@ -123,22 +123,22 @@
     };
 
   # ----- cursor ---
-    home.pointerCursor = {
-        gtk.enable = true;
-        x11.enable = true;
-        x11.defaultCursor = "left_ptr";
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
-        size = 24;
-    };
+ #   home.pointerCursor = {
+ #       gtk.enable = true;
+ #       x11.enable = true;
+ #       x11.defaultCursor = "left_ptr";
+ #       package = pkgs.bibata-cursors;
+ #       name = "Bibata-Modern-Ice";
+ #       size = 24;
+ #   };
 
     gtk = {
         enable = true;
-        iconTheme = {
-            name = "Morewaita-Dark"; # Or another BW theme
+  #      iconTheme = {
+  #          name = "Morewaita-Dark"; # Or another BW theme
             #package = pkgs.papirus-icon-theme;
-            package = pkgs.morewaita-icon-theme;
-        };
+  #          package = pkgs.morewaita-icon-theme;
+  #      };
     };
 
     programs.wofi = {
@@ -207,9 +207,9 @@
                 "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
             ];
             env = [
-                "XCURSOR_SIZE,24"
-                "HYPRCURSOR_SIZE,24"
-                "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+#                "XCURSOR_SIZE,24"
+#                "HYPRCURSOR_SIZE,24"
+#                "HYPRCURSOR_THEME,Bibata-Modern-Ice"
             ];
             monitor = ",preferred,auto,1";
             general = {
@@ -303,7 +303,7 @@
                     "windowsOut, 1, 7, default, popin 80%"
                     "border, 1, 10, default"
                     "fade, 1, 7, default"
-                    "workspaces, 1, 6, default" # This controls the "Tab" speed between workspaces
+                    "workspaces, 1, 10, default" # This controls the "Tab" speed between workspaces
                 ];
             };
         };
@@ -387,11 +387,11 @@
 #        };
     };
 
-    stylix.targets.vesktop.enable = true;
-    stylix.targets.hyprlock.enable = false;
-    stylix.targets.firefox.enable = true;
-    stylix.targets.hyprland.enable = true;
-    stylix.targets.wofi.enable = true;
+    #stylix.targets.vesktop.enable = true;
+    #stylix.targets.hyprlock.enable = false;
+    #stylix.targets.firefox.enable = true;
+    #stylix.targets.hyprland.enable = true;
+    #stylix.targets.wofi.enable = true;
 
     programs.hyprlock = {
         enable = true;
@@ -515,11 +515,11 @@
                 }
             ];
         };
-        theme = {
-            indicator = {
-                current = {underline =true; fg= "${config.lib.stylix.colors.withHashtag.base0C}";};
-            };
-        };
+        #theme = {
+        #    indicator = {
+        #        current = {underline =true; fg= "${config.lib.stylix.colors.withHashtag.base0C}";};
+        #    };
+        #};
     };
 }
 
