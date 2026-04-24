@@ -387,11 +387,17 @@
 #        };
     };
 
-    stylix.targets.vesktop.enable = true;
-    stylix.targets.hyprlock.enable = false;
-    stylix.targets.firefox.enable = true;
-    stylix.targets.hyprland.enable = true;
-    stylix.targets.wofi.enable = true;
+    stylix.targets = {
+        vesktop.enable = true;
+        firefox.enable = true;
+        hyprland.enable = true;
+
+        wofi.enable = false;
+        
+        waybar.enable = false;
+        hyprlock.enable = false;
+    };
+
 
     programs.hyprlock = {
         enable = true;
