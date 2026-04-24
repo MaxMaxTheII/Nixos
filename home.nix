@@ -468,6 +468,9 @@
     programs.fastfetch = {
         enable = true;
         settings = {
+            logo = {
+                padding.left = 2;
+            };
             modules = [
                 "title"
                 "separator"
