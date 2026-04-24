@@ -71,7 +71,7 @@
         firefox.enable = true;
         hyprland.enable = true;
         wofi.enable = true;
-        bitwarden-desktop.enable = true;
+#        bitwarden-desktop.enable = true;
         
         waybar.enable = false;
         hyprlock.enable = false;
