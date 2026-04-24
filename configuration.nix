@@ -3,23 +3,23 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-let
-    unstableTarball =
-        fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-in 
+#let
+#    unstableTarball =
+#        fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+#in 
 {
     imports =
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
             ./stylix.nix
         ];
-    nixpkgs.config = {
-        packageOverrides = pkgs: with pkgs; {
-            unstable = import unstableTarball {
-                config = config.nixpkgs.config;
-            };
-        };
-    };
+#    nixpkgs.config = {
+#        packageOverrides = pkgs: with pkgs; {
+#            unstable = import unstableTarball {
+#                config = config.nixpkgs.config;
+#            };
+#        };
+#    };
   # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -144,7 +144,7 @@ in
         docker_29
     #E
     #F 
-        unstable.fastfetch
+#        unstable.fastfetch
     #G 
         git
     #H   

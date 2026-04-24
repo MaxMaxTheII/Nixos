@@ -22,7 +22,7 @@
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
     #F 
-    #    unstable.fastfetch
+       fastfetch
     #G 
         gdb
         ghidra
