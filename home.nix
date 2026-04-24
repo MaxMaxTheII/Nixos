@@ -71,7 +71,7 @@
         firefox.enable = true;
         hyprland.enable = true;
 
-        wofi.enable = false;
+        wofi.enable = true;
         
         waybar.enable = false;
         hyprlock.enable = false;
@@ -132,11 +132,11 @@
 
     programs.wofi = {
         enable = true;
-        style = ''
-            #img {
-                -gtk-icon-effect: dim;
-            }
-        '';
+#        style = ''
+#            #img {
+#                -gtk-icon-effect: dim;
+#            }
+#        '';
     };
 
   # --- KITTY CONFIGURATION ---
