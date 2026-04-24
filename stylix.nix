@@ -52,7 +52,7 @@
             };
         };
 
-        fonts.packages = with pkgs; [
+        packages = with pkgs; [
             font-awesome
         ];
         opacity = {
