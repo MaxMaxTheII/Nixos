@@ -2,14 +2,7 @@
     stylix = {
         enable = true;
         
-        targets = {
-            vesktop.enable = true;
-            firefox.enable = true;
-            hyprland.enable = true;
-            wofi.enable = true;
-
-            hyprlock.enable = false;
-        };
+       
 
         polarity = "dark";
 

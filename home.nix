@@ -387,11 +387,11 @@
 #        };
     };
 
-    #stylix.targets.vesktop.enable = true;
-    #stylix.targets.hyprlock.enable = false;
-    #stylix.targets.firefox.enable = true;
-    #stylix.targets.hyprland.enable = true;
-    #stylix.targets.wofi.enable = true;
+    stylix.targets.vesktop.enable = true;
+    stylix.targets.hyprlock.enable = false;
+    stylix.targets.firefox.enable = true;
+    stylix.targets.hyprland.enable = true;
+    stylix.targets.wofi.enable = true;
 
     programs.hyprlock = {
         enable = true;
