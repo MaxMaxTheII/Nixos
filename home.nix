@@ -30,7 +30,7 @@
     #H   
         htop
         hunspell # libre office- spellchecker
-        hyprland
+    #    hyprland
         hyprshot
     #I  
         ipe
