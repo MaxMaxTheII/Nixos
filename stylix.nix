@@ -34,9 +34,6 @@
  	       	size = 24;
  	    };
         fonts = {
-            packages = with pkgs; [
-                font-awesome
-            ];
             monospace = {
                 package = pkgs.comic-mono;
                 name = "Comic Mono";
@@ -55,6 +52,9 @@
             };
         };
 
+        fonts.packages = with pkgs; [
+            font-awesome
+        ];
         opacity = {
             terminal = 0.8;
             applications = 0.8;
