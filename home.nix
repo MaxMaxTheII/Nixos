@@ -371,10 +371,29 @@
     };
     programs.wlogout = {
         enable = true;
-        # Add custom settings or CSS here
-#        settings = {
-      # Example: set the background color or layout
-#        };
+        layout = [
+            {
+                label = "lock";
+                action = "hyprlock";
+                text = "Lock";
+                keybind = "l";
+            }
+            {
+                label = "shutdown";
+                action = "systemctl poweroff";
+                text = "Shutdown";
+                keybind = "s";
+            }
+        ];
+        style = ''
+            window {
+              background-color: rgba(0, 0, 0, 0.5);
+            }
+            button {
+              background-color: ${config.lib.stylix.colors.withHashtag.base04};
+              color: ${config.lib.stylix.colors.withHashtag.base09};
+            }
+        '';
     };
 
 
