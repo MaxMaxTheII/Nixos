@@ -378,7 +378,7 @@
                 text = "(L)ock";
                 keybind = "l";
                 height = 1;
-                witdth = 1;
+                width = 1;
                 circular = true;
             }
             {
@@ -387,7 +387,7 @@
                 text = "Shutdow(n)";
                 keybind = "n";
                 height = 1;
-                witdth = 1;
+                width = 1;
                 circular = true;
             }
         ];
