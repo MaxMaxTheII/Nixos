@@ -377,12 +377,18 @@
                 action = "hyprlock";
                 text = "(L)ock";
                 keybind = "l";
+                height = 1;
+                witdth = 1;
+                circular = true;
             }
             {
                 label = "shutdown";
                 action = "systemctl poweroff";
                 text = "Shutdow(n)";
                 keybind = "n";
+                height = 1;
+                witdth = 1;
+                circular = true;
             }
         ];
         style = ''
@@ -392,7 +398,6 @@
             button {
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 color: ${config.lib.stylix.colors.withHashtag.base09};
-                margin: 10%;
             }
             button:hover{
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
