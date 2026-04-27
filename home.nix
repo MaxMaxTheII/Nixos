@@ -228,6 +228,7 @@
                 "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
                 #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
                 ", XF86Calculator, exec, gnome-calculator --mode=programming"
+                ", XKB_KEY_F10, exec, pkill wlogout || wlogout"
             ];
             # Keybindings (Super/Windows key is 'Mod4')
             binde = [
