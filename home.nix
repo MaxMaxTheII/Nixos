@@ -375,14 +375,14 @@
             {
                 label = "lock";
                 action = "hyprlock";
-                text = "<b>L</b>ock";
+                text = "(L)ock";
                 keybind = "l";
             }
             {
                 label = "shutdown";
                 action = "systemctl poweroff";
-                text = "<b>S</b>hutdown";
-                keybind = "s";
+                text = "Shutdow(n)";
+                keybind = "n";
             }
         ];
         style = ''
@@ -392,9 +392,10 @@
             button {
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 color: ${config.lib.stylix.colors.withHashtag.base09};
+                margin: 10%;
             }
             button:hover{
-                background-color: ${config.lib.stylix.colors.withHashtag.base01}
+                background-color: ${config.lib.stylix.colors.withHashtag.base01};
             }
         '';
     };
