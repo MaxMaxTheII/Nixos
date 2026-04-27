@@ -375,13 +375,13 @@
             {
                 label = "lock";
                 action = "hyprlock";
-                text = "Lock";
+                text = "<b>L</b>ock";
                 keybind = "l";
             }
             {
                 label = "shutdown";
                 action = "systemctl poweroff";
-                text = "Shutdown";
+                text = "<b>S</b>hutdown";
                 keybind = "s";
             }
         ];
