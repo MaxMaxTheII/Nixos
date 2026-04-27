@@ -7,20 +7,11 @@ programs.zathura = {
       synctex = true;
       synctex-editor-command = "nvim --remote-silent +%{line} %{input}";
       selection-clipboard = "clipboard";
-#      recolor = true; # Allows for dark mode/custom colors
-#      recolor-keephue = true;
-    
-      # Matching your 0.75 opacity vibe (pseudo-transparent)
-    /*  default-bg = "#1e1e1e";
-      default-fg = "#d4d4d4";
-      recolor-lightcolor = "#1e1e1e";
-      recolor-darkcolor = "#d4d4d4";*/
     };
 };
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      # catppuccin-nvim
       vimtex
       nvim-lspconfig
       luasnip
@@ -108,33 +99,6 @@ vim.keymap.set({"i", "s"}, "<Tab>", function()
     vim.lsp.handlers.hover, { border = "rounded" }
   )
 '';
-/*
-require("catppuccin").setup({
-    flavour = "mocha",
-    transparent_background = true,
-    integrations = {
-        cmp = true,
-        treesitter = true,
-        vimtex = true,
-        native_lsp = {
-            enabled = true,
-            virtual_text = {
-                errors = { "italic" },
-                hints = { "italic" },
-                warnings = { "italic" },
-                information = { "italic" },
-            },
-            underlines = {
-                errors = { "underline" },
-                hints = { "underline" },
-                warnings = { "underline" },
-                information = { "underline" },
-            },
-        },
-    },
-})
-vim.cmd.colorscheme "catppuccin"
-'';*/
     extraConfig = ''
       " --- VIMTEX SETTINGS ---
       let g:vimtex_view_method = 'zathura'
