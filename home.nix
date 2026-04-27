@@ -387,11 +387,14 @@
         ];
         style = ''
             window {
-              background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.5);
             }
             button {
-              background-color: ${config.lib.stylix.colors.withHashtag.base04};
-              color: ${config.lib.stylix.colors.withHashtag.base09};
+                background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                color: ${config.lib.stylix.colors.withHashtag.base09};
+            }
+            button:hover{
+                background-color: ${config.lib.stylix.colors.withHashtag.base01}
             }
         '';
     };
