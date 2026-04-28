@@ -41,7 +41,7 @@
         libnotify
         libreoffice-qt
     #M
-        mathematica
+#        mathematica
     #N  
     #O
     #P   
