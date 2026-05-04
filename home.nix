@@ -317,7 +317,7 @@
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" ];
-                modules-center = [ "clock"];
+                modules-center = ["custom/center-left" "clock" "custom/center-right"];
                 #modules-center = [ "hyprland/window" "clock"];
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
@@ -404,9 +404,20 @@
             #workspaces button.active{
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
+            .modules-center{
+                margin: 0 ;
+            }
             #clock{
-                background-color: ${config.lib.stylix.colors.withHashtag.base08};
+                background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 border-radius: 0 0 10px 10px;
+            }
+            "custom/center-left"{
+                width:10px;
+                background-color:${config.lib.stylix.colors.withHashtag.base0B}
+            }
+            "custom/center-right"{
+                width:10px;
+                background-color:${config.lib.stylix.colors.withHashtag.base0B}
             }
         ''; 
     };
