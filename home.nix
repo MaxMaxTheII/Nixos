@@ -343,11 +343,12 @@
                     spacing = 10;
                 };
                 cpu = {
-                    format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}'> </span>{usage}%"; 
+                    format = "  {usage}%"; 
                 };
                 memory = {
                     interval = 1;
-                    format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}'> </span>{used:0.1f}G/{total:0.1f}G";
+                    format = "  {used:0.1f}G/{total:0.1f}G";
+                    tooltip = false;
                 };
                 network = {
                     format-wifi = "  {essid}";
@@ -378,9 +379,14 @@
             };
         };
         style = ''
+            * {
+                border: none;
+                border-radius: 10px;
+            }
             window#waybar {
                 background: transparent;
             }
+
         '';
     };
     programs.wlogout = {
