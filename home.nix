@@ -387,6 +387,9 @@
             window#waybar {
                 background: transparent;
             }
+            .module-right{
+                background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
+            }
             .module-right:nth-child(even){
                 background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
             }
