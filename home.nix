@@ -382,7 +382,7 @@
             * {
                 border: none;
                 border-radius: 10px;
-                margin: 0 10px;
+                margin: 0 2px;
             }
             window#waybar {
                 background: transparent;
