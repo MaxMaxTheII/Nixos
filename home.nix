@@ -388,11 +388,8 @@
             window#waybar {
                 background: transparent;
             }
-            .module-right:nth-child(even){
+            .module-right{
                 background: ${config.lib.stylix.colors.withHashtag.base02}; 
-            }
-            .module-right:nth-child(odd){
-                background: ${config.lib.stylix.colors.withHashtag.base01}; 
             }
             '';
             /*window#waybar {
