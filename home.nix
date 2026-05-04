@@ -411,11 +411,11 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 border-radius: 0 0 10px 10px;
             }
-            "custom/center-left"{
+            #custom/center-left{
                 width:10px;
                 background-color:${config.lib.stylix.colors.withHashtag.base0B}
             }
-            "custom/center-right"{
+            #custom/center-right{
                 width:10px;
                 background-color:${config.lib.stylix.colors.withHashtag.base0B}
             }
