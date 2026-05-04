@@ -344,6 +344,7 @@
                 };
                 cpu = {
                     format = "  {usage}%"; 
+                    tooltip = false;
                 };
                 memory = {
                     interval = 1;
@@ -387,7 +388,8 @@
             window#waybar {
                 background: transparent;
             }
-            .module-right{
+            '';
+            /*.module-right{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
             }
             .module-right:nth-child(even){
@@ -397,7 +399,7 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base01}; 
             }
 
-        '';
+        '';*/ 
               #  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
               #  background-image: linear-gradient(to left,${config.lib.stylix.colors.withHashtag.base02}, ${config.lib.stylix.colors.withHashtag.base01}); 
     };
