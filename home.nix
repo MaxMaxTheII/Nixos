@@ -405,8 +405,6 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
         ''; 
-              #  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
-              #  background-image: linear-gradient(to left,${config.lib.stylix.colors.withHashtag.base02}, ${config.lib.stylix.colors.withHashtag.base01}); 
     };
     programs.wlogout = {
         enable = true;
