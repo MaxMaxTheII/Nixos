@@ -388,7 +388,7 @@
             window#waybar {
                 background: transparent;
             }
-            .module-right:nth-child(odd){
+            .modules-right:nth-child(odd){
                  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01});
             }
 
