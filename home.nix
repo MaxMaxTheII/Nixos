@@ -400,7 +400,7 @@
             #workspaces button:nth-child(odd){
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
             }
-            #workspyces button.focused{
+            #workspaces button.active{
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
         ''; 
