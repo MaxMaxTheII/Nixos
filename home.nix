@@ -389,16 +389,19 @@
                 background: transparent;
             }
             .modules-right :nth-child(odd) .module{
-                 background-image: linear-gradient(to left, ${config.lib.stylix.colors.withHashtag.base0C},${config.lib.stylix.colors.withHashtag.base0B});
+                 background-image: linear-gradient(to left, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base02});
             }
             .modules-right :nth-child(even) .module{
-                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base0C},${config.lib.stylix.colors.withHashtag.base0B});
+                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base02});
             }
             #workspaces button:nth-child(even){
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
             }
             #workspaces button:nth-child(odd){
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
+            }
+            #workspyces button:active{
+                background-color: ${config.lib.stylix.colors.withHashtag.base0D};
             }
         ''; 
               #  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
