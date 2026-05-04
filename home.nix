@@ -389,7 +389,7 @@
                 background: transparent;
             }
             .modules-right:nth-child(odd){
-                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01});
+                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base0C},${config.lib.stylix.colors.withHashtag.base0B});
             }
 
         ''; 
