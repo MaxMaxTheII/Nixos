@@ -319,7 +319,7 @@
                 modules-left = [ "hyprland/workspaces" ];
                 modules-center = [ "clock"];
                 #modules-center = [ "hyprland/window" "clock"];
-                modules-right = [ "network" "battery" "bluetooth" "tray" "custom/power"];
+                modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
                     format = "{:%H:%M}  ";
                     format-alt = "{:%A, %B %d, %Y (%R)}  ";
@@ -341,6 +341,13 @@
                 };
                 tray = {
                     spacing = 10;
+                };
+                cpu = {
+                    format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}'> </span>{usage}%"; 
+                };
+                memory = {
+                    interval = 1;
+                    format = "<span color='${config.lib.stylix.colors.withHashtag.base0C}'> </span>{used:0.1f}G/{total:0.1f}G";
                 };
                 network = {
                     format-wifi = "  {essid}";
@@ -370,6 +377,11 @@
                 };
             };
         };
+        style = ''
+            window#waybar {
+                background: transparent;
+            }
+        '';
     };
     programs.wlogout = {
         enable = true;
