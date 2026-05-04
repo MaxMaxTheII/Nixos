@@ -388,10 +388,12 @@
                 background: transparent;
             }
             .module-right:nth-child(even){
-                background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
+                // background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
+                background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
             }
             .module-right:nth-child(odd){
-                background-image: linear-gradient(to left,${config.lib.stylix.colors.withHashtag.base02}, ${config.lib.stylix.colors.withHashtag.base01}); 
+                // background-image: linear-gradient(to left,${config.lib.stylix.colors.withHashtag.base02}, ${config.lib.stylix.colors.withHashtag.base01}); 
+                background-color: ${config.lib.stylix.colors.withHashtag.base01}; 
             }
 
         '';
