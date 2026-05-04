@@ -385,11 +385,18 @@
                 border-radius: 10px;
                 margin: 0 2px;
             }
-            window#waybar {
+            .module-right:nth-child(even){
+                background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
+            }
+            .module-right:nth-child(odd){
+                background-color: ${config.lib.stylix.colors.withHashtag.base01}; 
+            }
+            '';
+            /*window#waybar {
                 background: transparent;
             }
             '';
-            /*.module-right{
+            .module-right{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
             }
             .module-right:nth-child(even){
