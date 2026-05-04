@@ -377,6 +377,12 @@
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
                     tooltip = false;
                 };
+                "custom/center-left" = {
+                    format = " ";
+                };
+                "custom/center-right" = {
+                    format = " ";
+                };
             };
         };
         style = ''
