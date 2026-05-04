@@ -384,15 +384,16 @@
                 border: none;
                 border-radius: 10px;
                 margin: 0 2px;
+                padding: 0 2px;
             }
             window#waybar {
                 background: transparent;
             }
             .modules-right :nth-child(odd) .module{
-                 background-image: linear-gradient(to left, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base02});
+                 background-image: linear-gradient(to left, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base03});
             }
             .modules-right :nth-child(even) .module{
-                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base02});
+                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base03});
             }
             #workspaces button:nth-child(even){
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
