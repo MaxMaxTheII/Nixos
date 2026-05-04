@@ -400,8 +400,8 @@
             #workspaces button:nth-child(odd){
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
             }
-            #workspyces button:active{
-                background-color: ${config.lib.stylix.colors.withHashtag.base0D};
+            #workspyces button.focused{
+                background-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
         ''; 
               #  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
