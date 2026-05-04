@@ -388,25 +388,11 @@
             window#waybar {
                 background: transparent;
             }
-            .module-right{
-                background: ${config.lib.stylix.colors.withHashtag.base02}; 
-            }
-            '';
-            /*window#waybar {
-                background: transparent;
-            }
-            '';
-            .module-right{
-                background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
-            }
-            .module-right:nth-child(even){
-                background-color: ${config.lib.stylix.colors.withHashtag.base02}; 
-            }
             .module-right:nth-child(odd){
-                background-color: ${config.lib.stylix.colors.withHashtag.base01}; 
+                 background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01});
             }
 
-        '';*/ 
+        ''; 
               #  background-image: linear-gradient(to right, ${config.lib.stylix.colors.withHashtag.base02},${config.lib.stylix.colors.withHashtag.base01}); 
               #  background-image: linear-gradient(to left,${config.lib.stylix.colors.withHashtag.base02}, ${config.lib.stylix.colors.withHashtag.base01}); 
     };
