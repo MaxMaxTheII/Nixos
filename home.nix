@@ -404,6 +404,10 @@
             #workspaces button.active{
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
+            #clock{
+                background-color: ${config.lib.stylix.colors.withHashtag.base08};
+                border-radius: 0 0 10px 10px;
+            }
         ''; 
     };
     programs.wlogout = {
