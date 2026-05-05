@@ -623,7 +623,7 @@
                     { run = ''$EDITOR "$@"''; orphan = true; block = true;}
                 ];
                 open = [
-                    {run = ''xdg-open "%s"''; orphan = true;}
+                    {run = ''xdg-open "$@"''; orphan = true;}
                 ];
             };
             open = {
