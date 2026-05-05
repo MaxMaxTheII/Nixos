@@ -163,6 +163,7 @@
         openconnect
     #P   
         polkit_gnome
+        python312
     #Q
     #R
     #S  
