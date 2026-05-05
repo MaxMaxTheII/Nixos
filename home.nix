@@ -412,7 +412,7 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
                 */
                 border-style: solid;
-                border-width = 5px;
+                border-width: 5px;
                 border-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
             .modules-center{
