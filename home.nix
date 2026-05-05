@@ -60,7 +60,8 @@
         unzip
     #V  
         vesktop # stylable discord client
-    #W 
+    #W
+        walker
         wireshark
     #X
     #Y  
@@ -140,10 +141,11 @@
 #            }
 #        '';
     };
- 
+/* 
     programs.walker = {
         enable = true;
     };
+  */ 
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
         enable = true;
