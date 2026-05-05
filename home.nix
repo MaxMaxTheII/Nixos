@@ -456,15 +456,21 @@
             #    width = 1;
             #    circular = true;
             }
+            {
+                label = "reboot";
+                action = "systemctl reboot";
+                text = "(R)eboot";
+                keybind = "r";
+            }
         ];
         style = ''
             window {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: ${config.lib.stylix.colors.withHashtag.base00}80;
             }
             button {
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 color: ${config.lib.stylix.colors.withHashtag.base09};
-                transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+                transition: box-shadow 0.7s ease-in-out, background-color 0.7s ease-in-out;
             }
             button:hover{
                 background-color: ${config.lib.stylix.colors.withHashtag.base03};
