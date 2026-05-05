@@ -443,18 +443,18 @@
                 action = "hyprlock";
                 text = "(L)ock";
                 keybind = "l";
-                height = 1;
-                width = 1;
-                circular = true;
+            #    height = 1;
+            #    width = 1;
+            #    circular = true;
             }
             {
                 label = "shutdown";
                 action = "systemctl poweroff";
                 text = "Shutdow(n)";
                 keybind = "n";
-                height = 1;
-                width = 1;
-                circular = true;
+            #    height = 1;
+            #    width = 1;
+            #    circular = true;
             }
         ];
         style = ''
@@ -464,9 +464,10 @@
             button {
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 color: ${config.lib.stylix.colors.withHashtag.base09};
+                transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
             }
             button:hover{
-                background-color: ${config.lib.stylix.colors.withHashtag.base01};
+                background-color: ${config.lib.stylix.colors.withHashtag.base03};
             }
         '';
     };
