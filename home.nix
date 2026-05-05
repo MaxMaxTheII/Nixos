@@ -409,6 +409,9 @@
             }
             #workspaces button.active{
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
+                border-style: solid;
+                border-size = 5px;
+                border-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
             .modules-center{
                 margin: 0 ;
