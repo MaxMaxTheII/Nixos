@@ -475,7 +475,9 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 color: ${config.lib.stylix.colors.withHashtag.base09};
                 transition: box-shadow 0.7s ease-in-out, background-color 0.7s ease-in-out;
+            /*
                 margin: 0, 10%;
+            */
             }
             button:hover{
                 background-color: ${config.lib.stylix.colors.withHashtag.base03};
