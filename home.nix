@@ -403,17 +403,19 @@
             }
             #workspaces button:nth-child(even){
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                border-bottom-color: ${config.lib.stylix.colors.withHashtag.base0C};
             }
             #workspaces button:nth-child(odd){
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
+                border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
             #workspaces button.active{
                 /* 
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
+                border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
                 */
-                border-style: solid;
-                border-width: 5px;
-                border-color: ${config.lib.stylix.colors.withHashtag.base08};
+                border-bottom-style: solid;
+                border-bottom-width: 2px;
             }
             .modules-center{
                 margin: 0 ;
