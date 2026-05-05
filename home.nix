@@ -465,7 +465,8 @@
         ];
         style = ''
             window {
-                background-color: ${config.lib.stylix.colors.withHashtag.base00}20;
+                background-color: ${config.lib.stylix.colors.withHashtag.base00};
+                opacity: 10%;
             }
             button {
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
