@@ -140,7 +140,10 @@
 #            }
 #        '';
     };
-
+ 
+    programs.walker{
+        enable = true;
+    };
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
         enable = true;
