@@ -413,8 +413,8 @@
                 /* 
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
                 border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
-                */
                 margin-top: 2px;
+                */
                 border-bottom-style: solid;
                 border-bottom-width: 5px;
             }
