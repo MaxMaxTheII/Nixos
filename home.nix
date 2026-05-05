@@ -415,7 +415,7 @@
                 border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
                 */
                 border-bottom-style: solid;
-                border-bottom-width: 2px;
+                border-bottom-width: 5px;
             }
             .modules-center{
                 margin: 0 ;
