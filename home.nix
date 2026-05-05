@@ -50,6 +50,7 @@
     #Q
     #R
     #S  
+        sl
         swayosd # on screen display for sound and light change
     #T 
         texlab
