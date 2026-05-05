@@ -141,7 +141,7 @@
 #        '';
     };
  
-    programs.walker{
+    programs.walker = {
         enable = true;
     };
   # --- KITTY CONFIGURATION ---
