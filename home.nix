@@ -556,6 +556,7 @@
             sudo = "sudo ";
              # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
             nos = ''git -C ~/dotfiles add . && git -C ~/dotfiles commit -m "update: $(date)" || true && nh os switch ~/dotfiles && git -C ~/dotfiles push'';
+            nix-update = ''cd ~/dotfiles && nix flake update && nos && nix-collect-garbage''; 
         };
         
         bashrcExtra = ''
