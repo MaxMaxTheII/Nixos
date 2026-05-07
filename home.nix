@@ -61,7 +61,7 @@
     #V  
         vesktop # stylable discord client
     #W
-        walker
+    #    walker
         wireshark
     #X
     #Y  
@@ -73,6 +73,7 @@
         vesktop.enable = true;
         firefox.enable = true;
         hyprland.enable = true;
+        walker.enable = true;
         wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
@@ -141,11 +142,11 @@
 #            }
 #        '';
     };
-/* 
+ 
     programs.walker = {
         enable = true;
     };
-  */ 
+ 
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
         enable = true;
@@ -232,7 +233,7 @@
                 "SUPER, mouse:273, resizewindow"
             ];
             bindr = [
-                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
+                "SUPER, SUPER_L, exec, pkill walker || walker"
                 #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
                 ", XF86Calculator, exec, gnome-calculator --mode=programming"
 #                ", XKB_KEY_F10, exec, wlogout"
