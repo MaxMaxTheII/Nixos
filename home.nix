@@ -385,9 +385,11 @@
                 };
                 "custom/center-left" = {
                     format = " ";
+                    tooltip = false;
                 };
                 "custom/center-right" = {
                     format = " ";
+                    tooltip = false;
                 };
             };
         };
