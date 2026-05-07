@@ -438,7 +438,6 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
                 border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
-            #workspaces button.visible,
             #workspaces button.active{
                 /* 
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
@@ -446,6 +445,15 @@
                 margin-top: 2px;
                 */
                 border-bottom-style: solid;
+                border-bottom-width: 5px;
+            }
+            #workspaces button.visible{
+                /* 
+                background-color: ${config.lib.stylix.colors.withHashtag.base08};
+                border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
+                margin-top: 2px;
+                */
+                border-bottom-style: dotted;
                 border-bottom-width: 5px;
             }
             #workspaces button.urgent{
