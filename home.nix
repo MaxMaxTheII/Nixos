@@ -73,8 +73,8 @@
         vesktop.enable = true;
         firefox.enable = true;
         hyprland.enable = true;
-        walker.enable = true;
-        wofi.enable = true;
+#        walker.enable = true;
+#        wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
         waybar.enable = false;
