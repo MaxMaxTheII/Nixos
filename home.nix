@@ -438,6 +438,7 @@
                 background-color: ${config.lib.stylix.colors.withHashtag.base01};
                 border-bottom-color: ${config.lib.stylix.colors.withHashtag.base08};
             }
+            #workspaces button.visible,
             #workspaces button.active{
                 /* 
                 background-color: ${config.lib.stylix.colors.withHashtag.base08};
