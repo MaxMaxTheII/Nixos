@@ -8,7 +8,7 @@
     home.stateVersion = "25.11";
     home.sessionVariables = {
         EDITOR = "nvim";
-        LOCATION = "London";
+#        LOCATION = "London";
     };
 
   # This allows Home Manager to manage itself
@@ -399,8 +399,9 @@
                     format= "{}°";
                     tooltip= true;
                     interval= 3600;
-                    exec= ''wttrbar --location $LOCATION --custom-indicator "{ICON} {FeelsLikeC}"'';
-                    on-click = ''export LOCATION="$(./city.sh)"'';
+                    #exec= ''wttrbar --location $LOCATION --custom-indicator "{ICON} {FeelsLikeC}"'';
+                    exec= ''wttrbar --location Graz --custom-indicator "{ICON} {FeelsLikeC}"'';
+#                    on-click = ''export LOCATION="$(./city.sh)"'';
                     return-type= "json";
                 };
                 "custom/center-left" = {
