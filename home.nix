@@ -8,7 +8,7 @@
     home.stateVersion = "25.11";
     home.sessionVariables = {
         EDITOR = "nvim";
-        LOCATION = "London"
+        LOCATION = "London";
     };
 
   # This allows Home Manager to manage itself
