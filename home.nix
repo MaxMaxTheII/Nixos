@@ -135,6 +135,11 @@
 
     programs.librewolf = {
         enable = true;
+        #settings = {
+            
+        
+
+        #};
     };
     programs.wofi = {
         enable = true;
