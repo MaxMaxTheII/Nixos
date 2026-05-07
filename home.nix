@@ -447,6 +447,10 @@
                 border-bottom-style: solid;
                 border-bottom-width: 5px;
             }
+            #workspaces button.urgent{
+                background-color: ${config.lib.stylix.colors.withHashtag.base0A};
+                color:#000;
+            }
             .modules-center *{
                 margin: 0;
             }
