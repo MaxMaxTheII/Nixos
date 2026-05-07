@@ -62,6 +62,7 @@
         vesktop # stylable discord client
     #W
         wireshark
+        wttrbar # weather for waybar
     #X
     #Y  
     #Z
@@ -332,7 +333,7 @@
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" ];
-                modules-center = ["custom/center-left" "clock" "custom/center-right"];
+                modules-center = ["custom/center-left" "clock" "custom/weather" "custom/center-right"];
                 #modules-center = [ "hyprland/window" "clock"];
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
@@ -391,6 +392,13 @@
                     format = "⏻ ";
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
                     tooltip = false;
+                };
+                "custom/weather": {
+                    format= "{}°";
+                    tooltip= true;
+                    interval= 3600;
+                    exec= ''wttrbar --location London --custom-indicator "{ICON} {FeelsLikeC} ({areaName})"'';
+                    return-type= "json";
                 };
                 "custom/center-left" = {
                     format = " ";
