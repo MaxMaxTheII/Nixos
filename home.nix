@@ -133,6 +133,9 @@
   #      };
     };
 
+    programs.librewolf = {}
+        enable = true;
+    ;
     programs.wofi = {
         enable = true;
 #        style = ''
