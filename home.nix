@@ -449,11 +449,11 @@
             }
             #custom-weather{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
-                border-radius: 0 0 0 10px;
+                border-radius: 0 0 10px 0;
             }
             #clock{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
-                border-radius: 0 0 10px 0;
+                border-radius: 0 0 0 10px;
             }
             #custom-center-right,
             #custom-center-left{
