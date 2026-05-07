@@ -78,6 +78,7 @@
 #        bitwarden-desktop.enable = true;
         
         waybar.enable = false;
+        librewolf.enable = false;
         hyprlock.enable = false;
     };
 
@@ -397,7 +398,7 @@
                     format= "{}°";
                     tooltip= true;
                     interval= 3600;
-                    exec= ''wttrbar --location London --custom-indicator "{ICON} {FeelsLikeC} ({areaName})"'';
+                    exec= ''wttrbar --location Graz --custom-indicator "{ICON} {FeelsLikeC}"'';
                     return-type= "json";
                 };
                 "custom/center-left" = {
@@ -445,11 +446,14 @@
             }
             .modules-center *{
                 margin: 0;
+            }
+            #custom-weather{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                border-radius: 0 0 0 10px;
             }
             #clock{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
-                border-radius: 0 0 10px 10px;
+                border-radius: 0 0 10px 0;
             }
             #custom-center-right,
             #custom-center-left{
