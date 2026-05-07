@@ -426,8 +426,8 @@
                 border-bottom-style: solid;
                 border-bottom-width: 5px;
             }
-            .modules-center{
-                margin: 0 ;
+            .modules-center *{
+                margin: 0;
             }
             #clock{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
