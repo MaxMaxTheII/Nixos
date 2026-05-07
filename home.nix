@@ -445,6 +445,7 @@
             }
             .modules-center *{
                 margin: 0;
+                background-color: ${config.lib.stylix.colors.withHashtag.base02};
             }
             #clock{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
