@@ -61,7 +61,7 @@
     #V  
         vesktop # stylable discord client
     #W
-        walker
+    #    walker
         wireshark
     #X
     #Y  
@@ -142,7 +142,7 @@
 #            }
 #        '';
     };
- 
+    services.walker.enable = true; 
 #    programs.walker = {    
 #        enable = true;
 #    };
