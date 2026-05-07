@@ -61,7 +61,7 @@
     #V  
         vesktop # stylable discord client
     #W
-    #    walker
+        walker
         wireshark
     #X
     #Y  
