@@ -393,7 +393,7 @@
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
                     tooltip = false;
                 };
-                "custom/weather": {
+                "custom/weather"= {
                     format= "{}°";
                     tooltip= true;
                     interval= 3600;
