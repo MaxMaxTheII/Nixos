@@ -515,6 +515,9 @@
             button:hover{
                 background-color: ${config.lib.stylix.colors.withHashtag.base03};
             }
+            button::first-letter{
+                color: ${config.lib.stylix.colors.withHashtag.base0C};
+            }
         '';
     };
 
