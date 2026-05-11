@@ -78,7 +78,7 @@
         wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
-        waybar.enable = false;
+        waybar.enable = true;
         librewolf.enable = false;
         hyprlock.enable = false;
     };
