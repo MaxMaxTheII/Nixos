@@ -394,6 +394,7 @@
                 "custom/music" = {
                     fromat = "{}";
                     interval = 10;
+                    max-length = 40;
                     exec = ''echo -e "$(playerctl metadata title)|$(playerctl metadata artist)"'';
                     on-click = "playerctl play-pause";
                     tooltip = false;
