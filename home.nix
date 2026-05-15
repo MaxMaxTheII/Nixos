@@ -404,7 +404,7 @@
                     fromat = "{}";
                     interval = 10;
                     max-length = 40;
-                    exec = ''echo -e "$(playerctl metadata title)|$(playerctl metadata artist)"'';
+                    exec = ''echo -e "$(playerctl metadata title)|$(playerctl metadata artist)|${awk 'BEGIN {print int(($(playerctl position) / ($(playerctl metadata mpris:length) / 1000000)) * 100)}'}"'';
                     on-click = "playerctl play-pause";
                     tooltip = false;
                 };
