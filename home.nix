@@ -393,7 +393,7 @@
                 };
                 "custom/music" = {
                     format = "{echo -e '$(playerctl metadata title)\t$(playerctl metadata artist)'}";
-                    tooltip = "tidal-hifi --no-sandbox"
+                    tooltip = "tidal-hifi --no-sandbox";
                 };
                 "custom/power" = {
                     format = "⏻ ";
