@@ -401,11 +401,13 @@
                     on-click = "blueman-manager";
                 };
                 "custom/music" = {
-                    fromat = "{}";
+                    fromat = "{display}";
                     interval = 1;
                     # max-length = 40;
-                    exec = ''(TITLE="$(playerctl metadata title 2>/dev/null || echo 'No Media')"; ARTIST="$(playerctl metadata artist 2>/dev/null || echo 'Unknown')"; POS=$(playerctl position 2>/dev/null || echo 0); LEN=$(playerctl metadata mpris:length 2>/dev/null || echo 1); awk -v t="$TITLE" -v a="$ARTIST" -v p="$POS" -v l="$LEN" 'BEGIN { pct=int((p / (l / 1000000)) * 100); txt=t " | " a; if (length(txt) > 40) txt=substr(txt, 1, 37) "..."; print txt " | " pct "%" }')'';
+                    exec = ''(TITLE="$(playerctl metadata title 2>/dev/null || echo 'No Media')"; ARTIST="$(playerctl metadata artist 2>/dev/null || echo 'Unknown')"; POS=$(playerctl position 2>/dev/null || echo 0); LEN=$(playerctl metadata mpris:length 2>/dev/null || echo 1); awk -v t="$TITLE" -v a="$ARTIST" -v p="$POS" -v l="$LEN" 'BEGIN { pct=int((p / (l / 1000000)) * 100); txt=t " | " a; if (length(txt) > 40) txt=substr(txt, 1, 37) "..."; print "{\"percentage\": " pct ", \"title\": \"" t "\", \"artist\": \"" a "\", \"display\": \"" txt " | " pct "%\"}" }')'';
+                    #exec = ''(TITLE="$(playerctl metadata title 2>/dev/null || echo 'No Media')"; ARTIST="$(playerctl metadata artist 2>/dev/null || echo 'Unknown')"; POS=$(playerctl position 2>/dev/null || echo 0); LEN=$(playerctl metadata mpris:length 2>/dev/null || echo 1); awk -v t="$TITLE" -v a="$ARTIST" -v p="$POS" -v l="$LEN" 'BEGIN { pct=int((p / (l / 1000000)) * 100); txt=t " | " a; if (length(txt) > 40) txt=substr(txt, 1, 37) "..."; print txt " | " pct "%" }')'';
                     on-click = "playerctl play-pause";
+                    tooltip-format = "{title}\n{artist}\n{percentage}%";
                     tooltip = true;
                 };
                 "custom/power" = {
