@@ -373,7 +373,7 @@
                 };
                 cpu = {
                     format = "  {usage}%"; 
-                    tooltip = false;
+                    tooltip = true;
                 };
                 memory = {
                     interval = 1;
