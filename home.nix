@@ -494,6 +494,10 @@
             .modules-center *{
                 margin: 0;
             }
+            #custom-music{
+                background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                border-radius: 0 0 10px 10px;
+            }
             #custom-weather{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
                 border-radius: 0 0 10px 0;
