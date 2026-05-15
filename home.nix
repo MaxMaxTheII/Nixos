@@ -47,6 +47,7 @@
     #N  
     #O
     #P   
+        playerctl
         poetry
         pwntools
     #Q
