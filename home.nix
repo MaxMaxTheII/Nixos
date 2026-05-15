@@ -156,12 +156,12 @@
     };
     programs.cava = {
         enable = true;
-#        settings = {
-#            color = {
-#                background = "'#000000'";
-#                foreground = "'#00FFFF'";
-#            };
-#        };
+        settings = {
+            color = {
+                background = "#000000";
+                foreground = "#00FFFF";
+            };
+        };
     };
 #    services.walker.enable = true; 
 #    programs.walker = {    
