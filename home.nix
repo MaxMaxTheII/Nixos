@@ -427,7 +427,7 @@
                         }'
                     '';
                     on-click = "playerctl play-pause";
-                    tooltip-format = "{}"; 
+                    tooltip-format = "{tooltip}"; 
                     return-type = "json";
                     tooltip = true;
                 };
