@@ -395,7 +395,7 @@
                     fromat = "{}";
                     interval = 10;
                     exec = ''echo -e "$(playerctl metadata title)|$(playerctl metadata artist)"'';
-                    on-click = "tidal-hifi --no-sandbox";
+                    on-click = "playerctl play-pause";
                     tooltip = false;
                 };
                 "custom/power" = {
