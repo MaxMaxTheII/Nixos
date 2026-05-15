@@ -401,29 +401,33 @@
                     on-click = "blueman-manager";
                 };
                 "custom/music" = {
-                    format = "{}"; 
+                    format = "{}";
                     interval = 1;
                     # max-length = 40;
                     exec = ''
                         if ! playerctl status >/dev/null 2>&1; then
-                          exit 0
+                            exit 0
                         fi
                         TITLE="$(playerctl metadata title 2>/dev/null || echo 'No Media')"
                         ARTIST="$(playerctl metadata artist 2>/dev/null || echo 'Unknown')"
                         POS=$(playerctl position 2>/dev/null || echo 0)
                         LEN=$(playerctl metadata mpris:length 2>/dev/null || echo 1)
                         awk -v t="$TITLE" -v a="$ARTIST" -v p="$POS" -v l="$LEN" 'BEGIN {
-                          pct=int((p / (l / 1000000)) * 100);
-                          txt=t " | " a;
-                          if (length(txt) > 40) txt=substr(txt, 1, 37) "...";
-                          gsub(/"/, "\\\"", t);
-                          gsub(/"/, "\\\"", a);
-                          gsub(/"/, "\\\"", txt);
-                          print "{\"text\": \"" txt " | " pct "%\", \"percentage\": " pct ", \"title\": \"" t "\", \"artist\": \"" a "\"}"
+                            pct=int((p / (l / 1000000)) * 100);
+                            txt=t " | " a;
+                            if (length(txt) > 40) txt=substr(txt, 1, 37) "...";
+                            gsub(/"/, "\\\"", t);
+                            gsub(/"/, "\\\"", a);
+                            gsub(/"/, "\\\"", txt);
+                            
+                            # Build a clean newline-separated tooltip string inside awk
+                            tt = t "\\n" a "\\n" pct "%";
+                            
+                            print "{\"text\": \"" txt " | " pct "%\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
                         }'
                     '';
                     on-click = "playerctl play-pause";
-                    tooltip-format = "{title}\n{artist}\n{percentage}%";
+                    tooltip-format = "{}"; 
                     return-type = "json";
                     tooltip = true;
                 };
