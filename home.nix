@@ -19,6 +19,7 @@
     #B
         bitwarden-desktop
     #C 
+        cava
     #D 
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
