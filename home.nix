@@ -424,7 +424,7 @@
                             played = substr(txt, 1, split_idx);
                             remaining = substr(txt, split_idx + 1);
                             ul_color = "#a6e3a1";
-                            marked_text = "<span underline=\\\"single\\\" underline_color=\\\"" ul_color "\\\">" played "</span>" remaining;
+                            marked_text = "<span underline=\\\"double\\\" underline_color=\\\"" ul_color "\\\">" played "</span>" remaining;
                             tt = t "\\n" a "\\n" pct "%";
                             print "{\"text\": \"" marked_text "\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
                         }'
