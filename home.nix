@@ -19,7 +19,7 @@
     #B
         bitwarden-desktop
     #C 
-        cava
+    #     cava
     #D 
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
@@ -153,6 +153,13 @@
 #                -gtk-icon-effect: dim;
 #            }
 #        '';
+    };
+    programs.cava = {
+        enable = true;
+        settings = {
+            color = {
+                foreground = "'${config.lib.stylix.colors.withHashtag.base0E}'";
+        };
     };
 #    services.walker.enable = true; 
 #    programs.walker = {    
