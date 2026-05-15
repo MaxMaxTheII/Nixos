@@ -393,7 +393,8 @@
                 };
                 "custom/music" = {
                     fromat = "{}";
-                    exec = ''echo -e "$(playerctl metadata title)\t$(playerctl metadata artist)"'';
+                    interval = 10;
+                    exec = ''echo -e "$(playerctl metadata title)|$(playerctl metadata artist)"'';
                     on-click = "tidal-hifi --no-sandbox";
                     tooltip = false;
                 };
