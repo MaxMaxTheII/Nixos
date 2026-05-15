@@ -221,9 +221,9 @@
             ];
             monitor = ",preferred,auto,1";
             general = {
-                gaps_in = 5;
-                gaps_out = 10;
-                border_size = 2;
+                gaps_in = 2;
+                gaps_out = 5;
+                border_size = 3;
                 "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
                 "col.inactive_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base01})";
                 layout = "dwindle";
@@ -231,7 +231,7 @@
                 extend_border_grab_area = 20;
             };
             decoration = {
-                rounding = 10;
+                rounding = 5;
                 blur = {
                     enabled = true;
                     size = 3;
