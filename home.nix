@@ -392,7 +392,7 @@
                     on-click = "blueman-manager";
                 };
                 "custom/music" = {
-                    fromat "{}";
+                    fromat = "{}";
                     exec = ''echo -e "$(playerctl metadata title)\t$(playerctl metadata artist)"'';
                     on-click = "tidal-hifi --no-sandbox";
                     tooltip = false;
