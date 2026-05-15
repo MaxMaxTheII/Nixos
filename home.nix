@@ -496,6 +496,7 @@
             }
             #custom-music{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                padding: 0 5px;
                 border-radius: 0 0 10px 10px;
             }
             #custom-weather{
