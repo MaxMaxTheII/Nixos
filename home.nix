@@ -400,7 +400,7 @@
                     format-connected-battery = " {device_alias} {device_battery_percentage}%";
                     on-click = "blueman-manager";
                 };
-               "custom/music" = {
+                "custom/music" = {
                     format = "{}";
                     interval = 1;
                     # max-length = 40;
@@ -419,15 +419,12 @@
                             gsub(/"/, "\\\"", t);
                             gsub(/"/, "\\\"", a);
                             gsub(/"/, "\\\"", txt);
-                            
-                            # Set your desired hex color for the underline here
-                            ul_color = "#a6e3a1";
-                            
-                            # Wrap the clean text field in the underline markup (no percentage appended)
-                            marked_text = "<span underline=\\\"single\\\" underline_color=\\\"" ul_color "\\\">" txt "</span>";
-                            
+                            total_len = length(txt);
+                            split_idx = int((pct / 100) * total_len);
+                            played = substr(txt, 1, split_idx);
+                            remaining = substr(txt, split_idx + 1);
+                            marked_text = "<span underline=\\\"single\\\" underline_color=\\\"" ul_color "\\\">" played "</span>" remaining;
                             tt = t "\\n" a "\\n" pct "%";
-                            
                             print "{\"text\": \"" marked_text "\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
                         }'
                     '';
@@ -500,6 +497,7 @@
             }
             #custom-music{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
+                underline-color: ${config.lib.stylix.colors.withHashtag.base08};
                 padding: 0 5px;
                 border-radius: 0 0 10px 10px;
             }
