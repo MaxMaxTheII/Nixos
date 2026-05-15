@@ -336,7 +336,7 @@
                 layer = "top";
                 position = "top";
                 height = 30;
-                modules-left = [ "hyprland/workspaces" ];
+                modules-left = [ "hyprland/workspaces" "custom/music"];
                 modules-center = ["custom/center-left" "clock" "custom/weather" "custom/center-right"];
                 #modules-center = [ "hyprland/window" "clock"];
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
@@ -391,7 +391,10 @@
                     format-connected-battery = " {device_alias} {device_battery_percentage}%";
                     on-click = "blueman-manager";
                 };
-
+                "custom/music" = {
+                    format = "{echo -e '$(playerctl metadata title)\t$(playerctl metadata artist)'}";
+                    tooltip = "tidal-hifi --no-sandbox"
+                };
                 "custom/power" = {
                     format = "⏻ ";
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
