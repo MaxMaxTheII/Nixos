@@ -423,6 +423,7 @@
                             split_idx = int((pct / 100) * total_len);
                             played = substr(txt, 1, split_idx);
                             remaining = substr(txt, split_idx + 1);
+                            ul_color = "#a6e3a1";
                             marked_text = "<span underline=\\\"single\\\" underline_color=\\\"" ul_color "\\\">" played "</span>" remaining;
                             tt = t "\\n" a "\\n" pct "%";
                             print "{\"text\": \"" marked_text "\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
@@ -497,7 +498,7 @@
             }
             #custom-music{
                 background-color: ${config.lib.stylix.colors.withHashtag.base02};
-                underline-color: ${config.lib.stylix.colors.withHashtag.base08};
+                /*underline-color: ${config.lib.stylix.colors.withHashtag.base08};*/
                 padding: 0 5px;
                 border-radius: 0 0 10px 10px;
             }
