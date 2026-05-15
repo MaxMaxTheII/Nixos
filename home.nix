@@ -400,7 +400,7 @@
                     format-connected-battery = " {device_alias} {device_battery_percentage}%";
                     on-click = "blueman-manager";
                 };
-                "custom/music" = {
+               "custom/music" = {
                     format = "{}";
                     interval = 1;
                     # max-length = 40;
@@ -420,17 +420,21 @@
                             gsub(/"/, "\\\"", a);
                             gsub(/"/, "\\\"", txt);
                             
-                            # Build a clean newline-separated tooltip string inside awk
+                            # Set your desired hex color for the underline here
+                            ul_color = "#a6e3a1";
+                            
+                            # Wrap the clean text field in the underline markup (no percentage appended)
+                            marked_text = "<span underline=\\\"single\\\" underline_color=\\\"" ul_color "\\\">" txt "</span>";
+                            
                             tt = t "\\n" a "\\n" pct "%";
                             
-                            print "{\"text\": \"" txt " | " pct "%\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
+                            print "{\"text\": \"" marked_text "\", \"percentage\": " pct ", \"tooltip\": \"" tt "\"}"
                         }'
                     '';
                     on-click = "playerctl play-pause";
-                    #tooltip-format = "{tooltip}"; 
                     return-type = "json";
                     tooltip = true;
-                };
+                }; 
                 "custom/power" = {
                     format = "⏻ ";
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
