@@ -156,11 +156,11 @@
     };
     programs.cava = {
         enable = true;
-        settings = {
-            color = {
-                foreground = "'${config.lib.stylix.colors.withHashtag.base0E}'";
-            };
-        };
+#        settings = {
+#            color = {
+#                foreground = "'${config.lib.stylix.colors.withHashtag.base0E}'";
+#            };
+#        };
     };
 #    services.walker.enable = true; 
 #    programs.walker = {    
