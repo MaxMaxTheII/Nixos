@@ -76,6 +76,7 @@
         vesktop.enable = true;
         firefox.enable = true;
         hyprland.enable = true;
+        tidal-hifi.enable = true;
 #        walker.enable = true;
         wofi.enable = true;
 #        bitwarden-desktop.enable = true;
