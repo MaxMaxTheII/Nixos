@@ -464,7 +464,9 @@
                 border-radius: 10px;
                 margin: 0 2px;
                 padding: 0 2px;
+                /*
                 font-family: "JetBrainsMono Nerd Font", sans-serif;
+                */
             }
             window#waybar {
                 background: transparent;
