@@ -111,6 +111,10 @@
             genericName = "Music Stream";
             categories = ["AudioVideo" "Audio" "Music" "Network"];
         };
+        htop = {
+            name = "Htop";
+            noDisplay = true;
+        };
         kvantummanager = {
             name = "Kvantum Manager";
             noDisplay = true;
