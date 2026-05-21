@@ -28,7 +28,6 @@ in
     #D 
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
-#        unstable.elephant # backend application for walker application launchere
     #F 
 #       fastfetch
     #G 
@@ -70,7 +69,6 @@ in
     #V  
         vesktop # stylable discord client
     #W
-#        unstable.walker
         wireshark
         wttrbar # weather for waybar
     #X
@@ -84,7 +82,7 @@ in
         firefox.enable = true;
         hyprland.enable = true;
 #        tidal-hifi.enable = true;
-#        walker.enable = true;
+        walker.enable = true;
         wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
