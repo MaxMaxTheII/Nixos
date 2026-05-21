@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-    unstable = import <nixos-unstable> { config = pkgs.config; };
+    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
 in
 {
     imports = [
