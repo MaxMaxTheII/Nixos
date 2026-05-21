@@ -178,6 +178,7 @@ in
     services.walker = {    
         enable = true;
         package = unstable.walker;
+        runAsService = true;
     };
  
   # --- KITTY CONFIGURATION ---
