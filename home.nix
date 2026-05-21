@@ -27,6 +27,7 @@ in
     #D 
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
+        unstable.elephant # backend application for walker application launchere
     #F 
 #       fastfetch
     #G 
