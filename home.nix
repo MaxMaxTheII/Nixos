@@ -27,7 +27,7 @@ in
     #D 
         (discord.override { withOpenASAR = false; }) # only the icon
     #E
-        unstable.elephant # backend application for walker application launchere
+#        unstable.elephant # backend application for walker application launchere
     #F 
 #       fastfetch
     #G 
@@ -69,7 +69,7 @@ in
     #V  
         vesktop # stylable discord client
     #W
-        unstable.walker
+#        unstable.walker
         wireshark
         wttrbar # weather for waybar
     #X
@@ -175,10 +175,10 @@ in
 #        };
     };
 #    services.walker.enable = true; 
-#    programs.walker = {    
-#        enable = true;
-#        package = unstable.walker;
-#    };
+    services.walker = {    
+        enable = true;
+        package = unstable.walker;
+    };
  
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
