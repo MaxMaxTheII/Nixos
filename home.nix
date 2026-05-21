@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }:
+let
+    unstable = import <nixos-unstable> { config = pkgs.config; };
+in
 {
     imports = [
         ./nvim.nix
@@ -672,6 +675,7 @@
     
     programs.fastfetch = {
         enable = true;
+        package = unstable.fastfetch;
         settings = {
             logo = {
                 padding.left = 2;
