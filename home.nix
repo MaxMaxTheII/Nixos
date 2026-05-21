@@ -68,6 +68,7 @@ in
     #V  
         vesktop # stylable discord client
     #W
+        unstable.walker
         wireshark
         wttrbar # weather for waybar
     #X
@@ -173,10 +174,10 @@ in
 #        };
     };
 #    services.walker.enable = true; 
-    programs.walker = {    
-        enable = true;
-        package = unstable.walker;
-    };
+#    programs.walker = {    
+#        enable = true;
+#        package = unstable.walker;
+#    };
  
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
