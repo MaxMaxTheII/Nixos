@@ -115,6 +115,7 @@ in
             icon = "tidal-hifi";
             genericName = "Music Stream";
             categories = ["AudioVideo" "Audio" "Music" "Network"];
+            noDisplay = true;
         };
         htop = {
             name = "Htop";
@@ -156,14 +157,14 @@ in
 
         #};
     };
-    programs.wofi = {
-        enable = true;
+#    programs.wofi = {
+#        enable = true;
 #        style = ''
 #            #img {
 #                -gtk-icon-effect: dim;
 #            }
 #        '';
-    };
+#    };
     programs.cava = {
         enable = true;
 #        settings = {
