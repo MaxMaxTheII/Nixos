@@ -115,7 +115,6 @@ in
             icon = "tidal-hifi";
             genericName = "Music Stream";
             categories = ["AudioVideo" "Audio" "Music" "Network"];
-            noDisplay = true;
         };
         htop = {
             name = "Htop";
