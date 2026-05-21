@@ -6,6 +6,7 @@ in
 {
     imports = [
         ./nvim.nix
+        inputs.walker.homeManagerModules.default
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
@@ -175,7 +176,7 @@ in
 #        };
     };
 #    services.walker.enable = true; 
-    services.walker = {    
+    programs.walker = {    
         enable = true;
         package = unstable.walker;
         runAsService = true;
