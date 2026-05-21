@@ -82,7 +82,7 @@ in
         firefox.enable = true;
         hyprland.enable = true;
 #        tidal-hifi.enable = true;
-        walker.enable = true;
+#        walker.enable = true;
         wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
@@ -266,8 +266,8 @@ in
                 "SUPER, mouse:273, resizewindow"
             ];
             bindr = [
-#                "SUPER, SUPER_L, exec, pkill walker || walker"
-                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
+                "SUPER, SUPER_L, exec, pkill walker || walker"
+#                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
                 #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
                 ", XF86Calculator, exec, gnome-calculator --mode=programming"
 #                ", XKB_KEY_F10, exec, wlogout"
