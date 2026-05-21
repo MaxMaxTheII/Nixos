@@ -5,7 +5,11 @@
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
         stylix.url = "github:nix-community/stylix/release-25.11";
-    
+        elephant.url = "github:abenz1267/elephant";
+        walker = {
+            url = "github:abenz1267/walker";
+            inputs.elephant.follows = "elephant";
+        }; 
     # Add Home Manager input
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
