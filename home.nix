@@ -679,6 +679,7 @@ in
         package = unstable.fastfetch;
         settings = {
             logo = {
+                source = "nixos";
                 padding.left = 2;
             };
             modules = [
