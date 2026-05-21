@@ -173,9 +173,10 @@ in
 #        };
     };
 #    services.walker.enable = true; 
-#    programs.walker = {    
-#        enable = true;
-#    };
+    programs.walker = {    
+        enable = true;
+        package = unstable.walker;
+    };
  
   # --- KITTY CONFIGURATION ---
     programs.kitty = {
