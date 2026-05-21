@@ -680,7 +680,7 @@ in
         settings = {
             logo = {
                 color = {
-                    "1"= "blue";
+                    "1"= "${config.lib.stylix.colors.withHashtag.base0C}";
                     "2"= "cyan";
                     "3"= "green";
                     "4"= "magenta";
@@ -704,12 +704,13 @@ in
                 "terminalfont"
                 "cpu"
                 "gpu"
-                "memory"
-                "swap"
-                "disk"
+          #      "memory"
+          #      "swap"
+          #      "disk"
                 "battery"
                 "poweradapter"
-                "locale"                
+                "locale"
+                "colors"
             ];
         };
     };
