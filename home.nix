@@ -266,7 +266,8 @@ in
                 "SUPER, mouse:273, resizewindow"
             ];
             bindr = [
-                "SUPER, SUPER_L, exec, pkill walker || walker"
+#                "SUPER, SUPER_L, exec, pkill walker || walker"
+                "SUPER, SUPER_L, exec, walker"
 #                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
                 #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
                 ", XF86Calculator, exec, gnome-calculator --mode=programming"
