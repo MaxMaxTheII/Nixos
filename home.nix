@@ -679,6 +679,14 @@ in
         package = unstable.fastfetch;
         settings = {
             logo = {
+                color = {
+                    "1"= "blue";
+                    "2"= "cyan";
+                    "3"= "green";
+                    "4"= "magenta";
+                    "5"= "yellow";
+                    "6"= "red";
+                };
                 source = "nixos";
                 padding.left = 2;
             };
