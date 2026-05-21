@@ -680,12 +680,12 @@ in
         settings = {
             logo = {
                 color = {
-                    "1"= "${config.lib.stylix.colors.withHashtag.base0C}";
-                    "2"= "cyan";
-                    "3"= "green";
-                    "4"= "magenta";
-                    "5"= "yellow";
-                    "6"= "red";
+                    "1"= "${config.lib.stylix.colors.withHashtag.base0A}";
+                    "2"= "${config.lib.stylix.colors.withHashtag.base0B}";
+                    "3"= "${config.lib.stylix.colors.withHashtag.base0C}";
+                    "4"= "${config.lib.stylix.colors.withHashtag.base0D}";
+                    "5"= "${config.lib.stylix.colors.withHashtag.base0E}";
+                    "6"= "${config.lib.stylix.colors.withHashtag.base0F}";
                 };
                 source = "nixos";
                 padding.left = 2;
