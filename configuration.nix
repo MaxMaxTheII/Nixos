@@ -65,9 +65,9 @@
         LC_TELEPHONE = "de_AT.UTF-8";
         LC_TIME = "de_AT.UTF-8";
     };
-    nixpkgs.config.permittedInsecurePackages = [
-        "electron-39.8.10"
-    ];
+    # nixpkgs.config.permittedInsecurePackages = [
+    #     "electron-39.8.10"
+    # ];
   # Enable the X11 windowing system.
     services.xserver.enable = true;
 
@@ -166,7 +166,8 @@
         openconnect
     #P   
         polkit_gnome
-        python3
+        python312
+    #    python3
     #Q
     #R
     #S  
@@ -181,6 +182,7 @@
     #Z
     ];
 
-    system.stateVersion = "26.05"; # Did you read the comment?
+    system.stateVersion = "25.11"; # Did you read the comment?
+    # system.stateVersion = "26.05"; # Did you read the comment?
 
 }
