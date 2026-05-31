@@ -65,11 +65,9 @@
         LC_TELEPHONE = "de_AT.UTF-8";
         LC_TIME = "de_AT.UTF-8";
     };
-    {
-        nixpkgs.config.permittedInsecurePackages = [
-            "electron-39.8.10"
-        ];
-    };
+    nixpkgs.config.permittedInsecurePackages = [
+        "electron-39.8.10"
+    ];
   # Enable the X11 windowing system.
     services.xserver.enable = true;
 
