@@ -365,7 +365,8 @@ in
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
                     format = "{:%H:%M}  ";
-                    format-alt = "{:%A, %B %d, %Y (%R)}  ";
+                    # format-alt = "{:%A, %B %d, %Y (%R)}  ";
+                    format-alt = "{:%A, %B %d, %Y (%R)}";
                     tooltip-format = "<tt><small>{calendar}</small></tt>";
                     calendar = {
                         mode          = "year";
