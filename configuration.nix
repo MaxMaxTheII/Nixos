@@ -166,8 +166,8 @@
         openconnect
     #P   
         polkit_gnome
-    #    python312
-        python3
+        python312
+       #  python3
     #Q
     #R
     #S  
@@ -182,7 +182,7 @@
     #Z
     ];
 
-    # system.stateVersion = "25.11"; # Did you read the comment?
-    system.stateVersion = "26.05"; # Did you read the comment?
+    system.stateVersion = "25.11"; # Did you read the comment?
+    # system.stateVersion = "26.05"; # Did you read the comment?
 
 }

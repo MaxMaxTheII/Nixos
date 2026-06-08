@@ -10,8 +10,8 @@ in
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
-    # home.stateVersion = "25.11";
-    home.stateVersion = "26.05";
+    home.stateVersion = "25.11";
+    # home.stateVersion = "26.05";
     home.sessionVariables = {
         EDITOR = "nvim";
 #        LOCATION = "London";
@@ -234,7 +234,7 @@ in
                 "hyprlock"
                 "swaybg -i ${config.stylix.image} -m fill"
                 "waybar"
-                "nm-applet --indicator"
+                "nm-applet --indicator" 
                 "udiskie &"
                 "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
             ];
