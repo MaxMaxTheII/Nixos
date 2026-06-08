@@ -230,14 +230,14 @@ in
 
                 "opacity 0.95 0.95,class:^(firefox)$"
             ];
-            exec-once = [
-                "hyprlock"
-                "swaybg -i ${config.stylix.image} -m fill"
-                "waybar"
-                "nm-applet --indicator" 
-                "udiskie &"
-                "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
-            ];
+#            exec-once = [
+#                "hyprlock"
+#                "swaybg -i ${config.stylix.image} -m fill"
+#                "waybar"
+#                "nm-applet --indicator" 
+#                "udiskie &"
+#                "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
+#            ];
             env = [
 #                "XCURSOR_SIZE,24"
 #                "HYPRCURSOR_SIZE,24"
