@@ -73,7 +73,7 @@
 
 
     programs.hyprland.enable = true;
-	programs.hyprland.package = pkgs.hyprland.overrideAttrs (old:{version= "0.54.x";});
+		programs.hyprland.package = pkgs.hyprland.overrideAttrs (old:{version= "0.52.1";});
     services.udisks2.enable = true;
     services.gvfs.enable = true;
 
