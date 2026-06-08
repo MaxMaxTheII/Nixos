@@ -10,8 +10,8 @@ in
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
-    home.stateVersion = "25.11";
-    # home.stateVersion = "26.05";
+    # home.stateVersion = "25.11";
+    home.stateVersion = "26.05";
     home.sessionVariables = {
         EDITOR = "nvim";
 #        LOCATION = "London";
@@ -216,9 +216,9 @@ in
                 no_hardware_cursors = true;
             };
             input = {
-            kb_layout = "at";
-            kb_variant = "nodeadkeys";
-            "touchpad:natural_scroll" = true;
+                kb_layout = "at";
+                kb_variant = "nodeadkeys";
+                "touchpad:natural_scroll" = true;
             };
             misc = {
                 force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
