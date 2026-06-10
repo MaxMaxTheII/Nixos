@@ -36,7 +36,7 @@ let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
         hyprlock
         swaybg -i ${config.stylix.image} -m fill
-        waybar
+        waybar &
         nm-applet --indicator 
         udiskie &
         ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
@@ -219,7 +219,7 @@ in
 #    services.walker.enable = true; 
     programs.walker = {    
         enable = true;
-        package = unstable.walker;
+        #package = unstable.walker;
         runAsService = true;
     };
  
