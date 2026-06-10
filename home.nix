@@ -48,7 +48,7 @@ in
 {
     imports = [
         ./nvim.nix
-#        inputs.walker.homeManagerModules.default
+        inputs.walker.homeManagerModules.default
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
