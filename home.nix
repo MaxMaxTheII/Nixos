@@ -267,7 +267,8 @@ in
                     gaps_out = 5;
                     border_size = 3;
                     col = {
-                        active_border = lib.mkForce "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
+                        active_border = lib.mkForce "rgb(${config.lib.stylix.colors.base0D})";
+                        #active_border = lib.mkForce "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
                         inactive_border = lib.mkForce "rgb(${config.lib.stylix.colors.base01})";
 
                     };
