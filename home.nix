@@ -36,12 +36,12 @@ let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
         hyprlock
         swaybg -i ${config.stylix.image} -m fill
-        waybar &
+	${pkgs.waybar}/bin/waybar &
         nm-applet --indicator 
         udiskie &
         ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
     '';
-    #    ${pkgs.waybar}/bin/waybar &
+        #waybar &
     #    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
     #    hyprlock &
 in
