@@ -255,12 +255,12 @@ in
         enable = true;
         configType = "lua";
         settings = {
-#                monitor = [{
-#                    output = "DP-1";
-#                    mode = "3840x2160";
-#                    position = "0x0";
-#                    scale = "1.0";
-#                }];
+                monitor = [{
+                    output = "DP-1";
+                    mode = "1920x1080";
+                    position = "0x0";
+                    scale = "1.0";
+                }];
             config = {
                 general = {
                     gaps_in = 2;
