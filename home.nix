@@ -303,7 +303,7 @@ in
                     kb_variant = "nodeadkeys";
 #                    follow_mouse = 0;
 #                    sensitivity = -0.2;
-                    natural_scroll = true;
+                    natural_scroll = false;
                     touchpad = {
                         natural_scroll = true;
                     };
