@@ -340,6 +340,7 @@ in
                     (lua ''
                         function()
                             hl.exec_cmd("${startupScript}/bin/start")
+			    hl.exec_cmd("waybar")
                         end'')
                 ];
             };
@@ -938,7 +939,7 @@ in
 
                 ];
                 append_rules = [
-	                { name = "*"; use = "open"; }# fallback
+	                { name = "*"; use = "open"; url="*" }# fallback
                 ];
             };
         };
