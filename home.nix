@@ -255,9 +255,6 @@ in
         enable = true;
         configType = "lua";
         settings = {
-#	    cursor = {
-#		no_hardware_cursors = 1;# no blinking cursor  
-#	    };
 #                monitor = [{
 #                    output = "DP-1";
 #                    mode = "3840x2160";
@@ -298,6 +295,9 @@ in
                     force_split = 2;
                     preserve_split = true;
                 };
+		    cursor = {
+			no_hardware_cursors = 1;# no blinking cursor  
+		    };
                 misc = {
                     force_default_wallpaper = -1;
                     disable_hyprland_logo = true;
