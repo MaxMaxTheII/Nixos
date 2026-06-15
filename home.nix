@@ -272,8 +272,8 @@ in
                         inactive_border = lib.mkForce "rgb(${config.lib.stylix.colors.base01})";
 
                     };
-                    # layout = "dwindle";
-                    layout = "master";
+                    layout = "dwindle";
+                    # layout = "master";
                     resize_on_border = true;
                     extend_border_grab_area = 20;
                 };
