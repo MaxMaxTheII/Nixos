@@ -82,6 +82,7 @@ in
         hunspell # libre office- spellchecker
     #    hyprland
         hyprshot
+	hyprshutdown
     #I  
         ipe
     #J
