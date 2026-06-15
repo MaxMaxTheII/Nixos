@@ -939,7 +939,7 @@ in
 
                 ];
                 append_rules = [
-	                { name = "*"; use = "open"; url="*" }# fallback
+	                { name = "*"; use = "open"; url="*"; }# fallback
                 ];
             };
         };
