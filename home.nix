@@ -935,7 +935,7 @@ in
                 rules = [
                     { mime = "application/pdf"; use = "pdf-viewer"; }
                     { mime = "text/*"; use = "text-edit";}
-                    { name = "*.html"; use = ["open" "text-edit"];}
+                    { name = "*.html"; url = "*.html"; use = ["open" "text-edit"];}
 
                 ];
                 append_rules = [
