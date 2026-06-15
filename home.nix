@@ -255,9 +255,9 @@ in
         enable = true;
         configType = "lua";
         settings = {
-	    cursor = {
-		no_hardware_cursors = 1;# no blinking cursor  
-	    };
+#	    cursor = {
+#		no_hardware_cursors = 1;# no blinking cursor  
+#	    };
 #                monitor = [{
 #                    output = "DP-1";
 #                    mode = "3840x2160";
