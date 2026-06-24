@@ -36,14 +36,7 @@ programs.zathura = {
   local t = ls.text_node
   local i = ls.insert_node
 
-
-require('nvim-treesitter.configs').setup({
-  auto_install = false,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = { "latex" }, -- Required for VimTeX to stay happy
-  },
-})
+  vim.g.init_treesitter = true
   require("luasnip.loaders.from_vscode").lazy_load({ 
     paths = { "${pkgs.vimPlugins.friendly-snippets}" } 
   })
@@ -119,3 +112,10 @@ vim.keymap.set({"i", "s"}, "<Tab>", function()
       #inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   };
 }
+#require('nvim-treesitter.configs').setup({
+#  auto_install = false,
+#  highlight = {
+#    enable = true,
+#    additional_vim_regex_highlighting = { "latex" }, -- Required for VimTeX to stay happy
+#  },
+#})
