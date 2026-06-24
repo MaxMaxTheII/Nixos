@@ -22,7 +22,7 @@ programs.zathura = {
       cmp-path
       (nvim-treesitter.withPlugins (p: [ p.latex p.bibtex p.lua p.vim p.bash p.markdown]))
     ];
-    extraLuaConfig = ''
+     initLua = ''
   local ts_path = "${pkgs.vimPlugins.nvim-treesitter.withAllGrammars}"
   vim.opt.runtimepath:append(ts_path)
   vim.opt.runtimepath:append(ts_path .."/queries")
