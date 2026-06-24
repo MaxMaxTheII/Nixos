@@ -346,7 +346,6 @@ in
                     (lua ''
                         function()
 			    hl.exec_cmd("waybar")
-			    hl.exec_cmd("waybar")
                             hl.exec_cmd("${startupScript}/bin/start")
                         end'')
                 ];
