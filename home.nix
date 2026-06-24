@@ -119,6 +119,7 @@ in
     #Y  
     #Z
         zathura
+	zip
     ];
 
     stylix.targets = {
