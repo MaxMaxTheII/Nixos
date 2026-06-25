@@ -340,7 +340,7 @@ in
             window_rule = [
                 { match = { class = "^(vesktop)$"; };  opacity = "0.85 0.85"; }
                 { match = { class = "^(firefox)$"; };  opacity = "0.95 0.95"; }
-                { match = { class = "^(tidal-hifi)$"; };  opacity = "0.85 0.85"; }
+                { match = { class = "^(tidal-hifi)$"; };  opacity = "0.75 0.75"; }
                 { match = { class = "^(bitwarden-desktop)$"; };  opacity = "0.85 0.85"; }
             ];
 
