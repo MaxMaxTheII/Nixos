@@ -101,6 +101,7 @@
         " --- GENERAL SETTINGS ---
         set number
         set relativenumber
+        set termguicolors
           
         " Enable spellcheck for LaTeX
         autocmd FileType tex setlocal spell spelllang=en_us,de_at
