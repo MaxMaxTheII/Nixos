@@ -337,13 +337,12 @@ in
                 { leaf = "fade"; enabled = true; speed = 7; bezier = "default"; }
                 { leaf = "workspaces"; enabled = true; speed = 6; bezier = "default"; }
             ];
-#          window_rule = [{
-#            match = {
-#              class = "^(kitty)$";
-#              title = "^(bw-unlock)$";
-#            };
-#            float = true;
-#          }];
+            window_rule = [
+                { match = { class = "^(vesktop)$"; };  opacity = "0.85 0.85"; }
+                { match = { class = "^(firefox)$"; };  opacity = "0.95 0.95"; }
+                { match = { class = "^(tidal-hifi)$"; };  opacity = "0.85 0.85"; }
+                { match = { class = "^(bitwarden-desktop)$"; };  opacity = "0.85 0.85"; }
+            ];
 
             on = {
                 _args = [
