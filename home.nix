@@ -256,12 +256,12 @@ in
         enable = true;
         configType = "lua";
         settings = {
-                monitor = [{
-                    output = "eDP-1";
-                    mode = "1920x1080";
-                    position = "0x0";
-                    scale = "1.25";
-                }];
+            monitor = [{
+                output = "eDP-1";
+                mode = "1920x1080";
+                position = "0x0";
+                scale = "1.25";
+            }];
             config = {
                 general = {
                     gaps_in = 2;
@@ -296,9 +296,9 @@ in
                     force_split = 2;
                     preserve_split = true;
                 };
-		    cursor = {
-			no_hardware_cursors = 1;# no blinking cursor  
-		    };
+                cursor = {
+                    no_hardware_cursors = 1;# no blinking cursor  
+                };
                 misc = {
                     force_default_wallpaper = -1;
                     disable_hyprland_logo = true;
@@ -314,6 +314,12 @@ in
                     };
                 };
             };
+            windowrulev2 = [
+                "opacity 0.85 0.85,class:^(vesktop)$"
+                "opacity 0.85 0.85,class:^(bitwarden-desktop)$"
+
+                "opacity 0.95 0.95,class:^(firefox)$"
+            ];
             curve = [{
                 _args = [
                     "myBezier"
