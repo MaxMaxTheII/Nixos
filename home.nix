@@ -52,7 +52,6 @@ in
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
-    # home.stateVersion = "25.11";
     home.stateVersion = "26.05";
     home.sessionVariables = {
         EDITOR = "nvim";
@@ -119,7 +118,7 @@ in
     #Y  
     #Z
         zathura
-	zip
+        zip
     ];
 
     stylix.targets = {
@@ -345,7 +344,7 @@ in
                     "hyprland.start"
                     (lua ''
                         function()
-			    hl.exec_cmd("waybar")
+                            hl.exec_cmd("waybar")
                             hl.exec_cmd("${startupScript}/bin/start")
                         end'')
                 ];
@@ -389,6 +388,10 @@ in
                 (bind "SUPER + SHIFT + up" (dsp.swap "up"))
                 (bind "SUPER + SHIFT + down" (dsp.swap "down"))
 
+#                "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
+#                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
+#                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
+
                     # Special workspace
              #   (bind "SUPER + S" (dsp.toggleSpecial "magic"))
              #   (bind "SUPER + SHIFT + S" (dsp.moveToSpecial "magic"))
@@ -409,141 +412,6 @@ in
             ] ++ workspaceBinds;
         };
     };
-
-#    wayland.windowManager.hyprland = {
-#        enable = true;
-#        settings = {
-#            cursor = {
-#                no_hardware_cursors = true;
-#            };
-#            input = {
-#                kb_layout = "at";
-#                kb_variant = "nodeadkeys";
-#                "touchpad:natural_scroll" = true;
-#            };
-#            misc = {
-#                force_default_wallpaper = 0; # Set to 0 to disable the anime girl/logo
-#                disable_hyprland_logo = true;
-#            };
-#            windowrulev2 = [
-#                "opacity 0.85 0.85,class:^(vesktop)$"
-#                "opacity 0.85 0.85,class:^(bitwarden-desktop)$"
-
- #               "opacity 0.95 0.95,class:^(firefox)$"
- #           ];
- #           exec-once = [
- #               "hyprlock"
- #               "swaybg -i ${config.stylix.image} -m fill"
-#                "waybar"
-#                "nm-applet --indicator" 
-#                "udiskie &"
-#                "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
-#            ];
-#            env = [
-#                "XCURSOR_SIZE,24"
-#                "HYPRCURSOR_SIZE,24"
-#                "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-#            ];
-#            monitor = ",preferred,auto,1";
-#            general = {
-#                gaps_in = 2;
-#                gaps_out = 5;
-#                border_size = 3;
-#                "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
-#                "col.inactive_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base01})";
-#                layout = "dwindle";
-#                resize_on_border = true;
-#                extend_border_grab_area = 20;
-#            };
-#            decoration = {
-#                rounding = 5;
-#                blur = {
-#                    enabled = true;
-#                    size = 3;
-#                };
-#            };
-#            bindm = [
-#                # Mouse movements: SUPER + Left Click to move, SUPER + Right Click to resize
-#                "SUPER, mouse:272, movewindow"
-#                "SUPER, mouse:273, resizewindow"
-#            ];
-#            bindr = [
-#                "SUPER, SUPER_L, exec, pkill walker || walker"
-#                "SUPER, SUPER_L, exec, walker"
-#                "SUPER, SUPER_L, exec, pkill wofi || wofi --show drun --allow-images --prompt 'Search...'"
-#                #", XF86Calculator, exec, pkill -f gnome-calculator || gnome-calculator -m programming &"
- #               ", XF86Calculator, exec, gnome-calculator --mode=programming"
-#                ", XKB_KEY_F10, exec, wlogout"
-  #          ];
-            # Keybindings (Super/Windows key is 'Mod4')
-  #          binde = [
-                # Volume with OSD
- #               ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
- #               ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-                  
-                # Brightness with OSD
- #               ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
-  #              ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
- #           ];
-  #          bind = [
-  #              "SUPER, Q, exec, kitty"
-  #              "SUPER, C, killactive,"
-  #              "SUPER, M, exit,"
-  #              "SUPER, E, exec, kitty yazi"
-  #              "SUPER, V, togglefloating,"
-  #              "SUPER, L, exec, hyprlock"
-#
-#                "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
-#                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
-#                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
-#                  
-#                "SUPER, left, movefocus, l"
-#                "SUPER, right, movefocus, r"
-#                "SUPER, up, movefocus, u"
-#                "SUPER, down, movefocus, d"
-#
-#                "SUPER, Tab, workspace, e+1"
-#                "SUPER SHIFT, Tab, workspace, e-1"
-#
-#                "SUPER SHIFT, 1, movetoworkspace, 1"
-#                "SUPER SHIFT, 2, movetoworkspace, 2"
-#                "SUPER SHIFT, 3, movetoworkspace, 3"
-#                "SUPER SHIFT, 4, movetoworkspace, 4"
-#                "SUPER SHIFT, 5, movetoworkspace, 5"
-#                "SUPER SHIFT, 6, movetoworkspace, 6"
-#                "SUPER SHIFT, 7, movetoworkspace, 7"
-#                "SUPER SHIFT, 8, movetoworkspace, 8"
-#                "SUPER SHIFT, 9, movetoworkspace, 9"
-#                "SUPER SHIFT, 0, movetoworkspace, 10"
-#
-#                "SUPER, 1, workspace, 1"
-#                "SUPER, 2, workspace, 2"
-#                "SUPER, 3, workspace, 3"
-#                "SUPER, 4, workspace, 4"
-#                "SUPER, 5, workspace, 5"
-#                "SUPER, 6, workspace, 6"
-#                "SUPER, 7, workspace, 7"
-#                "SUPER, 8, workspace, 8"
-#                "SUPER, 9, workspace, 9"
-#                "SUPER, 0, workspace, 10"
-#
-#                # Mute with OSD
-#                ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-#                # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-#            ];
-#            animations = {
-#                enabled = true;
-#                bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-#                animation = [
-#                     "windows, 1, 10, myBezier"
-#                    "windowsOut, 1, 10, default, popin 80%"
-#                    "border, 1, 10, default"
-#                    "fade, 1, 10, default"
-#                    "workspaces, 1, 10, default" # This controls the "Tab" speed between workspaces
-#                ];
-#            };
-#    	};
-#    };
 
 
     services.udiskie = {
