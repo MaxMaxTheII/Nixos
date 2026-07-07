@@ -34,9 +34,9 @@ let
     ) (lib.range 1 10);
 
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-        hyprlock
-        swaybg -i ${config.stylix.image} -m fill
-        nm-applet --indicator 
+        hyprlock &
+        swaybg -i ${config.stylix.image} -m fill &
+        nm-applet --indicator &
         udiskie &
         ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
     '';
