@@ -487,7 +487,7 @@ in
                     format =  " {status}";
                     format-connected = " {device_alias}";
                     format-connected-battery = " {device_alias} {device_battery_percentage}%";
-                    on-click = "blueman-manager";
+                    on-click = "walker -m bluetooth";
                 };
                 "custom/music" = {
                     format = "{}";
