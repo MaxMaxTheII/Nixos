@@ -489,6 +489,12 @@ in
                     format-connected-battery = " {device_alias} {device_battery_percentage}%";
                     on-click = "walker -m bluetooth";
                 };
+                "hyprland/workspaces" = {
+                    format = "{icon}";
+                    format-icons = ["I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X"];
+
+
+                };
                 "custom/music" = {
                     format = "{}";
                     interval = 1;
