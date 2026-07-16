@@ -434,8 +434,8 @@ in
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" "custom/music"];
-                modules-center = ["custom/center-left" "clock" "custom/weather" "custom/center-right"];
-                #modules-center = [ "hyprland/window" "clock"];
+                # modules-center = ["custom/center-left" "clock" "custom/weather" "custom/center-right"];
+                modules-center = ["clock" "custom/weather"];
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
                     format = "{:%H:%M}  ";
@@ -584,6 +584,9 @@ in
             #workspaces button.urgent{
                 background-color: ${config.lib.stylix.colors.withHashtag.base0A};
                 color:#000;
+            }
+            #workspaces{
+                margin: 0 2px 0 0;
             }
             .modules-center *{
                 margin: 0;
