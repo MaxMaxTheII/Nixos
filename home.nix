@@ -406,10 +406,14 @@ in
                 (bind "SUPER + mouse_up" (dsp.focusWorkspace "e-1"))
 
                     # Volume keys
-                (bindOpts "XF86AudioRaiseVolume" (dsp.exec "wpctl set-volume @ 5%+") { locked = true; repeating = true; })
-                (bindOpts "XF86AudioLowerVolume" (dsp.exec "wpctl set-volume @ 5%-") { locked = true; repeating = true; })
-                (bindOpts "XF86AudioMute" (dsp.exec "wpctl set-mute @ toggle") { locked = true; })
-                (bindOpts "XF86AudioMicMute" (dsp.exec "wpctl set-mute u/DEFAULT_AUDIO_SOURCE@ toggle") { locked = true; })
+                (bindOpts "XF86AudioRaiseVolume" (dsp.exec "swayosd-client --output-volume raise") { locked = true; repeating = true; })
+                (bindOpts "XF86AudioLowerVolume" (dsp.exec "swayosd-client --output-volume lower") { locked = true; repeating = true; })
+                (bindOpts "XF86AudioMute" (dsp.exec "swayosd-client --output-volume mute-toggle") { locked = true; })
+                (bindOpts "XF86AudioMicMute" (dsp.exec "swayosd-client --input-volume mute-toggle") { locked = true; })
+
+                    # Brightness keys
+                (bindOpts "XF86MonBrightnessUp" (dsp.exec "swayosd-client --brightness raise") { locked = true; repeating = true; })
+                (bindOpts "XF86MonBrightnessDown" (dsp.exec "swayosd-client --brightness lower") { locked = true; repeating = true; })
 
                     # Mouse move/resize
                 (bindOpts "SUPER + mouse:272" dsp.drag { mouse = true; })
