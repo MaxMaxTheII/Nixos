@@ -396,9 +396,9 @@ in
 #                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
 #                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
                     # Screenshots
-                (bind "SUPER + P" dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/")
-                (bind "SUPER + SHIFT + P" dsp.exec "hyprshot hyprshot --clipboard-only -z -m region")
-                (bind "Print" dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/")
+                (bind "SUPER + P" (dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/"))
+                (bind "SUPER + SHIFT + P" (dsp.exec "hyprshot hyprshot --clipboard-only -z -m region"))
+                (bind "Print" (dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/"))
                     # Special workspace
              #   (bind "SUPER + S" (dsp.toggleSpecial "magic"))
              #   (bind "SUPER + SHIFT + S" (dsp.moveToSpecial "magic"))
