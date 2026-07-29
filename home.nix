@@ -102,7 +102,7 @@ in
     #R
     #S  
         sl
-        swayosd # on screen display for sound and light change
+        swayosd # on screen display for sound and light change and client for the change itself
     #T 
         texlab
         texliveFull
@@ -378,7 +378,6 @@ in
                 (bind "SUPER + L" (dsp.exec "hyprlock"))
                 (bind "SUPER + V" dsp.float)
                 (bind "SUPER + F" dsp.fullscreen)
-                (bind "SUPER + P" dsp.pseudo)
                 (bind "SUPER + J" (dsp.layout "togglesplit"))
 
                     # Focus
@@ -396,7 +395,10 @@ in
 #                "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
 #                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
 #                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
-
+                    # Screenshots
+                (bind "SUPER + P" dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/")
+                (bind "SUPER + SHIFT + P" dsp.exec "hyprshot hyprshot --clipboard-only -z -m region")
+                (bind "Print" dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/")
                     # Special workspace
              #   (bind "SUPER + S" (dsp.toggleSpecial "magic"))
              #   (bind "SUPER + SHIFT + S" (dsp.moveToSpecial "magic"))
