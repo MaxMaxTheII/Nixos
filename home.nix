@@ -801,7 +801,7 @@ in
                 "host"
                 "kernel"
                 "uptime"
-                "packages"
+#                "packages"
                 "shell"
                 "display"
                 "terminal"
