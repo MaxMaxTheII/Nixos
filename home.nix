@@ -775,7 +775,11 @@ in
 
         # Fastfetch on startup
         initExtra = ''
-          fastfetch
+            if (( $(tput cols) >= 110 )); then
+                fastfetch
+            else
+                fastfetch --logo nixos_small
+            fi
         '';
     };
     
