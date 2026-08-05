@@ -72,6 +72,7 @@ in
     #E
     #F 
 #       fastfetch
+        file
     #G 
         gdb
         ghidra
