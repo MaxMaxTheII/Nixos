@@ -375,7 +375,7 @@ in
 
                     # Window management
                 (bind "SUPER + C" dsp.close)
-                (bind "SUPER + SHIFT + Q" dsp.exit)
+                # (bind "SUPER + SHIFT + Q" dsp.exit)
                 (bind "SUPER + L" (dsp.exec "hyprlock"))
                 (bind "SUPER + V" dsp.float)
                 (bind "SUPER + F" dsp.fullscreen)
