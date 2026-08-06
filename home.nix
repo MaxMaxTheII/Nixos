@@ -579,7 +579,8 @@ in
                 */
             }
             window#waybar {
-                background: rgba(0,0,0,0.6);
+                border-raduis: 0;
+                background: rgba(0,0,0,0.4);
             }
             .modules-right :nth-child(odd) .module{
                  background-image: linear-gradient(to left, ${config.lib.stylix.colors.withHashtag.base01},${config.lib.stylix.colors.withHashtag.base03});
