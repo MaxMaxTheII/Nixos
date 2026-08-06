@@ -579,7 +579,7 @@ in
                 */
             }
             window#waybar {
-                border-raduis: 0;
+                border-radius: 0;
                 background: rgba(0,0,0,0.4);
             }
             .modules-right :nth-child(odd) .module{
