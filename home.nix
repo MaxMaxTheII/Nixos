@@ -265,8 +265,8 @@ in
             }];
             config = {
                 general = {
-                    gaps_in = 2;
-                    gaps_out = 0;
+                    gaps_in = 0;
+                    gaps_out = 2;
                     border_size = 3;
                     col = {
                         active_border = lib.mkForce "rgb(${config.lib.stylix.colors.base0D})";
