@@ -33,7 +33,7 @@
  	       	name = "Bibata-Modern-Classic";
  	       	size = 24;
  	    };
-        iconTheme = {
+        icons = {
             enable = true;
             package = pkgs.papirus-icon-theme.override { color = "indigo"; };
             dark = "Papirus-Dark"; # used
