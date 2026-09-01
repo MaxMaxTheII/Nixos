@@ -114,6 +114,7 @@ in
         vesktop # stylable discord client
     #W
         wireshark
+        wl-clipboard
         wttrbar # weather for waybar
     #X
     #Y  
