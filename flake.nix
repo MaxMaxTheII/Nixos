@@ -13,7 +13,6 @@
             url = "github:abenz1267/walker";
             inputs.elephant.follows = "elephant";
         }; 
-    # Add Home Manager input
         home-manager = {
             url = "github:nix-community/home-manager/release-26.05";
             inputs.nixpkgs.follows = "nixpkgs";
