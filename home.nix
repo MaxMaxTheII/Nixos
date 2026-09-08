@@ -197,7 +197,8 @@ in
     };
     programs.vesktop = {
         enable = true;
-    }
+    };
+
 
     wayland.windowManager.hyprland = {
         enable = true;
