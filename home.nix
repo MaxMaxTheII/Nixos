@@ -29,6 +29,7 @@ in
     home.stateVersion = "26.05";
     home.sessionVariables = {
         EDITOR = "nvim";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     };
 
   # This allows Home Manager to manage itself
@@ -55,7 +56,7 @@ in
         hunspell # libre office- spellchecker
     #    hyprland
         hyprshot
-	hyprshutdown
+	    hyprshutdown
     #I  
         ipe
     #J
@@ -97,7 +98,6 @@ in
 
     stylix.targets = {
         firefox.enable = true;
-        hyprland.enable = true;
     };
 
     xdg.desktopEntries = {

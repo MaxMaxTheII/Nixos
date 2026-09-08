@@ -41,6 +41,8 @@ let
 
 in 
 {
+    stylix.targest.enable = true;
+
     wayland.windowManager.hyprland = {
         enable = true;
         configType = "lua";
