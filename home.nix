@@ -53,6 +53,7 @@
 	    hyprshutdown
     #I  
         ipe
+        inputs.elephant.packages.${pkgs.system}.elephant-with-providers
     #J
     #K 
     #    kitty
