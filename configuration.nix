@@ -165,7 +165,8 @@
     #O
         openconnect
     #P   
-        pinentry-qt
+        # pinentry-qt
+        pinentry-curses
         polkit_gnome
 #        python312
         python3
