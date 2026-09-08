@@ -31,7 +31,8 @@
     home.packages = with pkgs; [
     #A
     #B
-        bitwarden-desktop
+#        bitwarden-desktop
+        bitwarden-cli
     #C 
     #     cava
     #D 
