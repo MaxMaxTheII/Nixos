@@ -2,6 +2,7 @@
 {
     imports = [
         ./modules/programs/kitty.nix
+        ./modules/programs/bitwarden-cli.nix
         ./modules/programs/nvim.nix
         ./modules/programs/zathura.nix
         ./modules/programs/bash.nix
@@ -32,7 +33,6 @@
     #A
     #B
 #        bitwarden-desktop
-        bitwarden-cli
     #C 
     #     cava
     #D 
