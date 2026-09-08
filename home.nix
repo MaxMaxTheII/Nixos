@@ -53,6 +53,7 @@ in
         ./modules/programs/cava.nix
         ./modules/programs/walker.nix
         ./modules/programs/librewolf.nix
+        ./modules/programs/vesktop.nix
         inputs.walker.homeManagerModules.default
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/waybar.nix
@@ -117,7 +118,6 @@ in
     #U
         unzip
     #V  
-        vesktop # stylable discord client
     #W
         wireshark
         wl-clipboard
@@ -130,16 +130,13 @@ in
     ];
 
     stylix.targets = {
-        vesktop.enable = true;
         firefox.enable = true;
         hyprland.enable = true;
 #        tidal-hifi.enable = true;
 #        walker.enable = true;
-        wofi.enable = true;
 #        bitwarden-desktop.enable = true;
         
         waybar.enable = true;
-        librewolf.enable = false;
         hyprlock.enable = false;
     };
 
