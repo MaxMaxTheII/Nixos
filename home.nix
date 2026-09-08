@@ -1,12 +1,4 @@
 { config, lib, pkgs, inputs, ... }:
-
-let
-    unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-   	# ${pkgs.waybar}/bin/waybar &
-        #waybar &
-    #    gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-    #    hyprlock &
-in
 {
     imports = [
         ./nvim.nix
