@@ -1,15 +1,7 @@
 { config, pkgs, ... }:
 
 {
-    programs.zathura = {
-        enable = true;
-        options = {
-            synctex = true;
-            synctex-editor-command = "nvim --remote-silent +%{line} %{input}";
-            selection-clipboard = "clipboard";
-        };
-    };
-    programs.neovim = {
+   programs.neovim = {
         enable = true;
         plugins = with pkgs.vimPlugins; [
             vimtex

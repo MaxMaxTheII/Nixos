@@ -1,8 +1,9 @@
 { config, lib, pkgs, inputs, ... }:
 {
     imports = [
-        ./nvim.nix
         ./modules/programs/kitty.nix
+        ./modules/programs/nvim.nix
+        ./modules/programs/zathura.nix
         ./modules/programs/bash.nix
         ./modules/programs/cava.nix
         ./modules/programs/walker.nix
