@@ -50,6 +50,9 @@ in
         ./nvim.nix
         ./modules/programs/kitty.nix
         ./modules/programs/wlogout.nix
+        ./modules/programs/cava.nix
+        ./modules/programs/walker.nix
+        ./modules/programs/librewolf.nix
         inputs.walker.homeManagerModules.default
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/waybar.nix
@@ -197,19 +200,6 @@ in
   #      };
     };
 
-    programs.librewolf = {
-        enable = true;
-    };
-
-    programs.cava = {
-        enable = true;
-    };
-
-    programs.walker = {    
-        enable = true;
-        runAsService = true;
-    };
- 
     wayland.windowManager.hyprland = {
         enable = true;
         configType = "lua";
