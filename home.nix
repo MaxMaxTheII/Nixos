@@ -49,7 +49,9 @@ in
     imports = [
         ./nvim.nix
         ./modules/programs/kitty.nix
+        ./modules/programs/wlogout.nix
         inputs.walker.homeManagerModules.default
+        ./modules/desktop/hyprlock.nix
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
@@ -197,64 +199,17 @@ in
 
     programs.librewolf = {
         enable = true;
-        #settings = {
-            
-        
-
-        #};
     };
-#    programs.wofi = {
-#        enable = true;
-#        style = ''
-#            #img {
-#                -gtk-icon-effect: dim;
-#            }
-#        '';
-#    };
+
     programs.cava = {
         enable = true;
-#        settings = {
-#            color = {
-#                background = "'#000000'";
-#                foreground = "'#00FFFF'";
-#            };
-#        };
     };
-#    services.walker.enable = true; 
+
     programs.walker = {    
         enable = true;
-        #package = unstable.walker;
         runAsService = true;
     };
  
-  # --- KITTY CONFIGURATION ---
-    #programs.kitty = {
-    #    enable = true;
-    #    settings = {
-    #        background_blur = 20;
-    #        remember_window_size = "no";
-    #        initial_window_width = "128c";
-    #        initial_window_height = "40c";
-    #        confirm_os_window_close = -1;
-    #        tab_bar_style = "powerline";
-    #        tab_powerline_style = "round";
-    #    };
-    #    shellIntegration.enableBashIntegration = true;
-    #    
-    #    keybindings = {
-    #        "alt+shift+1" = "goto_tab 1";
-    #        "alt+shift+2" = "goto_tab 2";
-    #        "alt+shift+3" = "goto_tab 3";
-    #        "alt+shift+4" = "goto_tab 4";
-    #        "alt+shift+5" = "goto_tab 5";
-    #        "alt+shift+6" = "goto_tab 6";
-    #        "alt+shift+7" = "goto_tab 7";
-    #        "alt+shift+8" = "goto_tab 8";
-    #        "alt+shift+9" = "goto_tab 9";
-    #        "alt+shift+0" = "goto_tab 10";
-    #    };
-    #};
-   
     wayland.windowManager.hyprland = {
         enable = true;
         configType = "lua";
@@ -309,20 +264,12 @@ in
                 input = {
                     kb_layout = "at";
                     kb_variant = "nodeadkeys";
-#                    follow_mouse = 0;
-#                    sensitivity = -0.2;
                     natural_scroll = false;
                     touchpad = {
                         natural_scroll = true;
                     };
                 };
             };
-#            windowrulev2 = [
-#                "opacity 0.85 0.85,class:^(vesktop)$"
-#                "opacity 0.85 0.85,class:^(bitwarden-desktop)$"
-#
-#                "opacity 0.95 0.95,class:^(firefox)$"
-#               ];
             curve = [{
                 _args = [
                     "myBezier"
@@ -359,46 +306,27 @@ in
             };
 
             bind = [
-                # App launchers
                 (bind "SUPER + Q" (dsp.exec "kitty"))
                 (bind "SUPER + E" (dsp.exec "kitty yazi"))
                 (bind "SUPER + SPACE" (dsp.exec "walker"))
-               # (bind "SUPER + CTRL + V" (dsp.exec "walker -m clipboard"))
                 (bind "SUPER + M" (dsp.exec "kitty nvim ~/Cortex/00_NOTES/temp.md"))
 
-                    # Screenshots
-              #  (bind "SUPER + CTRL + 4" (dsp.exec "grimblast copysave area"))
-              #  (bind "SUPER + CTRL + 5" (dsp.exec "grimblast copysave screen"))
-
-                    # Universal copy/paste
-                #(bind "SUPER + C" (dsp.sendshortcut "CTRL" "Insert"))
-                #(bind "SUPER + V" (dsp.sendshortcut "SHIFT" "Insert"))
-                #(bind "SUPER + X" (dsp.sendshortcut "CTRL" "X"))
-
-                    # Window management
                 (bind "SUPER + C" dsp.close)
-                # (bind "SUPER + SHIFT + Q" dsp.exit)
                 (bind "SUPER + L" (dsp.exec "hyprlock"))
                 (bind "SUPER + V" dsp.float)
                 (bind "SUPER + F" dsp.fullscreen)
                 (bind "SUPER + J" (dsp.layout "togglesplit"))
 
-                    # Focus
                 (bind "SUPER + left" (dsp.focus "left"))
                 (bind "SUPER + right" (dsp.focus "right"))
                 (bind "SUPER + up" (dsp.focus "up"))
                 (bind "SUPER + down" (dsp.focus "down"))
 
-                    # Swap windows
                 (bind "SUPER + SHIFT + left" (dsp.swap "left"))
                 (bind "SUPER + SHIFT + right" (dsp.swap "right"))
                 (bind "SUPER + SHIFT + up" (dsp.swap "up"))
                 (bind "SUPER + SHIFT + down" (dsp.swap "down"))
 
-#                "SUPER, P, exec, hyprshot -z -m region -o ~/Pictures/screenshots/"
-#                "SUPER SHIFT, P, exec, hyprshot --clipboard-only -z -m region"
-#                ", Print, exec, hyprshot -m window -m active -o ~/Pictures/screenshots"
-                    # Screenshots
                 (bind "SUPER + P" (dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/"))
                 (bind "SUPER + SHIFT + P" (dsp.exec "hyprshot hyprshot --clipboard-only -z -m region"))
                 (bind "Print" (dsp.exec "hyprshot -z -m region -o ~/Pictures/screenshots/"))
@@ -406,21 +334,17 @@ in
              #   (bind "SUPER + S" (dsp.toggleSpecial "magic"))
              #   (bind "SUPER + SHIFT + S" (dsp.moveToSpecial "magic"))
 
-                    # Scroll through workspaces
                 (bind "SUPER + mouse_down" (dsp.focusWorkspace "e+1"))
                 (bind "SUPER + mouse_up" (dsp.focusWorkspace "e-1"))
 
-                    # Volume keys
                 (bindOpts "XF86AudioRaiseVolume" (dsp.exec "swayosd-client --output-volume raise") { locked = true; repeating = true; })
                 (bindOpts "XF86AudioLowerVolume" (dsp.exec "swayosd-client --output-volume lower") { locked = true; repeating = true; })
                 (bindOpts "XF86AudioMute" (dsp.exec "swayosd-client --output-volume mute-toggle") { locked = true; })
                 (bindOpts "XF86AudioMicMute" (dsp.exec "swayosd-client --input-volume mute-toggle") { locked = true; })
 
-                    # Brightness keys
                 (bindOpts "XF86MonBrightnessUp" (dsp.exec "swayosd-client --brightness raise") { locked = true; repeating = true; })
                 (bindOpts "XF86MonBrightnessDown" (dsp.exec "swayosd-client --brightness lower") { locked = true; repeating = true; })
 
-                    # Mouse move/resize
                 (bindOpts "SUPER + mouse:272" dsp.drag { mouse = true; })
                 (bindOpts "SUPER + mouse:273" dsp.resize { mouse = true; })
             ] ++ workspaceBinds;
@@ -443,12 +367,10 @@ in
                 position = "top";
                 height = 30;
                 modules-left = [ "hyprland/workspaces" "custom/music"];
-                # modules-center = ["custom/center-left" "clock" "custom/weather" "custom/center-right"];
                 modules-center = ["clock" "custom/weather"];
                 modules-right = [ "cpu" "memory" "network" "battery" "bluetooth" "tray" "custom/power"];
                 clock = {
                     format = "{:%H:%M}  ";
-                    # format-alt = "{:%A, %B %d, %Y (%R)}  ";
                     format-alt = "{:%A, %B %d, %Y (%R)}";
                     tooltip-format = "<tt><small>{calendar}</small></tt>";
                     calendar = {
@@ -555,9 +477,7 @@ in
                     format= "{}°";
                     tooltip= true;
                     interval= 3600;
-                    #exec= ''wttrbar --location $LOCATION --custom-indicator "{ICON} {FeelsLikeC}"'';
                     exec= ''wttrbar --location Graz --custom-indicator "{ICON} {FeelsLikeC}"'';
-#                    on-click = ''export LOCATION="$(./city.sh)"'';
                     return-type= "json";
                 };
                 "custom/center-left" = {
@@ -637,123 +557,9 @@ in
             }
         ''; 
     };
-    programs.wlogout = {
-        enable = true;
-        layout = [
-            {
-                label = "lock";
-                action = "hyprlock";
-                text = "(L)ock";
-                keybind = "l";
-            #    height = 1;
-            #    width = 1;
-            #    circular = true;
-            }
-            {
-                label = "shutdown";
-                action = "systemctl poweroff";
-                text = "Shutdow(n)";
-                keybind = "n";
-            #    height = 1;
-            #    width = 1;
-            #    circular = true;
-            }
-            {
-                label = "reboot";
-                action = "systemctl reboot";
-                text = "(R)eboot";
-                keybind = "r";
-            }
-        ];
-        style = ''
-            window {
-            /*
-                background-color: ${config.lib.stylix.colors.withHashtag.base00};
-                opacity: 10%;
-            */ 
-                background-color: rgba(0,0,0,0.5);
-            }
-            button {
-                background-color: ${config.lib.stylix.colors.withHashtag.base02};
-                color: ${config.lib.stylix.colors.withHashtag.base09};
-                transition: box-shadow 0.7s ease-in-out, background-color 0.7s ease-in-out;
-            /*
-                margin: 0, 10%;
-            */
-            }
-            button:hover{
-                background-color: ${config.lib.stylix.colors.withHashtag.base03};
-            }
-/*          
-            button label::first-letter{
-                color: ${config.lib.stylix.colors.withHashtag.base0C};
-            }
-*/
-        '';
-    };
 
 
-
-    programs.hyprlock = {
-        enable = true;
-        settings = {
-            general = {
-                disable_loading = true;
-                grace = 0;
-                hide_cursor = true;
-            };
-
-            background = [
-                {
-                    path = "screenshot"; # This takes a blurred screenshot of your current screen
-                    blur_passes = 3;
-                    blur_size = 8;
-                }
-            ];
-
-            input-field = [
-                {
-                    size = "200, 50";
-                    position = "0, -20";
-                    monitor = "";
-                    dots_center = true;
-                    fade_on_empty = false;
-                    font_color = "rgb(202, 211, 245)";
-                    inner_color = "rgb(91, 96, 120)";
-                    outer_color = "rgb(24, 25, 38)";
-                    outline_thickness = 5;
-                    placeholder_text = "Password...";
-                    shadow_passes = 2;
-                }
-            ];
-            label = [
-                {
-                    monitor = "";
-                    # This command tells hyprlock to display the time in 24h format
-                    text = "$TIME"; 
-                    color = "rgba(242, 243, 244, 0.75)";
-                    font_size = 95;
-                    font_family = "JetBrains Mono Nerd Font Bold"; # Or your favorite font
-                    position = "0, 300";
-                    halign = "center";
-                    valign = "center";
-                }
-                {
-                    monitor = "";
-                    # This displays the date below the time
-                    text = "cmd[update:1000] echo \"$(date +'%A, %d %B')\"";
-                    color = "rgba(242, 243, 244, 0.75)";
-                    font_size = 22;
-                    font_family = "JetBrains Mono Nerd Font";
-                    position = "0, 200";
-                    halign = "center";
-                    valign = "center";
-                }
-            ];
-        };
-    };
-
-
+    
     # --- BASH CONFIGURATION ---
     programs.bash = {
         enable = true;
