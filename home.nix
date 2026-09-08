@@ -84,6 +84,7 @@
     #W
         wireshark
         wl-clipboard
+        wtype
         wttrbar # weather for waybar
     #X
     #Y  
