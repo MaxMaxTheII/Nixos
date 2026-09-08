@@ -1,5 +1,6 @@
+{pkgs, ...}:
 {
-    programs.rbw = {
-        enable = true;
-    };
+    home.pkgs = [
+        pkgs.rbw
+    ];
 }
