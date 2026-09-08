@@ -49,11 +49,14 @@ in
     imports = [
         ./nvim.nix
         ./modules/programs/kitty.nix
+        ./modules/programs/bash.nix
         ./modules/programs/wlogout.nix
         ./modules/programs/cava.nix
         ./modules/programs/walker.nix
         ./modules/programs/librewolf.nix
+        ./modules/programs/fastfetch.nix
         ./modules/programs/vesktop.nix
+        ./modules/programs/yazi.nix
         inputs.walker.homeManagerModules.default
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/waybar.nix
@@ -132,12 +135,6 @@ in
     stylix.targets = {
         firefox.enable = true;
         hyprland.enable = true;
-#        tidal-hifi.enable = true;
-#        walker.enable = true;
-#        bitwarden-desktop.enable = true;
-        
-        waybar.enable = true;
-        hyprlock.enable = false;
     };
 
     xdg.desktopEntries = {
@@ -349,37 +346,6 @@ in
     
     
     # --- BASH CONFIGURATION ---
-    programs.bash = {
-        enable = true;
-        shellAliases = {
-            ll = "ls -la";
-            nv = "nvim";
-            sudo = "sudo ";
-             # nos = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos -L";
-            nos = ''git -C ~/dotfiles add . && git -C ~/dotfiles commit -m "update: $(date)" || true && nh os switch ~/dotfiles && git -C ~/dotfiles push'';
-            nix-update = ''cd ~/dotfiles && nix flake update && nos && nix-collect-garbage''; 
-        };
-        
-        bashrcExtra = ''
-          function y() {
-              local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-              command yazi "$@" --cwd-file="$tmp"
-              IFS= read -r -d ''' cwd < "$tmp"
-              [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-              rm -f -- "$tmp"
-          }
-        '';
-
-        # Fastfetch on startup
-        initExtra = ''
-            if (( $(tput cols) >= 110 )); then
-                fastfetch
-            else
-                fastfetch --logo nixos_small
-            fi
-        '';
-    };
-    
     programs.fastfetch = {
         enable = true;
         package = unstable.fastfetch;
@@ -419,49 +385,6 @@ in
                 "colors"
             ];
         };
-    };
-
-    programs.yazi = {
-        enable = true;
-        settings = {
-            
-            opener = {
-                pdf-viewer = [
-                    { run = ''zathura "$@"'';orphan = true; block = false; }
-                ];
-                text-edit = [
-                    { run = ''$EDITOR "$@"''; orphan = true; block = true;}
-                ];
-                open = [
-                    {run = ''xdg-open "$@"''; orphan = true;}
-                ];
-            };
-            open = {
-                rules = [
-                    { mime = "application/pdf"; use = "pdf-viewer"; }
-                    { mime = "text/*"; use = "text-edit";}
-                    { name = "*.html"; url = "*.html"; use = ["open" "text-edit"];}
-
-                ];
-                append_rules = [
-	                { name = "*"; use = "open"; url="*"; }# fallback
-                ];
-            };
-        };
-        keymap = {
-            mgr.prepend_keymap = [
-                {
-                on = [ "g" "m" ];
-                run = "cd /run/media/max/";
-                desc = "Go to Media";
-                }
-            ];
-        };
-        #theme = {
-        #    indicator = {
-        #        current = {underline =true; fg= "${config.lib.stylix.colors.withHashtag.base0C}";};
-        #    };
-        #};
     };
 }
 
