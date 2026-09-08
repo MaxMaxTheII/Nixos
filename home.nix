@@ -12,7 +12,6 @@ in
         ./nvim.nix
         ./modules/programs/kitty.nix
         ./modules/programs/bash.nix
-        ./modules/programs/wlogout.nix
         ./modules/programs/cava.nix
         ./modules/programs/walker.nix
         ./modules/programs/librewolf.nix
@@ -20,6 +19,7 @@ in
         ./modules/programs/vesktop.nix
         ./modules/programs/yazi.nix
         inputs.walker.homeManagerModules.default
+        ./modules/desktop/wlogout.nix
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/hyprland.nix
         ./modules/desktop/waybar.nix
