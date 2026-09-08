@@ -81,7 +81,6 @@
                 "custom/music" = {
                     format = "{}";
                     interval = 1;
-                    # max-length = 40;
                     exec = ''
                         if ! playerctl status >/dev/null 2>&1; then
                             exit 0
@@ -116,13 +115,19 @@
                     on-click = "wlogout"; # You'll need to add 'wlogout' to your packages
                     tooltip = false;
                 };
-                "custom/weather"= {
-                    format= "{}°";
-                    tooltip= true;
-                    interval= 3600;
-                    exec= ''wttrbar --location Graz --custom-indicator "{ICON} {FeelsLikeC}"'';
-                    return-type= "json";
+                "custom/weather" = {
+                    format = "{}°";
+                    tooltip = true;
+                    exec = ''
+                        CITY=$(curl -s 'http://ip-api.com/json/' |
+                          sed -n 's/.*"city":"\([^"]*\)".*/\1/p')
+                        wttrbar --location "$CITY" --custom-indicator "{ICON} {FeelsLikeC}"
+                    '';
+                    return-type = "json";
+                    signal = 8;
+                    on-click = "pkill -RTMIN+8 waybar";
                 };
+
                 "custom/center-left" = {
                     format = " ";
                     tooltip = false;
