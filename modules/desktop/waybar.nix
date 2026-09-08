@@ -121,7 +121,7 @@
                     exec = ''
                         CITY=$(curl -s 'http://ip-api.com/json/' |
                           sed -n 's/.*"city":"\([^"]*\)".*/\1/p')
-                        wttrbar --location "$CITY" --custom-indicator "{ICON} {FeelsLikeC}"
+                        wttrbar --location "$CITY" --vertical-view --hide-conditions --custom-indicator "{ICON} {FeelsLikeC}"
                     '';
                     return-type = "json";
                     signal = 8;
