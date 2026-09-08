@@ -121,7 +121,7 @@ in
     #U
         unzip
     #V  
- #       vesktop
+        vesktop
     #W
         wireshark
         wl-clipboard
@@ -195,9 +195,9 @@ in
   #          package = pkgs.morewaita-icon-theme;
   #      };
     };
-    programs.vesktop = {
-        enable = true;
-    };
+    #programs.vesktop = {
+    #    enable = true;
+    #};
 
 
     wayland.windowManager.hyprland = {
