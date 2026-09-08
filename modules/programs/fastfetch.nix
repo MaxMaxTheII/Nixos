@@ -1,6 +1,7 @@
 {...}:
 let 
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
     stylix.targets.enable = true;
 
