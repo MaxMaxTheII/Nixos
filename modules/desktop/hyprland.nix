@@ -181,4 +181,4 @@ in
             ] ++ workspaceBinds;
         };
     };
-
+}
