@@ -3,7 +3,7 @@ let
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-    stylix.targets.enable = true;
+#    stylix.targets.enable = true;
 
     programs.fastfetch = {
         enable = true;
