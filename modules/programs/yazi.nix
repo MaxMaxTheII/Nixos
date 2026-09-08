@@ -1,6 +1,6 @@
 {...}:
 {
-    stylix.targets.enable = true;
+#    stylix.targets.enable = true;
 
     programs.yazi = {
         enable = true;
