@@ -6,7 +6,7 @@
             providers.prefixes = [
                 {
                     provider = "bitwarden";
-                    prefix = "bw";
+                    prefix = "*";
                 }
             ];
         };
