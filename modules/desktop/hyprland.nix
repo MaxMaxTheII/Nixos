@@ -41,7 +41,7 @@ let
 
 in 
 {
-    stylix.targets.enable = true;
+    stylix.targets.hyprland.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
