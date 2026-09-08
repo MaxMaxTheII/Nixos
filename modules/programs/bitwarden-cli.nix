@@ -1,6 +1,6 @@
 {...}:
 {
-    programs.bitwarden-cli = {
-        enable = true;
-    };
+    home.packages = [
+        pkgs.bitwarden-cli
+    ];
 }
