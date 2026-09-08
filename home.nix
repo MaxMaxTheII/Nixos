@@ -55,7 +55,7 @@ in
         ./modules/programs/walker.nix
         ./modules/programs/librewolf.nix
         ./modules/programs/fastfetch.nix
-#        ./modules/programs/vesktop.nix
+        ./modules/programs/vesktop.nix
         ./modules/programs/yazi.nix
         inputs.walker.homeManagerModules.default
         ./modules/desktop/hyprlock.nix
@@ -121,7 +121,7 @@ in
     #U
         unzip
     #V  
-        vesktop
+   #     vesktop
     #W
         wireshark
         wl-clipboard
@@ -136,7 +136,6 @@ in
     stylix.targets = {
         firefox.enable = true;
         hyprland.enable = true;
-        vesktop.enable = true;
     };
 
     xdg.desktopEntries = {
