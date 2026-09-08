@@ -1,4 +1,4 @@
-{...}
+{...}:
 {
     stylix.targets.vesktop.enable = true;
 

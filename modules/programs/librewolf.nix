@@ -1,4 +1,4 @@
-{...}
+{...}:
 {
     stylix.targets.librewolf.enable = false;
 
