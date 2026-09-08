@@ -1,6 +1,6 @@
 {pkgs, ...}:
 {
-    home.pkgs = [
+    home.packages = [
         pkgs.rbw
     ];
 }
