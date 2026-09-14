@@ -76,7 +76,7 @@
 #	programs.hyprland.package = pkgs.hyprland.overrideAttrs (old:{version= "0.52.1";});
     services.udisks2.enable = true;
     services.gvfs.enable = true;
-    services.upower.enable = true;
+#    services.upower.enable = true;
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     services.displayManager.sddm = {
