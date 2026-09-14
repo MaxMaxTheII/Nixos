@@ -13,8 +13,8 @@
         ./modules/programs/fastfetch.nix
         ./modules/programs/vesktop.nix
         ./modules/programs/yazi.nix
-#        ./modules/programs/hyprmon.nix
-        ./modules/programs/hyprdynamicmonitors.nix
+        ./modules/programs/hyprmon.nix
+#        ./modules/programs/hyprdynamicmonitors.nix
         inputs.walker.homeManagerModules.default
         ./modules/desktop/wlogout.nix
         ./modules/desktop/hyprlock.nix
