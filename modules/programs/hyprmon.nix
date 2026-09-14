@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}:
+{pkgs, inputs, lib, ...}:
 let 
     unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in 
