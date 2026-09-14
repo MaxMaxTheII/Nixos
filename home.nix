@@ -16,6 +16,7 @@
         ./modules/programs/hyprmon.nix
 #        ./modules/programs/hyprdynamicmonitors.nix
         inputs.walker.homeManagerModules.default
+        inputs.elephant.homeManagerModules.default
         ./modules/desktop/wlogout.nix
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/hyprland.nix
