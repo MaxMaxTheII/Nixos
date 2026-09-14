@@ -47,12 +47,12 @@ in
         enable = true;
         configType = "lua";
         settings = {
-            monitor = [{
-                output = "eDP-1";
-                mode = "1920x1080";
-                position = "0x0";
-                scale = "1.25";
-            }];
+#            monitor = [{
+#                output = "eDP-1";
+#                mode = "1920x1080";
+#                position = "0x0";
+#                scale = "1.25";
+#            }];
             config = {
                 general = {
                     gaps_in = 0;
