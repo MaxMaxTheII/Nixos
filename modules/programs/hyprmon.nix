@@ -1,5 +1,5 @@
 {
-    program.hyprmon = {
+    programs.hyprmon = {
         enable = true;
     };
 }
