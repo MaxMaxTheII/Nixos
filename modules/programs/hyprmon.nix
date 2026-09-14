@@ -6,4 +6,7 @@ in
     home.packages = [
         unstable.hyprmon
     ];
+    wayland.windowManager.hyprland.extraConfig = ''
+        require("hyprmon")
+    '';
 }
