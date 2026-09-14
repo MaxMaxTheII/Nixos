@@ -56,7 +56,7 @@
 	    hyprshutdown
     #I  
         ipe
-        inputs.elephant.packages.${pkgs.system}.elephant-with-providers
+        inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers
     #J
     #K 
     #    kitty
