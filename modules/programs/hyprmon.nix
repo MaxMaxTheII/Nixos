@@ -1,5 +1,6 @@
+{pkgs, ...}:
 {
-    programs.hyprmon = {
-        enable = true;
-    };
+    home.packages = [
+        pkgs.hyprmon
+    ];
 }
