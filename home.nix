@@ -73,6 +73,7 @@
         poetry
         pwntools
     #Q
+        quickshell
     #R
     #S  
         sl
