@@ -6,6 +6,7 @@ in
     home.packages = [
         pkgs.quickshell
     ];
-    xdg.configFile."quickshell".source = 
-        config.lib.file.mkOutOfStoreSymlink quickshellConfig;
+    xdg.configFile."quickshell" = {
+        source = config.lib.file.mkOutOfStoreSymlink quickshellConfig;
+    };
 }

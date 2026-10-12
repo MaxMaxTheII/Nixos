@@ -1,0 +1,27 @@
+-- General Settings
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+
+-- Tab Behavior
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
+-- Completion options
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- LSP Hover Border UI Polish
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover, { border = "rounded" }
+)
+
+-- Enable spellcheck for LaTeX and Markdown files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "tex", "markdown" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = { "en_us", "de_at" }
+    end,
+})
