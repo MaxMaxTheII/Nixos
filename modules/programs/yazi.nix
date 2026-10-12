@@ -13,19 +13,20 @@
             # PDFs -> Zathura 
                 { mime = "application/pdf"; use = "pdf-viewer"; }
             # HTML -> browser by default, Neovim as alternative 
-                { url = ".html"; use = [ "open" "text-edit" ]; } { url = ".htm"; use = [ "open" "text-edit" ]; }
+                { url = "*.html"; use = [ "open" "text-edit" ]; } { url = ".htm"; use = [ "open" "text-edit" ]; }
             # Source files -> Neovim 
-                { url = ".lua"; use = "text-edit"; }
-                { url = ".tex"; use = "text-edit"; }
-                { url = ".bib"; use = "text-edit"; }
-                { url = ".md"; use = "text-edit"; }
-                { url = ".nix"; use = "text-edit"; }
-                { url = ".py"; use = "text-edit"; }
-                { url = ".rs"; use = "text-edit"; }
-                { url = ".c"; use = "text-edit"; }
-                { url = ".h"; use = "text-edit"; }
-                { url = ".lock"; use = "text-edit"; }
-                { url = ".cpp"; use = "text-edit"; }
+                { url = ".*lua"; use = "text-edit"; }
+                { url = ".*tex"; use = "text-edit"; }
+                { url = ".*bib"; use = "text-edit"; }
+                { url = ".*md"; use = "text-edit"; }
+                { url = ".*nix"; use = "text-edit"; }
+                { url = ".*py"; use = "text-edit"; }
+                { url = ".*rs"; use = "text-edit"; }
+                { url = ".*c"; use = "text-edit"; }
+                { url = ".*h"; use = "text-edit"; }
+                { url = ".*lock"; use = "text-edit"; }
+                { url = ".*cpp"; use = "text-edit"; }
+                { url = ".*hpp"; use = "text-edit"; }
                 { url = "*.sh"; use = "text-edit"; }
             # Other text files -> Neovim 
                 { mime = "text/*"; use = "text-edit"; }
