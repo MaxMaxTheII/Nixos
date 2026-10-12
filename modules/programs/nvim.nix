@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+    stylix.targets.neovim = {
+        enable = true;
+        plugin = "base16-nvim";
+    };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;

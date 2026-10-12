@@ -12,6 +12,8 @@ vim.opt.shiftwidth = 4
 -- Completion options
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
+vim.cmd.colorscheme("base16-default-dark") -- Stylix generates/maps base16 names here
+
 -- LSP Hover Border UI Polish
 vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
     config = config or {}

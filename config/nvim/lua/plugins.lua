@@ -12,6 +12,7 @@ require("lazy").setup({
     -- 1. Vimtex
     { "lervag/vimtex", lazy = false },
 
+    { "RRethy/base16-nvim", lazy = false },
     -- 2. Treesitter (downloads and builds parsers automatically)
 -- Treesitter
 -- Treesitter
