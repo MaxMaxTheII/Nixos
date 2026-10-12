@@ -80,7 +80,7 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         config = function()
             -- Ensure you have texlab installed via your system package manager or Mason
-            require("lspconfig").texlab.setup({})
+           vim.lsp.config.texlab.setup({})
         end,
     },
 })
