@@ -21,6 +21,7 @@
         ./modules/desktop/hyprlock.nix
         ./modules/desktop/hyprland.nix
         ./modules/desktop/waybar.nix
+        ./modules/desktop/quickshell.nix
     ];
     home.username = "max";
     home.homeDirectory = "/home/max";
@@ -73,7 +74,7 @@
         poetry
         pwntools
     #Q
-        quickshell
+#        quickshell
     #R
     #S  
         sl

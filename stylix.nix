@@ -6,7 +6,7 @@
 
         polarity = "dark";
 
-        image = ./data/wallpapers/zergling-wp.jpg;
+        image = ./assets/wallpapers/zergling-wp.jpg;
         base16Scheme = {
             base00 = "0b0a11"; # very dark background (almost black with purple tint)
             base01 = "14121c"; # subtle elevation
