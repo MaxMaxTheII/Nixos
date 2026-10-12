@@ -24,6 +24,7 @@
                 { url = ".rs"; use = "text-edit"; }
                 { url = ".c"; use = "text-edit"; }
                 { url = ".h"; use = "text-edit"; }
+                { url = ".lock"; use = "text-edit"; }
                 { url = ".cpp"; use = "text-edit"; }
                 { url = "*.sh"; use = "text-edit"; }
             # Other text files -> Neovim 
