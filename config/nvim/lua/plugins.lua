@@ -13,19 +13,20 @@ require("lazy").setup({
     { "lervag/vimtex", lazy = false },
 
     -- 2. Treesitter (downloads and builds parsers automatically)
+-- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
-        config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = { "latex", "bibtex", "lua", "vim", "bash", "markdown" },
-                highlight = { enable = true },
-            })
+        opts = {
+            ensure_installed = { "latex", "bibtex", "lua", "vim", "bash", "markdown" },
+            highlight = { enable = true },
+        },
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
             vim.treesitter.language.register('latex', 'tex')
         end,
-    },
-
+    }, 
     -- 3. Snippet Engine & Dependencies
     {
         "L3MON4D3/LuaSnip",
