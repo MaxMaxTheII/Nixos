@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 let
     quickshellConfig = "${config.home.homeDirectory}/dotfiles/config/quickshell";
 in 
