@@ -13,9 +13,11 @@ vim.opt.shiftwidth = 4
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- LSP Hover Border UI Polish
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-    vim.lsp.handlers.hover, { border = "rounded" }
-)
+vim.lsp.handlers["textDocument/hover"] = function(_, result, ctx, config)
+    config = config or {}
+    config.border = "rounded"
+    return vim.lsp.handlers.hover(_, result, ctx, config)
+end
 
 -- Enable spellcheck for LaTeX and Markdown files
 vim.api.nvim_create_autocmd("FileType", {

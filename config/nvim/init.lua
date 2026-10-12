@@ -6,6 +6,6 @@ vim.g.vimtex_view_method = "zathura"
 vim.g.vimsyn_embed = "l"
 vim.g.vimtex_quickfix_mode = 0
 
+require("plugins")
 require("options")
 require("keymaps")
-require("plugins")
