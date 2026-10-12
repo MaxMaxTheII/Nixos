@@ -14,16 +14,21 @@ require("lazy").setup({
 
     -- 2. Treesitter (downloads and builds parsers automatically)
 -- Treesitter
+-- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         lazy = false,
-        opts = {
-            ensure_installed = { "latex", "bibtex", "lua", "vim", "bash", "markdown" },
-            highlight = { enable = true },
-        },
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
+        config = function()
+            -- Modern nvim-treesitter API (no more .configs module)
+            require("nvim-treesitter").setup()
+            
+            -- If you need to install specific parsers automatically on startup:
+            local parsers = { "latex", "bibtex", "lua", "vim", "bash", "markdown" }
+            pcall(function()
+                require("nvim-treesitter").install(parsers)
+            end)
+
             vim.treesitter.language.register('latex', 'tex')
         end,
     }, 
