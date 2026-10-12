@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     texlab
+    tree-sitter
     zathura
     ripgrep
     fd
