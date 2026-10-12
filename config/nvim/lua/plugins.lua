@@ -9,10 +9,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Vimtex
+    -- 1. Vimtex
     { "lervag/vimtex", lazy = false },
 
-    -- Treesitter
+    -- 2. Treesitter (downloads and builds parsers automatically)
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -26,7 +26,7 @@ require("lazy").setup({
         end,
     },
 
-    -- Snippets & Completion
+    -- 3. Snippet Engine & Dependencies
     {
         "L3MON4D3/LuaSnip",
         dependencies = {
@@ -38,11 +38,14 @@ require("lazy").setup({
             require("luasnip").filetype_extend("tex", {"latex"})
         end,
     },
+
+    -- 4. Completion Engine
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
+            "saadparwaiz1/cmp_luasnip",
         },
         config = function()
             local cmp = require("cmp")
@@ -76,12 +79,12 @@ require("lazy").setup({
         end,
     },
 
-    -- LSP Config
+    -- 5. LSP Client Config
     {
         "neovim/nvim-lspconfig",
         lazy = false,
         config = function()
-           vim.lsp.enable('texlab')
+            vim.lsp.enable('texlab')
         end,
     },
 })
