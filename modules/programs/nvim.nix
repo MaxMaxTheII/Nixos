@@ -3,7 +3,7 @@
 {
     stylix.targets.neovim = {
         enable = true;
-        plugin = "base16-nvim";
+#        plugin = "base16-nvim";
     };
 
   programs.neovim = {
