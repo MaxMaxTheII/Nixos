@@ -8,6 +8,9 @@
 
         image = ../assets/wallpapers/zergling-wp.jpg;
         base16Scheme = {
+            scheme = "neon-zerg";
+            author = "MaxMax";
+
             base00 = "0b0a11"; # very dark background (almost black with purple tint)
             base01 = "14121c"; # subtle elevation
             base02 = "1f1b2e"; # UI panels
