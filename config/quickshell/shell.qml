@@ -20,7 +20,7 @@ ShellRoot {
 
     // Font
     property string fontFamily: "JetBrainsMono Nerd Font"
-    property int fontSize: 14
+    property int fontSize: 12
 
     // System info properties
     property string kernelVersion: "Linux"
@@ -246,7 +246,7 @@ ShellRoot {
                             property var workspace: Hyprland.workspaces.values.find(ws => ws.id === index + 1) ?? null
                             property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
                             property bool hasWindows: workspace !== null
-
+                            visible: hasWindows
                             Text {
                                 text: index + 1
                                 color: parent.isActive ? root.colCyan : (parent.hasWindows ? root.colCyan : root.colMuted)
@@ -266,7 +266,12 @@ ShellRoot {
 
                             MouseArea {
                                 anchors.fill: parent
-                                onClicked: Hyprland.dispatch("workspace " + (index + 1))
+                                onClicked: {
+                                    let ws = Hyprland.workspaces.values.find(
+                                        ws => ws.id === index + 1
+                                    )
+                                    if (ws) ws.activate()
+                                }
                             }
                         }
                     }
@@ -310,7 +315,7 @@ ShellRoot {
                         elide: Text.ElideRight
                         maximumLineCount: 1
                     }
-
+                    /*
                     Text {
                         text: kernelVersion
                         color: root.colRed
@@ -319,7 +324,7 @@ ShellRoot {
                         font.bold: true
                         Layout.rightMargin: 8
                     }
-
+                    */
                     Rectangle {
                         Layout.preferredWidth: 1
                         Layout.preferredHeight: 16
@@ -330,7 +335,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "CPU: " + cpuUsage + "%"
+                        text: "  " + cpuUsage + "%"
                         color: root.colYellow
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -348,7 +353,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "Mem: " + memUsage + "%"
+                        text: "  " + memUsage + "%"
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -366,7 +371,7 @@ ShellRoot {
                     }
 
                     Text {
-                        text: "Disk: " + diskUsage + "%"
+                        text: "  " + diskUsage + "%"
                         color: root.colBlue
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -403,7 +408,7 @@ ShellRoot {
 
                     Text {
                         id: clockText
-                        text: Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
+                        text: Qt.formatDateTime(new Date(), "HH:mm")
                         color: root.colCyan
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily

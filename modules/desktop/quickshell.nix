@@ -3,8 +3,9 @@ let
     quickshellConfig = "${config.home.homeDirectory}/dotfiles/config/quickshell";
 in 
 {
-    home.packages = [
-        pkgs.quickshell
+    home.packages = with pkgs; [
+        quickshell
+        jq #json parser
     ];
     xdg.configFile."quickshell" = {
         source = config.lib.file.mkOutOfStoreSymlink quickshellConfig;
