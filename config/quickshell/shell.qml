@@ -236,7 +236,7 @@ ShellRoot {
                     Item { width: 8 }
 
                     Repeater {
-                        model: 9
+                        model: 10
 
                         Rectangle {
                             Layout.preferredWidth: 20
@@ -248,7 +248,7 @@ ShellRoot {
                             property bool hasWindows: workspace !== null
                             visible: hasWindows
                             Text {
-                                text: index + 1
+                                text: ["I","II","III","IV","V","VI","VII","VIII","IX","X"][index]
                                 color: parent.isActive ? root.colCyan : (parent.hasWindows ? root.colCyan : root.colMuted)
                                 font.pixelSize: root.fontSize
                                 font.family: root.fontFamily
@@ -259,7 +259,7 @@ ShellRoot {
                             Rectangle {
                                 width: 20
                                 height: 3
-                                color: parent.isActive ? root.colPurple : root.colBg
+                                color: parent.isActive? root.colCyan:parent.workspace.active ? root.colPurple : root.colBg
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 anchors.bottom: parent.bottom
                             }
@@ -326,6 +326,13 @@ ShellRoot {
                     }
                     */
                     Rectangle {
+                       /*RotationAnimator on rotation {
+                            from: 0;
+                            to: 360;
+                            duration: 1000;
+                            easing.type: Easing.InOutElastic
+                        }*/
+                        //https://doc.qt.io/qt-6/qml-qtquick-animator.html#easing-prop
                         Layout.preferredWidth: 1
                         Layout.preferredHeight: 16
                         Layout.alignment: Qt.AlignVCenter
@@ -415,12 +422,12 @@ ShellRoot {
                         font.bold: true
                         Layout.rightMargin: 8
 
-                        Timer {
+                        /*Timer {
                             interval: 1000
                             running: true
                             repeat: true
                             onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
-                        }
+                        }*/
                     }
 
                     Item { width: 8 }

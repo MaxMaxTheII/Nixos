@@ -92,6 +92,7 @@ require("lazy").setup({
         lazy = false,
         config = function()
             vim.lsp.enable('texlab')
+            vim.lsp.enable('qmlls')
         end,
     },
 })
