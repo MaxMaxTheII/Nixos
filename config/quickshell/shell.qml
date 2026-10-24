@@ -4,6 +4,7 @@ import Quickshell.Io
 import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
 ShellRoot {
     id: root
@@ -30,6 +31,7 @@ ShellRoot {
     property int volumeLevel: 0
     property string activeWindow: "Window"
     property string currentLayout: "Tile"
+    readonly property int cACTIVE_WINDOW_LENGTH: 20
 
     // CPU tracking
     property var lastCpuIdle: 0
@@ -135,6 +137,9 @@ ShellRoot {
             onRead: data => {
                 if (data && data.trim()) {
                     activeWindow = data.trim()
+                    if (activeWindow.length > cACTIVE_WINDOW_LENGTH){
+                        activeWindow = data.trim().slice(0,(cACTIVE_WINDOW_LENGTH - 3))+"..."
+                    }
                 }
             }
         }
@@ -325,6 +330,37 @@ ShellRoot {
                         Layout.rightMargin: 8
                     }
                     */
+                    Text {
+                        id: clockText
+                        property string layout: ma.containsMouse ? "ddd, MMM dd - HH:mm":"HH:mm"   
+                        text: Qt.formatDateTime(new Date(), layout)
+                        color: root.colCyan
+                        font.pixelSize: root.fontSize
+                        font.family: root.fontFamily
+                        font.bold: true
+                        anchors.centerIn: parent
+                        
+                        
+                        Timer {
+                            interval: 1000
+                            running: true
+                            repeat: true
+                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), clockText.layout)
+                        }
+                        MouseArea {
+                            id:ma
+                            anchors.fill: parent
+                            hoverEnabled:true
+                        }
+
+                        /*Timer {
+                            interval: 1000
+                            running: true
+                            repeat: true
+                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
+                        }*/
+                    }
+                    
                     Rectangle {
                        /*RotationAnimator on rotation {
                             from: 0;
@@ -412,24 +448,20 @@ ShellRoot {
                         Layout.rightMargin: 8
                         color: root.colMuted
                     }
-
-                    Text {
-                        id: clockText
-                        text: Qt.formatDateTime(new Date(), "HH:mm")
-                        color: root.colCyan
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
-                        font.bold: true
-                        Layout.rightMargin: 8
-
-                        /*Timer {
-                            interval: 1000
-                            running: true
-                            repeat: true
-                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
-                        }*/
+                    Button {
+                        Text{
+                            id:button_text
+                            text:" ⏻ "
+                            color: root.colRed
+                        }
+                        Process{
+                            id:wlogout_process
+                            command: ["sh", "-c", "wlogout"]
+                        }
+                        flat: true
+                        Layout.preferredWidth: button_text.width
+                        onClicked:wlogout_process.startDetached()
                     }
-
                     Item { width: 8 }
                 }
             }
