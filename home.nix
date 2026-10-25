@@ -57,6 +57,7 @@
     #    hyprland
         hyprshot
 	    hyprshutdown
+        hyprsunset
     #I  
         ipe
         inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers
