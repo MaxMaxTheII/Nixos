@@ -9,6 +9,18 @@ import QtQuick.Controls
 Item {
     id: bar
     property int constACTIVE_WINDOW_LENGTH: 20
+    property string kernelVersion: "Linux"
+    property int cpuUsage: 0
+    property int memUsage: 0
+    property int diskUsage: 0
+    property int volumeLevel: 0
+    property string activeWindow: "Window"
+    property string currentLayout: "Tile"
+
+    // CPU tracking
+    property var lastCpuIdle: 0
+    property var lastCpuTotal: 0
+
     // Kernel version
     Process {
         id: kernelProc
@@ -179,7 +191,7 @@ Item {
             }
 
             implicitHeight: 30
-            color: root.colBg
+            color: Constants.colBg
 
             margins {
                 top: 0
@@ -190,7 +202,7 @@ Item {
 
             Rectangle {
                 anchors.fill: parent
-                color: root.colBg
+                color: Constants.colBg
 
                 RowLayout {
                     anchors.fill: parent
@@ -205,7 +217,7 @@ Item {
 
                         Image {
                             anchors.fill: parent
-                            source: "file:///home/tony/.config/quickshell/icons/tonybtw.png"
+                            source: Constants.logo
                             fillMode: Image.PreserveAspectFit
                         }
                     }
@@ -226,9 +238,9 @@ Item {
                             visible: hasWindows
                             Text {
                                 text: ["I","II","III","IV","V","VI","VII","VIII","IX","X"][index]
-                                color: parent.isActive ? root.colCyan : (parent.hasWindows ? root.colCyan : root.colMuted)
-                                font.pixelSize: root.fontSize
-                                font.family: root.fontFamily
+                                color: parent.isActive ? Constants.colCyan : (parent.hasWindows ? Constants.colCyan : Constants.colMuted)
+                                font.pixelSize: Constants.fontSize
+                                font.family: Constants.fontFamily
                                 font.bold: true
                                 anchors.centerIn: parent
                             }
@@ -236,7 +248,7 @@ Item {
                             Rectangle {
                                 width: 20
                                 height: 3
-                                color: parent.isActive? root.colCyan:parent.workspace.active ? root.colPurple : root.colBg
+                                color: parent.isActive? Constants.colCyan:parent.workspace.active ? Constants.colPurple : Constants.colBg
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 anchors.bottom: parent.bottom
                             }
@@ -259,14 +271,14 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 8
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
 
                     Text {
                         text: currentLayout
-                        color: root.colFg
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colFg
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.leftMargin: 5
                         Layout.rightMargin: 5
@@ -278,14 +290,14 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 2
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
 
                     Text {
                         text: activeWindow
-                        color: root.colPurple
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colPurple
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.fillWidth: true
                         Layout.leftMargin: 8
@@ -295,9 +307,9 @@ Item {
                     /*
                     Text {
                         text: kernelVersion
-                        color: root.colRed
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colRed
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.rightMargin: 8
                     }
@@ -306,11 +318,11 @@ Item {
                         id: clockText
                         property string layout: ma.containsMouse ? "ddd, MMM dd - HH:mm":"HH:mm"   
                         text: Qt.formatDateTime(new Date(), layout)
-                        color: root.colCyan
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colCyan
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
-                        anchors.centerIn: parent
+                        Layout.alignment: Qt.AlignHCenter|Qt.AlignVCenter
                         
                         
                         Timer {
@@ -346,14 +358,21 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 0
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
-
+                   /* PopupWindow {
+                        anchor.window: root
+                        anchor.rect.x: parentWindow.width / 2 - width / 2
+                        anchor.rect.y: parentWindow.height
+                        width: 500
+                        height: 500
+                        visible: true
+                    }*/
                     Text {
                         text: "  " + cpuUsage + "%"
-                        color: root.colYellow
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colYellow
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.rightMargin: 8
                     }
@@ -364,14 +383,14 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 0
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
 
                     Text {
                         text: "  " + memUsage + "%"
-                        color: root.colCyan
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colCyan
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.rightMargin: 8
                     }
@@ -382,14 +401,14 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 0
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
 
                     Text {
                         text: "  " + diskUsage + "%"
-                        color: root.colBlue
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
+                        color: Constants.colBlue
+                        font.pixelSize: Constants.fontSize
+                        font.family: Constants.fontFamily
                         font.bold: true
                         Layout.rightMargin: 8
                     }
@@ -400,15 +419,15 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 0
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
 
                     Text {
                         text: (volumeLevel == 0)?"󰝟":(volumeLevel <= 25)?"󰕿":(volumeLevel <= 75)?"󰖀":"󰕾"
-                        color: root.colPurple
-                        font.pixelSize: root.fontSize
-                        font.family: root.fontFamily
-                        font.bold: true
+                        color: Constants.colPurple
+                        //font.pixelSize: Constants.fontSize
+                        //font.family: Constants.fontFamily
+                        //font.bold: true
                         Layout.rightMargin: 8
                         
                     }
@@ -420,13 +439,13 @@ Item {
                         Layout.alignment: Qt.AlignVCenter
                         Layout.leftMargin: 0
                         Layout.rightMargin: 8
-                        color: root.colMuted
+                        color: Constants.colMuted
                     }
                     Button {
                         Text{
                             id:button_text
                             text:" ⏻ "
-                            color: root.colRed
+                            color: Constants.colRed
                         }
                         Process{
                             id:wlogout_process

@@ -10,7 +10,7 @@ ShellRoot {
     id: root
 
     // Theme colors
-    property color colBg: "#1a1b26"
+    /*property color colBg: "#1a1b26"
     property color colFg: "#a9b1d6"
     property color colMuted: "#444b6a"
     property color colCyan: "#0db9d7"
@@ -34,7 +34,7 @@ ShellRoot {
 
     // CPU tracking
     property var lastCpuIdle: 0
-    property var lastCpuTotal: 0
+    property var lastCpuTotal: 0*/
 
     Bar{constACTIVE_WINDOW_LENGTH:15}
 }

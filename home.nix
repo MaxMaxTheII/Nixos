@@ -4,6 +4,7 @@
         ./modules/programs/kitty.nix
 #        ./modules/programs/bitwarden-cli.nix
         ./modules/programs/rbw.nix
+        ./modules/programs/gimp.nix
         ./modules/programs/conda.nix
         ./modules/programs/nvim.nix
         ./modules/programs/zathura.nix
