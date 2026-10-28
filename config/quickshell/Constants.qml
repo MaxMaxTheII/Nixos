@@ -15,5 +15,5 @@ QtObject {
     readonly property string fontFamily: "JetBrainsMono Nerd Font"
     readonly property int fontSize: 12
 
-    readonly property var logo: "file:///home/max/Desktop/zergling.jpg"
+    readonly property var logo: "file:///home/max/Desktop/zergling2.png"
 }

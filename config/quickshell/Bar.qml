@@ -181,6 +181,7 @@ Item {
         model: Quickshell.screens
 
         PanelWindow {
+            id:barPanel
             property var modelData
             screen: modelData
 
@@ -199,13 +200,15 @@ Item {
                 left: 0
                 right: 0
             }
+            
+            //HoverMenu{Text{text:"asd"}}
 
             Rectangle {
                 anchors.fill: parent
                 color: Constants.colBg
 
                 RowLayout {
-                    anchors.fill: parent
+                    anchors.left: parent.left
                     spacing: 0
 
                     Item { width: 8 }
@@ -248,7 +251,7 @@ Item {
                             Rectangle {
                                 width: 20
                                 height: 3
-                                color: parent.isActive? Constants.colCyan:parent.workspace.active ? Constants.colPurple : Constants.colBg
+                                color: parent.isActive? Constants.colCyan:(parent.workspace && parent.workspace.active) ? Constants.colPurple : Constants.colBg
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 anchors.bottom: parent.bottom
                             }
@@ -314,37 +317,39 @@ Item {
                         Layout.rightMargin: 8
                     }
                     */
-                    Text {
-                        id: clockText
-                        property string layout: ma.containsMouse ? "ddd, MMM dd - HH:mm":"HH:mm"   
-                        text: Qt.formatDateTime(new Date(), layout)
-                        color: Constants.colCyan
-                        font.pixelSize: Constants.fontSize
-                        font.family: Constants.fontFamily
-                        font.bold: true
-                        Layout.alignment: Qt.AlignHCenter|Qt.AlignVCenter
-                        
-                        
-                        Timer {
-                            interval: 1000
-                            running: true
-                            repeat: true
-                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), clockText.layout)
-                        }
-                        MouseArea {
-                            id:ma
-                            anchors.fill: parent
-                            hoverEnabled:true
-                        }
-
-                        /*Timer {
-                            interval: 1000
-                            running: true
-                            repeat: true
-                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
-                        }*/
-                    }
+               }
+                Text {
+                    id: clockText
+                    property string layout: ma.containsMouse ? "ddd, MMM dd - HH:mm":"HH:mm"   
+                    text: Qt.formatDateTime(new Date(), layout)
+                    color: Constants.colCyan
+                    font.pixelSize: Constants.fontSize
+                    font.family: Constants.fontFamily
+                    font.bold: true
+                    anchors.centerIn: parent
                     
+                    
+                    Timer {
+                        interval: 1000
+                        running: true
+                        repeat: true
+                        onTriggered: clockText.text = Qt.formatDateTime(new Date(), clockText.layout)
+                    }
+                    MouseArea {
+                        id:ma
+                        anchors.fill: parent
+                        hoverEnabled:true
+                    }
+
+                    /*Timer {
+                        interval: 1000
+                        running: true
+                        repeat: true
+                        onTriggered: clockText.text = Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
+                    }*/
+                }
+                RowLayout {
+                    anchors.right: parent.right
                     Rectangle {
                        /*RotationAnimator on rotation {
                             from: 0;
@@ -360,79 +365,68 @@ Item {
                         Layout.rightMargin: 8
                         color: Constants.colMuted
                     }
-                   /* PopupWindow {
-                        anchor.window: root
-                        anchor.rect.x: parentWindow.width / 2 - width / 2
-                        anchor.rect.y: parentWindow.height
-                        width: 500
-                        height: 500
-                        visible: true
-                    }*/
-                    Text {
-                        text: "  " + cpuUsage + "%"
+                    Text{
+                        id:systemStatsButton
+                        text:"󱗼"
                         color: Constants.colYellow
                         font.pixelSize: Constants.fontSize
                         font.family: Constants.fontFamily
                         font.bold: true
                         Layout.rightMargin: 8
-                    }
+                        MouseArea{
+                            id:maSystemMenu
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onExited:systemStats.visible=false
+                            onEntered:systemStats.visible=true
+                        }
+                        HoverMenu{
+                            id:systemStats
+                            ColumnLayout{
+                                Text {
+                                    text: "  " + cpuUsage + "%"
+                                    color: Constants.colYellow
+                                    font.pixelSize: Constants.fontSize
+                                    font.family: Constants.fontFamily
+                                    font.bold: true
+                                    Layout.rightMargin: 8
+                                }
 
-                    Rectangle {
-                        Layout.preferredWidth: 1
-                        Layout.preferredHeight: 16
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.leftMargin: 0
-                        Layout.rightMargin: 8
-                        color: Constants.colMuted
-                    }
 
-                    Text {
-                        text: "  " + memUsage + "%"
-                        color: Constants.colCyan
-                        font.pixelSize: Constants.fontSize
-                        font.family: Constants.fontFamily
-                        font.bold: true
-                        Layout.rightMargin: 8
-                    }
+                                Text {
+                                    text: "  " + memUsage + "%"
+                                    color: Constants.colCyan
+                                    font.pixelSize: Constants.fontSize
+                                    font.family: Constants.fontFamily
+                                    font.bold: true
+                                    Layout.rightMargin: 8
+                                }
 
-                    Rectangle {
-                        Layout.preferredWidth: 1
-                        Layout.preferredHeight: 16
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.leftMargin: 0
-                        Layout.rightMargin: 8
-                        color: Constants.colMuted
-                    }
 
-                    Text {
-                        text: "  " + diskUsage + "%"
-                        color: Constants.colBlue
-                        font.pixelSize: Constants.fontSize
-                        font.family: Constants.fontFamily
-                        font.bold: true
-                        Layout.rightMargin: 8
-                    }
+                                Text {
+                                    text: "  " + diskUsage + "%"
+                                    color: Constants.colBlue
+                                    font.pixelSize: Constants.fontSize
+                                    font.family: Constants.fontFamily
+                                    font.bold: true
+                                    Layout.rightMargin: 8
+                                }
 
-                    Rectangle {
-                        Layout.preferredWidth: 1
-                        Layout.preferredHeight: 16
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.leftMargin: 0
-                        Layout.rightMargin: 8
-                        color: Constants.colMuted
-                    }
 
-                    Text {
-                        text: (volumeLevel == 0)?"󰝟":(volumeLevel <= 25)?"󰕿":(volumeLevel <= 75)?"󰖀":"󰕾"
-                        color: Constants.colPurple
-                        //font.pixelSize: Constants.fontSize
-                        //font.family: Constants.fontFamily
-                        //font.bold: true
-                        Layout.rightMargin: 8
-                        
+                                Text {
+                                    text: (volumeLevel == 0)?"󰝟":(volumeLevel <= 25)?"󰕿":(volumeLevel <= 75)?"󰖀":"󰕾"
+                                    color: Constants.colPurple
+                                    //font.pixelSize: Constants.fontSize
+                                    font.family: Constants.fontFamily
+                                    font.bold: true
+                                    Layout.rightMargin: 8
+                                    
+                                }
+                                //["", "", "", "", ""]
+                            //Tray{}
+                            }
+                        }
                     }
-                    //["", "", "", "", ""]
-
                     Rectangle {
                         Layout.preferredWidth: 1
                         Layout.preferredHeight: 16
@@ -442,10 +436,13 @@ Item {
                         color: Constants.colMuted
                     }
                     Button {
+                        Layout.alignment: Qt.AlignVCenter
                         Text{
                             id:button_text
                             text:" ⏻ "
                             color: Constants.colRed
+                            font.family: Constants.fontFamily
+                            font.bold: true
                         }
                         Process{
                             id:wlogout_process

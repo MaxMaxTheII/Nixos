@@ -15,6 +15,8 @@
         ./modules/programs/fastfetch.nix
         ./modules/programs/vesktop.nix
         ./modules/programs/yazi.nix
+        ./modules/programs/ipe.nix
+        ./modules/programs/ghidra.nix
         ./modules/programs/hyprmon.nix
 #        ./modules/programs/hyprdynamicmonitors.nix
         inputs.walker.homeManagerModules.default
@@ -50,7 +52,7 @@
         file
     #G 
         gdb
-        ghidra
+#        ghidra
         gnome-calculator
     #H   
         htop
@@ -60,7 +62,7 @@
 	    hyprshutdown
 #        hyprsunset
     #I  
-        ipe
+ #       ipe
         inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers
     #J
     #K 
